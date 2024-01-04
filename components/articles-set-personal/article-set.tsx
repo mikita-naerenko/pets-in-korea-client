@@ -25,6 +25,7 @@ export default function ArticelSet({ tags }: { tags: Tag[] }) {
   const [decodedHTML, setDecodedHTML] = useState("");
   const pathname = usePathname();
   const currentTag = pathname.split("/").pop();
+  console.log(currentTag);
   const [tagId] = tags.filter((tag) => tag.label === currentTag);
   const current = currentProps.currentArticle
     ? currentProps.currentArticle
