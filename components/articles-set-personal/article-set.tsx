@@ -65,7 +65,6 @@ export default function ArticelSet({ tags }: { tags: Tag[] }) {
   if (!current) {
     return <div>Articles not found</div>;
   }
-  console.log(current);
 
   return (
     <Container disableGutters>

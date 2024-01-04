@@ -29,7 +29,9 @@ export default function RootLayout({
       <ThemeProvider theme={theme}>
         <body className={font.className} style={{ position: "relative" }}>
           <Container maxWidth={"xl"}>
-            <Header>{children}</Header>
+            {/* <Header> */}
+            {children}
+            {/* </Header> */}
             <UpToTopButton />
             <Footer />
           </Container>
