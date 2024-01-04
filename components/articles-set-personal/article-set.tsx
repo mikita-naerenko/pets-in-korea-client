@@ -8,7 +8,7 @@ import he from "he";
 import OtherArticles from "./other-articles";
 import { useCurrentProps } from "@/hooks/use-current-props";
 
-import Test from "../../../../public/no-image-news.png";
+import Test from "../../public/no-image-news.png";
 import { usePathname } from "next/navigation";
 import { Article, Tag } from "@/lib/type";
 import { useEffect, useState } from "react";
