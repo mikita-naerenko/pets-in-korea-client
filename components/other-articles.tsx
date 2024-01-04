@@ -36,6 +36,10 @@ export default function OtherArticles({ articles }: { articles: Article[] }) {
       sx={{ width: "100%", bgcolor: "background.paper", pt: 0 }}
     >
       {articles.map((article, i) => {
+        const image =
+          article.images?.[0] && article.images?.[0].url
+            ? article.images?.[0].url
+            : Fallback.src;
         return (
           <ListItemButton
             component="li"
@@ -46,7 +50,7 @@ export default function OtherArticles({ articles }: { articles: Article[] }) {
           >
             <ListItemAvatar>
               <Image
-                src={article?.images?.[0].url || Fallback.src}
+                src={image}
                 quality={70}
                 width={50}
                 height={40}

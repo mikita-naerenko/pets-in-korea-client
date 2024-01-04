@@ -55,6 +55,11 @@ export default function Rocommendations() {
         sx={{ width: "100%", bgcolor: "background.paper", pt: 0 }}
       >
         {articles.map((item, i) => {
+          const image =
+            item.images?.[0] && item.images?.[0].url
+              ? item.images?.[0].url
+              : Fallback.src;
+
           return (
             <ListItemButton
               component="li"
@@ -65,7 +70,7 @@ export default function Rocommendations() {
             >
               <ListItemAvatar>
                 <Image
-                  src={item?.images?.[0].url || Fallback.src}
+                  src={image}
                   quality={70}
                   width={50}
                   height={40}

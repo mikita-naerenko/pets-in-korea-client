@@ -19,6 +19,7 @@ import { PawPrint } from "lucide-react";
 import Link from "next/link";
 import SectionTitle from "../ui/Section-title";
 import { useState } from "react";
+import Fallback from "../../public/fallback.jpg";
 
 export default function ImportantNews({ latestNews }: { latestNews: News[] }) {
   const [showedNews, setShowedNews] = useState<number>(3);
@@ -44,6 +45,10 @@ export default function ImportantNews({ latestNews }: { latestNews: News[] }) {
         cols={0}
       >
         {latestNews.slice(0, showedNews).map((item) => {
+          const image =
+            item.images?.[0] && item.images?.[0].url
+              ? item.images?.[0].url
+              : Fallback.src;
           return (
             <Link href={`/news/${item.id}`} key={item.id}>
               <ImageListItem
@@ -57,11 +62,7 @@ export default function ImportantNews({ latestNews }: { latestNews: News[] }) {
                 }}
               >
                 <img
-                  src={
-                    item?.images && item.images[0]?.url
-                      ? item.images[0].url
-                      : NoImageNews.src
-                  }
+                  src={image}
                   // style={{ filter: "brightness(0.6)" }}
                   width={300}
                   height={400}

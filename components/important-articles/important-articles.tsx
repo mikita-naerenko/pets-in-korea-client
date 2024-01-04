@@ -12,6 +12,7 @@ import InfoIcon from "@mui/icons-material/Info";
 import Image from "next/image";
 import SectionTitle from "../ui/Section-title";
 import { useState } from "react";
+import Fallback from "../../public/fallback.jpg";
 
 export default function ImportantArticles({ items }: { items: Article[] }) {
   const [showedItems, setShowedItems] = useState<number>(3);
@@ -43,14 +44,17 @@ export default function ImportantArticles({ items }: { items: Article[] }) {
           cols={0}
         >
           {items.slice(0, showedItems).map((item) => {
+            const image =
+              item.images?.[0] && item.images?.[0].url
+                ? item.images?.[0].url
+                : Fallback.src;
             return (
               <ImageListItem
                 key={item.id}
                 onClick={() => handleClickSingleItem(item)}
               >
                 <img
-                  // srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                  src={item?.images?.[0]?.url ?? "fallback-image-url"}
+                  src={image}
                   width={300}
                   height={400}
                   alt={item.title}
