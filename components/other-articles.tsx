@@ -11,6 +11,7 @@ import { Article } from "../lib/type";
 import { useCurrentProps } from "../hooks/use-current-props";
 import ListItemButton from "@mui/material/ListItemButton";
 import React from "react";
+import Fallback from "../public/fallback.jpg";
 
 export default function OtherArticles({ articles }: { articles: Article[] }) {
   const currentProps = useCurrentProps();
@@ -45,7 +46,7 @@ export default function OtherArticles({ articles }: { articles: Article[] }) {
           >
             <ListItemAvatar>
               <Image
-                src={article?.images?.[0].url || "fallback url"}
+                src={article?.images?.[0].url || Fallback.src}
                 quality={70}
                 width={50}
                 height={40}

@@ -17,6 +17,7 @@ import ArticleTitle from "@/components/ui/article-title";
 import ArticleDescription from "@/components/ui/article-description";
 import { StyledTextContainer } from "./styled-text-container";
 import AuthorInfo from "@/components/ui/author-info";
+import Fallback from "../public/fallback.jpg";
 
 export default function SingleArticle({
   article,
@@ -59,7 +60,7 @@ export default function SingleArticle({
         <Box sx={{ width: { md: "40%" } }}>
           <Image
             style={{ display: "block", width: "100%" }}
-            src={article?.images?.[0].url || "fallback url"}
+            src={article?.images?.[0].url || Fallback.src}
             // layout="responsive"
             quality={90}
             width={250}

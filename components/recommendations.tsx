@@ -14,6 +14,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import { useEffect, useState } from "react";
 import getArticles from "@/actions/get-articles";
 import getNews from "@/actions/get-news";
+import Fallback from "../public/fallback.jpg";
 
 export default function Rocommendations() {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -64,7 +65,7 @@ export default function Rocommendations() {
             >
               <ListItemAvatar>
                 <Image
-                  src={item?.images?.[0].url || "fallback url"}
+                  src={item?.images?.[0].url || Fallback.src}
                   quality={70}
                   width={50}
                   height={40}
@@ -112,7 +113,7 @@ export default function Rocommendations() {
             >
               <ListItemAvatar>
                 <Image
-                  src={item?.images?.[0].url || "fallback url"}
+                  src={item?.images?.[0].url || Fallback.src}
                   quality={70}
                   width={50}
                   height={40}
