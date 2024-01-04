@@ -5,16 +5,12 @@ import React from "react";
 import ArticleDescription from "../ui/article-description";
 import ArticleTitle from "../ui/article-title";
 import Image from "next/image";
-import Document10days from "../../public/10-days.jpeg";
-import Document3days from "../../public/Document3days.jpeg";
-import Relax from "../../public/relax.png";
-import ArriveMain from "../../public/arrive-main.png";
-import antibodyTest from "../../public/antibody-test.png";
+import departure from "../../public/departure.jpg";
+import InnerStaticContent from "./innerStaticContent";
 import Recommendations from "../recommendations";
 import { StyledTextContainer } from "../styled-text-container";
 import { Article } from "@/lib/type";
 import OtherArticles from "../articles-set-personal/other-articles";
-import InnerStaticContent from "./innerStaticContent";
 
 export default function Arrive({ articles }: { articles: Article[] }) {
   return (
@@ -28,18 +24,23 @@ export default function Arrive({ articles }: { articles: Article[] }) {
           }}
         >
           <ArticleTitle>
-            {"Как увезти домашнее животное из Южной Кореи"}
+            {"Ввоз животных в Южную Корею: документы и требования"}
           </ArticleTitle>
           <ArticleDescription>
             {
-              "Жизнь бывает непредсказуема, и иногда возникает острая необходимость по тем или иным причинам покинуть Южную Корею. Подготовка всех необходимых документов для путешествия вместе с животным занимает время, и к решению этого вопроса мы рекомендуем приступать заблаговременно."
+              "Как и другие страны Южная Корея выдвигает ряд требований для тех кто желает взять с собой домашних питомцев, в этой статье постараемся максимально подробно разобраться и описать шаг за шагом дейсвия необходимые для ввоза животных в Южную Корею"
             }
           </ArticleDescription>
         </Box>
         <Box sx={{ width: { md: "40%" } }}>
           <Image
-            style={{ display: "block", width: "100%", height: "100%" }}
-            src={ArriveMain.src}
+            style={{
+              display: "block",
+              width: "100%",
+              height: "100%",
+              maxHeight: "450px",
+            }}
+            src={departure.src}
             quality={90}
             width={250}
             height={300}

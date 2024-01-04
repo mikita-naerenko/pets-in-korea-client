@@ -1,5 +1,5 @@
 import React from "react";
-import Departure from "@/components/departure";
+import Departure from "@/components/arrive";
 import getArticles from "@/actions/get-articles";
 import getTags from "@/actions/get-tags";
 
