@@ -15,9 +15,12 @@ import { useEffect, useState } from "react";
 import getArticles from "@/actions/get-articles";
 import getNews from "@/actions/get-news";
 import Fallback from "../public/fallback.jpg";
+import { RecommendationsSkeleton } from "./ui/skeletons";
 
-export default function Rocommendations() {
+export default function Recommendations() {
   const [articles, setArticles] = useState<Article[]>([]);
+  const [loadingArticles, setLoadingArticles] = useState(true);
+  const [loadingNews, setLoadingNews] = useState(true);
   const [news, setNews] = useState<News[]>([]);
   const currentProps = useCurrentProps();
 
@@ -25,6 +28,8 @@ export default function Rocommendations() {
     const fetch = async () => {
       const articles = await getArticles({ random: 3 });
       const news = await getNews({ random: 3 });
+      articles ? setLoadingArticles(!loadingArticles) : null;
+      news ? setLoadingNews(!loadingNews) : null;
       setArticles(articles);
       setNews(news);
     };
@@ -37,9 +42,7 @@ export default function Rocommendations() {
   const handleClickNews = (item: News) => {
     window.location.assign(`/news/${item.id}`);
   };
-  if (!articles) {
-    return <div>not found</div>;
-  }
+
   return (
     <>
       <List
@@ -54,46 +57,54 @@ export default function Rocommendations() {
         }
         sx={{ width: "100%", bgcolor: "background.paper", pt: 0 }}
       >
-        {articles.map((item, i) => {
-          const image =
-            item.images?.[0] && item.images?.[0].url
-              ? item.images?.[0].url
-              : Fallback.src;
+        {loadingArticles ? (
+          <>
+            <RecommendationsSkeleton />
+            <RecommendationsSkeleton />
+            <RecommendationsSkeleton />
+          </>
+        ) : (
+          articles.map((item, i) => {
+            const image =
+              item.images?.[0] && item.images?.[0].url
+                ? item.images?.[0].url
+                : Fallback.src;
 
-          return (
-            <ListItemButton
-              component="li"
-              onClick={() => handleClickArticle(item)}
-              alignItems="flex-start"
-              key={item.id}
-              divider={i !== articles.length - 1}
-            >
-              <ListItemAvatar>
-                <Image
-                  src={image}
-                  quality={70}
-                  width={50}
-                  height={40}
-                  alt={`${item.title} `}
+            return (
+              <ListItemButton
+                component="li"
+                onClick={() => handleClickArticle(item)}
+                alignItems="flex-start"
+                key={item.id}
+                divider={i !== articles.length - 1}
+              >
+                <ListItemAvatar>
+                  <Image
+                    src={image}
+                    quality={70}
+                    width={50}
+                    height={40}
+                    alt={`${item.title} `}
+                  />
+                </ListItemAvatar>
+                <ListItemText
+                  primary={item.title}
+                  secondary={
+                    <>
+                      <Typography
+                        sx={{ display: "inline" }}
+                        component="span"
+                        variant="body2"
+                        color="text.primary"
+                      ></Typography>
+                      {item.description.slice(0, 50)}...
+                    </>
+                  }
                 />
-              </ListItemAvatar>
-              <ListItemText
-                primary={item.title}
-                secondary={
-                  <>
-                    <Typography
-                      sx={{ display: "inline" }}
-                      component="span"
-                      variant="body2"
-                      color="text.primary"
-                    ></Typography>
-                    {item.description.slice(0, 50)}...
-                  </>
-                }
-              />
-            </ListItemButton>
-          );
-        })}
+              </ListItemButton>
+            );
+          })
+        )}
       </List>
       <List
         subheader={
@@ -107,41 +118,50 @@ export default function Rocommendations() {
         }
         sx={{ width: "100%", bgcolor: "background.paper", pt: 0 }}
       >
-        {news.map((item, i) => {
-          return (
-            <ListItemButton
-              component="li"
-              onClick={() => handleClickNews(item)}
-              alignItems="flex-start"
-              key={item.id}
-              divider={i !== articles.length - 1}
-            >
-              <ListItemAvatar>
-                <Image
-                  src={item?.images?.[0].url || Fallback.src}
-                  quality={70}
-                  width={50}
-                  height={40}
-                  alt={`${item.title} `}
+        {" "}
+        {loadingNews ? (
+          <>
+            <RecommendationsSkeleton />
+            <RecommendationsSkeleton />
+            <RecommendationsSkeleton />
+          </>
+        ) : (
+          news.map((item, i) => {
+            return (
+              <ListItemButton
+                component="li"
+                onClick={() => handleClickNews(item)}
+                alignItems="flex-start"
+                key={item.id}
+                divider={i !== articles.length - 1}
+              >
+                <ListItemAvatar>
+                  <Image
+                    src={item?.images?.[0].url || Fallback.src}
+                    quality={70}
+                    width={50}
+                    height={40}
+                    alt={`${item.title} `}
+                  />
+                </ListItemAvatar>
+                <ListItemText
+                  primary={item.title}
+                  secondary={
+                    <>
+                      <Typography
+                        sx={{ display: "inline" }}
+                        component="span"
+                        variant="body2"
+                        color="text.primary"
+                      ></Typography>
+                      {item.description.slice(0, 50)}...
+                    </>
+                  }
                 />
-              </ListItemAvatar>
-              <ListItemText
-                primary={item.title}
-                secondary={
-                  <>
-                    <Typography
-                      sx={{ display: "inline" }}
-                      component="span"
-                      variant="body2"
-                      color="text.primary"
-                    ></Typography>
-                    {item.description.slice(0, 50)}...
-                  </>
-                }
-              />
-            </ListItemButton>
-          );
-        })}
+              </ListItemButton>
+            );
+          })
+        )}
       </List>
     </>
   );
