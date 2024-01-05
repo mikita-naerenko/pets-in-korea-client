@@ -10,7 +10,7 @@ import InnerStaticContent from "./innerStaticContent";
 import Recommendations from "../recommendations";
 import { StyledTextContainer } from "../styled-text-container";
 import { Article } from "@/lib/type";
-import OtherArticles from "../articles-set-personal/other-articles";
+import OtherArticles from "../other-articles";
 
 export default function Arrive({ articles }: { articles: Article[] }) {
   return (
