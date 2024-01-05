@@ -1,7 +1,6 @@
 import React from "react";
 import getArticle from "@/actions/get-article";
 import SingleArticle from "@/components/single-article";
-// import Fallback from "../public/fallback.jpg";
 import { getBlurData } from "@/lib/getBlurData";
 
 export default async function page({
