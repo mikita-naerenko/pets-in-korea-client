@@ -22,6 +22,8 @@ import NavbarMd from "./navbar-md";
 import NavbarXs from "./navbar-xs";
 
 import Logo from "../../public/logo.svg";
+import LogoDesktop from "../../public//logo-desktop.png";
+import Link from "next/link";
 
 interface Props {
   children: React.ReactElement;
@@ -71,7 +73,9 @@ export default function Header(
                   },
                 }}
               >
-                <Image width={180} height={50} alt="Logo" src={Logo} />
+                <Link href="/">
+                  <Image width={180} height={50} alt="Logo" src={Logo} />
+                </Link>
               </Box>
               <Box
                 sx={{
@@ -79,10 +83,20 @@ export default function Header(
                     xs: "none",
                     md: "block",
                     justifyContent: "center",
+                    width: "200px",
+                    maxHeight: "70px",
                   },
                 }}
               >
-                <Image width={200} height={60} alt="Logo" src={Logo} />
+                <Link href="/">
+                  <Image
+                    width={200}
+                    height={60}
+                    alt="Logo"
+                    src={LogoDesktop}
+                    style={{ width: "100%", height: "auto" }}
+                  />
+                </Link>
               </Box>
 
               <Box

@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
+import Image from "next/image";
 
 import { News } from "@/lib/type";
 import NoImageNews from "../../public/no-image-news.png";
@@ -61,13 +62,20 @@ export default function ImportantNews({ latestNews }: { latestNews: News[] }) {
                   },
                 }}
               >
-                <img
+                <Image
                   src={image}
-                  // style={{ filter: "brightness(0.6)" }}
                   width={300}
                   height={400}
+                  quality={80}
                   alt={item.title}
-                  loading="lazy"
+                  style={{
+                    objectFit: "cover",
+                    width: "100%",
+                    height: "auto",
+                    display: "block",
+                    flexGrow: 1,
+                    filter: "brightness(0.6)",
+                  }}
                 />
                 <ImageListItemBar
                   sx={{

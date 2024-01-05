@@ -22,7 +22,7 @@ export const ImageButton = styled(ButtonBase)(({ theme }) => ({
     },
   },
 }));
-export const ImageSrc = styled("span")({
+export const ImageContainer = styled("span")({
   position: "absolute",
   left: 0,
   right: 0,
@@ -32,7 +32,7 @@ export const ImageSrc = styled("span")({
   backgroundPosition: "center 40%",
 });
 
-export const Image = styled("span")(({ theme }) => ({
+export const Content = styled("span")(({ theme }) => ({
   position: "absolute",
   left: 0,
   right: 0,

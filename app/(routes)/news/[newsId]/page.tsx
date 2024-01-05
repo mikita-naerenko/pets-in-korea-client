@@ -5,5 +5,5 @@ import SingleArticle from "@/components/single-article";
 export default async function Page({ params }: { params: { newsId: string } }) {
   const singleNews = await getNewsById({ id: params.newsId });
 
-  return <SingleArticle article={singleNews} />;
+  return <SingleArticle article={singleNews} blurImage={null} />;
 }

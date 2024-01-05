@@ -4,27 +4,25 @@ import { useRouter } from "next/navigation";
 
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import Image from "next/image";
 
 import { THEMATIC_ARTICLES } from "@/lib/constants";
 
 import {
   ImageButton,
-  ImageSrc,
-  Image,
+  ImageContainer,
+  Content,
+  // Image,
   ImageBackdrop,
   ImageMarked,
 } from "./styled-components";
 import Container from "@mui/material/Container";
-import { theme } from "../theme";
-import { Bone } from "lucide-react";
-import SectionTitle from "../ui/Section-title";
 
 export default function ThematicSetOfArticles() {
   const router = useRouter();
 
   return (
     <Container disableGutters component={"section"}>
-      {/* <SectionTitle title="Подборки важных статей:" svg={<Bone />} /> */}
       <Box
         display={"flex"}
         sx={{
@@ -41,9 +39,22 @@ export default function ThematicSetOfArticles() {
             key={image.title}
             onClick={() => router.push(`${image.href}/${image.tagId}`)}
           >
-            <ImageSrc style={{ backgroundImage: `url(${image.img})` }} />
+            <ImageContainer>
+              <Image
+                alt={image.title}
+                src={image.img}
+                placeholder="blur"
+                blurDataURL={image.blur}
+                quality={80}
+                fill
+                sizes="100vw"
+                style={{
+                  objectFit: "cover",
+                }}
+              />
+            </ImageContainer>
             <ImageBackdrop className="MuiImageBackdrop-root" />
-            <Image>
+            <Content>
               <Typography
                 component="span"
                 variant="h5"
@@ -58,7 +69,7 @@ export default function ThematicSetOfArticles() {
                 {image.title}
                 <ImageMarked className="MuiImageMarked-root" />
               </Typography>
-            </Image>
+            </Content>
           </ImageButton>
         ))}
       </Box>

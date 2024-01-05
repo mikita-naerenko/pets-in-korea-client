@@ -11,6 +11,7 @@ import { keyframes } from "@mui/material";
 
 import { usePathname } from "next/navigation";
 import { theme } from "../theme";
+import LogoDesktop from "../../public//logo-desktop.png";
 
 const animateGradient = keyframes`
 0%{background-position:0% 84%}
@@ -48,12 +49,37 @@ export default function Footer() {
           <Box
             sx={{
               display: {
-                md: "block",
+                md: "none",
+
                 justifyContent: "center",
               },
             }}
           >
-            <Image width={200} height={60} alt="Logo" src={Logo} />
+            <Link href="/">
+              <Image width={200} height={60} alt="Logo" src={Logo} />
+            </Link>
+          </Box>
+          <Box
+            sx={{
+              display: {
+                xs: "none",
+                md: "block",
+                justifyContent: "center",
+                maxHeight: "70px",
+                width: "200px",
+              },
+            }}
+          >
+            <Link href="/">
+              {" "}
+              <Image
+                width={200}
+                height={60}
+                alt="Logo"
+                src={LogoDesktop}
+                style={{ width: "100%", height: "70px", maxHeight: "70px" }}
+              />
+            </Link>
           </Box>
           <Box
             sx={{

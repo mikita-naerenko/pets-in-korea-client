@@ -5,15 +5,11 @@ import React from "react";
 import ArticleDescription from "../ui/article-description";
 import ArticleTitle from "../ui/article-title";
 import Image from "next/image";
-import Document10days from "../../public/10-days.jpeg";
-import Document3days from "../../public/Document3days.jpeg";
-import Relax from "../../public/relax.png";
 import ArriveMain from "../../public/arrive-main.png";
-import antibodyTest from "../../public/antibody-test.png";
 import Recommendations from "../recommendations";
 import { StyledTextContainer } from "../styled-text-container";
 import { Article } from "@/lib/type";
-import OtherArticles from "../articles-set-personal/other-articles";
+import OtherArticles from "../other-articles";
 import InnerStaticContent from "./innerStaticContent";
 
 export default function Departure({ articles }: { articles: Article[] }) {
@@ -40,10 +36,10 @@ export default function Departure({ articles }: { articles: Article[] }) {
           <Image
             style={{ display: "block", width: "100%", height: "100%" }}
             src={ArriveMain.src}
-            quality={90}
+            quality={80}
             width={250}
             height={300}
-            alt={`dd `}
+            alt={`Как увезти домашнее животное из Южной Кореи`}
           />
         </Box>
       </Box>

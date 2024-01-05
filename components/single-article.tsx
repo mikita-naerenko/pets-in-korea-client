@@ -1,18 +1,13 @@
 "use client";
 import * as React from "react";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Image from "next/image";
 import he from "he";
-// import OtherArticles from "./other-articles";
 import Recommendations from "./recommendations";
-import { useCurrentProps } from "@/hooks/use-current-props";
 
-import { usePathname } from "next/navigation";
 import { Article, News, Tag } from "@/lib/type";
 import { useEffect, useState } from "react";
-import getArticles from "@/actions/get-articles";
 import ArticleTitle from "@/components/ui/article-title";
 import ArticleDescription from "@/components/ui/article-description";
 import { StyledTextContainer } from "./styled-text-container";
@@ -21,10 +16,15 @@ import Fallback from "../public/fallback.jpg";
 
 export default function SingleArticle({
   article,
+  blurImage,
 }: {
   article: Article | News;
+  blurImage: string | null;
 }) {
   const [decodedHTML, setDecodedHTML] = useState("");
+  const imageURL = article?.images?.[0]
+    ? article?.images?.[0].url
+    : Fallback.src;
 
   useEffect(() => {
     const decodeHTML = (input: string) => {
@@ -60,8 +60,9 @@ export default function SingleArticle({
         <Box sx={{ width: { md: "40%" } }}>
           <Image
             style={{ display: "block", width: "100%" }}
-            src={article?.images?.[0].url || Fallback.src}
-            // layout="responsive"
+            src={imageURL}
+            placeholder="blur"
+            blurDataURL={blurImage ? blurImage : Fallback.src}
             quality={90}
             width={250}
             height={300}

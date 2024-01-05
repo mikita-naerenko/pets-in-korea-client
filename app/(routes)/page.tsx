@@ -6,6 +6,8 @@ import ImportantArticles from "@/components/important-articles/important-article
 import ThematicSetOfArticles from "@/components/thematic-set-of-articles/thematic-set-of-articles";
 import ImportantNews from "@/components/important-news/important-news";
 import DictionaryList from "@/components/dictionarys-list/dictionary-list";
+import { Suspense } from "react";
+import { DictionarySkeleton } from "@/components/ui/skeletons";
 
 export default async function Home() {
   const tags = await getTags();
@@ -22,7 +24,9 @@ export default async function Home() {
       <ThematicSetOfArticles />
       <ImportantArticles items={importantArticles} />
       <ImportantNews latestNews={latest4News} />
-      <DictionaryList themes={themes} />
+      <Suspense fallback={<DictionarySkeleton />}>
+        <DictionaryList themes={themes} />
+      </Suspense>
     </>
   );
 }

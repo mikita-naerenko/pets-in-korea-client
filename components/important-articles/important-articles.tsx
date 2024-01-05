@@ -53,12 +53,19 @@ export default function ImportantArticles({ items }: { items: Article[] }) {
                 key={item.id}
                 onClick={() => handleClickSingleItem(item)}
               >
-                <img
+                <Image
                   src={image}
                   width={300}
                   height={400}
+                  quality={80}
                   alt={item.title}
-                  loading="lazy"
+                  style={{
+                    objectFit: "cover",
+                    width: "100%",
+                    height: "auto",
+                    display: "block",
+                    flexGrow: 1,
+                  }}
                 />
                 <ImageListItemBar
                   title={item.title}
