@@ -4,20 +4,20 @@ import withPlaiceholder from "@plaiceholder/next";
 /**
  * @type {import('next').NextConfig}
  */
-module.exports = withPlaiceholder({
-    // transpilePackages: ["@plaiceholder/ui"],
+
+const nextConfig = {
+  // transpilePackages: ["@plaiceholder/ui"],
     images: {
         domains: ["res.cloudinary.com"]
       },
-});
-// const nextConfig = {
-//   // transpilePackages: ["@plaiceholder/ui"],
-//     images: {
-//         domains: ["res.cloudinary.com"]
-//       },
-//       reactStrictMode: false,
-// }
+      reactStrictMode: false,
+}
 
 // export default withPlaiceholder(nextConfig);
 
-// module.exports = withPlaiceholder(nextConfig)
+module.exports = nextConfig;
+
+
+// git add .
+// git commit -m 'test'
+// git push
