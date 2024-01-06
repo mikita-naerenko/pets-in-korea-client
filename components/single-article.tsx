@@ -16,10 +16,10 @@ import Fallback from "../public/fallback.jpg";
 
 export default function SingleArticle({
   article,
-  blurImage,
-}: {
+}: // blurImage,
+{
   article: Article | News;
-  blurImage: string | null;
+  // blurImage: string | null;
 }) {
   const [decodedHTML, setDecodedHTML] = useState("");
   const imageURL = article?.images?.[0]
@@ -61,8 +61,8 @@ export default function SingleArticle({
           <Image
             style={{ display: "block", width: "100%" }}
             src={imageURL}
-            placeholder="blur"
-            blurDataURL={blurImage ? blurImage : Fallback.src}
+            // placeholder="blur"
+            // blurDataURL={blurImage ? blurImage : Fallback.src}
             quality={90}
             width={250}
             height={300}
