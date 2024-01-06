@@ -11,18 +11,17 @@ export default async function page({
   const articleId = params.singleArticleId;
   const article = await getArticle({ id: articleId });
   const imageURL = article?.images?.[0].url;
-  console.log(imageURL);
-  // const blurData = imageURL && (await getBlurData(imageURL));
+
+  const blurData = imageURL && (await getBlurData(imageURL));
 
   return (
     <>
-      <div>Load</div>
-      {/* <Suspense fallback={<div>Loading</div>}>
+      <Suspense fallback={<div>Loading</div>}>
         <SingleArticle
           article={article}
           blurImage={blurData ? blurData : null}
         />
-      </Suspense> */}
+      </Suspense>
     </>
   );
 }
