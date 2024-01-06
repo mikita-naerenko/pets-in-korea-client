@@ -4,14 +4,15 @@ import withPlaiceholder from "@plaiceholder/next";
 /**
  * @type {import('next').NextConfig}
  */
-const config = {
+const nextConfig = {
   transpilePackages: ["@plaiceholder/ui"],
   images: {
-    domains: ["images.unsplash.com"],
-  },
+        domains: ["res.cloudinary.com"],
+      },
+      reactStrictMode: false,
 };
 
-export default config;
+export default withPlaiceholder(nextConfig);
 
 
 // /**
