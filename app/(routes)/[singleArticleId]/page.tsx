@@ -10,9 +10,9 @@ export default async function page({
 }) {
   const articleId = params.singleArticleId;
   const article = await getArticle({ id: articleId });
-  const imageURL = article?.images?.[0].url;
+  // const imageURL = article?.images?.[0].url;
 
-  const blurData = imageURL && (await getBlurData(imageURL));
+  // const blurData = imageURL && (await getBlurData(imageURL));
 
   return (
     <>
