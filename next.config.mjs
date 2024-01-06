@@ -1,7 +1,5 @@
 // @ts-check
-// import withPlaiceholder from "@plaiceholder/next";
-// @ts-ignore
-const { withPlaiceholder } = require("@plaiceholder/next");
+import withPlaiceholder from "@plaiceholder/next";
 
 /**
  * @type {import('next').NextConfig}
