@@ -5,13 +5,13 @@ import withPlaiceholder from "@plaiceholder/next";
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  transpilePackages: ["@plaiceholder/ui"],
+  // transpilePackages: ["@plaiceholder/ui"],
     images: {
         domains: ["res.cloudinary.com"]
       },
       reactStrictMode: false,
 }
 
-// export default withPlaiceholder(nextConfig);
+export default withPlaiceholder(nextConfig);
 
-module.exports = withPlaiceholder(nextConfig)
+// module.exports = withPlaiceholder(nextConfig)
