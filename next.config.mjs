@@ -1,17 +1,25 @@
 // @ts-check
-import withPlaiceholder from "@plaiceholder/next";
+// import withPlaiceholder from "@plaiceholder/next";
+// @ts-ignore
+const { withPlaiceholder } = require("@plaiceholder/next");
 
 /**
  * @type {import('next').NextConfig}
  */
-const nextConfig = {
-  // transpilePackages: ["@plaiceholder/ui"],
+module.exports = withPlaiceholder({
+    // transpilePackages: ["@plaiceholder/ui"],
     images: {
         domains: ["res.cloudinary.com"]
       },
-      reactStrictMode: false,
-}
+});
+// const nextConfig = {
+//   // transpilePackages: ["@plaiceholder/ui"],
+//     images: {
+//         domains: ["res.cloudinary.com"]
+//       },
+//       reactStrictMode: false,
+// }
 
-export default withPlaiceholder(nextConfig);
+// export default withPlaiceholder(nextConfig);
 
 // module.exports = withPlaiceholder(nextConfig)
