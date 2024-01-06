@@ -12,6 +12,6 @@ const nextConfig = {
       reactStrictMode: false,
 }
 
-// export default withPlaiceholder(nextConfig);
+export default withPlaiceholder(nextConfig);
 
-module.exports = withPlaiceholder(nextConfig);
+module.exports = nextConfig
