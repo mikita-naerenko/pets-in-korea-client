@@ -21,8 +21,9 @@ import SearchInputSm from "./search-input-sm";
 import NavbarMd from "./navbar-md";
 import NavbarXs from "./navbar-xs";
 
-import Logo from "../../public/logo.svg";
+import Logo from "../../public/logo.png";
 import LogoDesktop from "../../public//logo-desktop.png";
+
 import Link from "next/link";
 
 interface Props {
@@ -74,7 +75,7 @@ export default function Header(
                 }}
               >
                 <Link href="/">
-                  <Image width={180} height={50} alt="Logo" src={Logo} />
+                  <Image width={180} height={40} alt="Logo" src={Logo} />
                 </Link>
               </Box>
               <Box
@@ -102,13 +103,17 @@ export default function Header(
               <Box
                 sx={{
                   flexGrow: 1,
-                  display: { xs: "none", md: "flex" },
+                  display: { xs: "none", sm: "flex" },
                   flexDirection: "column",
-                  ml: 10,
+                  ml: { md: 10 },
                 }}
               >
-                <Typography>Информационный портал для</Typography>
-                <Typography>владельцев животных в Южной Корее</Typography>
+                <Typography sx={{ fontSize: { sm: "0.8rem", md: "1rem" } }}>
+                  Информационный портал для
+                </Typography>
+                <Typography sx={{ fontSize: { sm: "0.8rem", md: "1rem" } }}>
+                  владельцев животных в Южной Корее
+                </Typography>
               </Box>
               <Box sx={{ display: "flex" }}>
                 {showSearchInput && <SearchInputSm />}

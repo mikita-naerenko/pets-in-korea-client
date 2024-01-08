@@ -2,7 +2,7 @@
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Image from "next/image";
-import Logo from "../../public/logo.svg";
+
 import { NAV_ITEMS } from "@/lib/constants";
 import Link from "next/link";
 import Typography from "@mui/material/Typography";
@@ -11,7 +11,9 @@ import { keyframes } from "@mui/material";
 
 import { usePathname } from "next/navigation";
 import { theme } from "../theme";
+
 import LogoDesktop from "../../public//logo-desktop.png";
+import Logo from "../../public/logo.png";
 
 const animateGradient = keyframes`
 0%{background-position:0% 84%}
@@ -31,7 +33,6 @@ export default function Footer() {
 
   return (
     <GradientContainer
-      // maxWidth={}
       sx={{
         maxWidth: "100% !important",
         display: "flex",
@@ -44,19 +45,18 @@ export default function Footer() {
         left: 0,
       }}
     >
-      <Container maxWidth="xl">
-        <Box display={"flex"}>
+      <Container disableGutters maxWidth="xl">
+        <Box display={"flex"} justifyContent="center">
           <Box
             sx={{
               display: {
                 md: "none",
-
-                justifyContent: "center",
               },
+              justifyContent: "center",
             }}
           >
             <Link href="/">
-              <Image width={200} height={60} alt="Logo" src={Logo} />
+              <Image width={180} height={40} alt="Logo" src={Logo} />
             </Link>
           </Box>
           <Box
@@ -85,7 +85,7 @@ export default function Footer() {
             sx={{
               display: { xs: "none", md: "flex" },
               flexWrap: "wrap",
-              ml: 3,
+              mx: "auto",
             }}
           >
             {NAV_ITEMS.map((item) => {

@@ -49,6 +49,11 @@ export default function NavbarXs() {
           horizontal: "left",
         }}
         keepMounted
+        PaperProps={{
+          style: {
+            width: "80vw", // Adjust the width as per your requirement
+          },
+        }}
         transformOrigin={{
           vertical: "top",
           horizontal: "left",
@@ -64,6 +69,7 @@ export default function NavbarXs() {
             selected={pathname === item.href}
             key={item.href}
             href={item.href}
+            onClick={() => setAnchorElNav(null)}
             component={Link}
           >
             <Typography textAlign="center">{item.label}</Typography>
