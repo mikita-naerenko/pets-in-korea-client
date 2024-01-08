@@ -5,7 +5,8 @@ const URL = `${process.env.NEXT_PUBLIC_API_URL}articles`;
 
 interface Query {
   tagId?: string;
-  // id?: string;
+  limit?: number;
+  offset?: number;
   random?: number;
 }
 

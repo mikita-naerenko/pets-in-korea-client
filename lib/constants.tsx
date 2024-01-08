@@ -9,7 +9,7 @@ import AdoptBlur from "../public/how-to-adopt-blur.jpg";
 
 export const THEMATIC_ARTICLES = [
   {
-    title: "Советы по аренде жилья ",
+    title: "Приюты для домашних животных",
     img: Rent.src,
     blur: RentBlur.src,
     href: "/articles-set",

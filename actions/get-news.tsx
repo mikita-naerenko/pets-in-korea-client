@@ -5,6 +5,8 @@ interface Query {
   quantity?: number;
   id?: string;
   random?: number;
+  limit?: number;
+  offset?: number;
 }
 
 const URL = `${process.env.NEXT_PUBLIC_API_URL}news`;
@@ -16,6 +18,8 @@ export default async function getNews(query: Query | null): Promise<News[]> {
       take: query?.quantity || "",
       id: query?.id || "",
       random: query?.random || "",
+      limit: query?.limit || "",
+      offset: query?.offset || "",
     },
   });
 

@@ -23,6 +23,23 @@ export function RecommendationsSkeleton() {
   );
 }
 
+export function NewsItemSkeleton() {
+  return (
+    <ListItemButton divider>
+      <ListItemAvatar>
+        <Skeleton
+          variant="rectangular"
+          sx={{ width: { xs: 40, sm: 70 }, height: { xs: 30, sm: 60 } }}
+        />
+      </ListItemAvatar>
+
+      <ListItemText>
+        <Skeleton variant="rectangular" width={"100%"} height={30} />
+      </ListItemText>
+    </ListItemButton>
+  );
+}
+
 export function AuthorInfoSkeleton() {
   return (
     <Box>
