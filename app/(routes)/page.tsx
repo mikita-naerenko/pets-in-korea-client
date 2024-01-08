@@ -10,11 +10,14 @@ import { Suspense } from "react";
 import { DictionarySkeleton } from "@/components/ui/skeletons";
 
 export default async function Home() {
-  const tags = await getTags();
-  const actual = tags.find((tag) => tag.label === "actual");
+  // const tags = await getTags();
+  // const actual = tags.find((tag) => tag.label === "actual");
 
+  // const importantArticles = await getArticles({
+  //   tagId: actual ? actual.id : "",
+  // });
   const importantArticles = await getArticles({
-    tagId: actual ? actual.id : "",
+    tagLabel: "actual",
   });
   const latest4News = await getNews({ quantity: 4 });
   const themes = await getThemes();
@@ -22,7 +25,7 @@ export default async function Home() {
   return (
     <>
       <ThematicSetOfArticles />
-      <ImportantArticles items={importantArticles} />
+      <ImportantArticles items={importantArticles} title={"Важные темы"} />
       <ImportantNews latestNews={latest4News} />
       <Suspense fallback={<DictionarySkeleton />}>
         <DictionaryList themes={themes} />

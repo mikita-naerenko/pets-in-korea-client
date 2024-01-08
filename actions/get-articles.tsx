@@ -8,6 +8,7 @@ interface Query {
   limit?: number;
   offset?: number;
   random?: number;
+  tagLabel?: string;
 }
 
 export default async function getArticles(
@@ -17,7 +18,17 @@ export default async function getArticles(
     const url = qs.stringifyUrl({
       url: URL,
       query: {
-        random: query?.random || "",
+        random: query.random,
+      },
+    });
+    const res = await fetch(url, { cache: "no-store" });
+    return res.json();
+  }
+  if (query?.tagLabel) {
+    const url = qs.stringifyUrl({
+      url: URL,
+      query: {
+        tagLabel: query.tagLabel,
       },
     });
     const res = await fetch(url, { cache: "no-store" });

@@ -14,9 +14,16 @@ import SectionTitle from "../ui/Section-title";
 import { useState } from "react";
 import Fallback from "../../public/fallback.jpg";
 
-export default function ImportantArticles({ items }: { items: Article[] }) {
-  const [showedItems, setShowedItems] = useState<number>(3);
+export default function ImportantArticles({
+  items,
+  title,
+}: {
+  items: Article[];
+  title: string;
+}) {
   const offset = 3;
+  const [showedItems, setShowedItems] = useState<number>(6);
+
   const handleClickMoreButton = () => {
     showedItems > items.length
       ? setShowedItems(items.length)
@@ -29,7 +36,7 @@ export default function ImportantArticles({ items }: { items: Article[] }) {
 
   return (
     <Container disableGutters>
-      <SectionTitle title="Важные темы" svg={<MousePointerSquareDashed />} />
+      <SectionTitle title={title} svg={<MousePointerSquareDashed />} />
       <Box display={"flex"} flexDirection="column" alignItems="center">
         <ImageList
           sx={{

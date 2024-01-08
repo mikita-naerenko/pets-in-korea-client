@@ -2,6 +2,7 @@ import React from "react";
 import Departure from "@/components/departure";
 import getArticles from "@/actions/get-articles";
 import getTags from "@/actions/get-tags";
+import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
 
 export default async function Page() {
   const tags = await getTags();
@@ -9,5 +10,10 @@ export default async function Page() {
 
   const articles = await getArticles({ tagId: arriveTag.id });
 
-  return <Departure articles={articles} />;
+  return (
+    <>
+      <BasicBreadcrumbs currentPage={undefined} />
+      <Departure articles={articles} />
+    </>
+  );
 }

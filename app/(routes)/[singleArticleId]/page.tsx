@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import getArticle from "@/actions/get-article";
 import SingleArticle from "@/components/single-article";
-// import { getBlurData } from "@/lib/getBlurData";
+import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
 
 export default async function page({
   params,
@@ -12,16 +12,10 @@ export default async function page({
   const article = await getArticle({ id: articleId });
   const imageURL = article?.images?.[0].url;
 
-  // const blurData = imageURL && (await getBlurData(imageURL));
-
   return (
     <>
-      <Suspense fallback={<div>Loading</div>}>
-        <SingleArticle
-          article={article}
-          // blurImage={blurData ? blurData : null}
-        />
-      </Suspense>
+      <BasicBreadcrumbs currentPage={article.title} />
+      <SingleArticle article={article} />
     </>
   );
 }

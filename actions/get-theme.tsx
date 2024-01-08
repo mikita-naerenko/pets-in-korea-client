@@ -7,7 +7,7 @@ interface Query {
   id?: string;
 }
 
-export default async function getTheme(query: Query): Promise<Theme[]> {
+export default async function getTheme(query: Query): Promise<Theme> {
   const url = qs.stringifyUrl({
     url: URL,
     query: {
