@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { PT_Sans_Caption } from "next/font/google";
 import { ThemeProvider } from "@mui/material/styles";
 import "./globals.css";
 import { theme } from "@/components/theme";
@@ -8,10 +8,10 @@ import Container from "@mui/material/Container";
 import Footer from "@/components/footer/footer";
 import UpToTopButton from "@/components/ui/up-to-top-button";
 
-const font = Roboto({
+const font = PT_Sans_Caption({
   subsets: ["cyrillic"],
-  weight: ["400", "500", "700"],
-  style: ["italic", "normal"],
+  weight: ["400", "700"],
+  style: ["normal"],
 });
 
 export const metadata: Metadata = {

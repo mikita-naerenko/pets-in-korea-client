@@ -2,7 +2,7 @@ import getArticles from "@/actions/get-articles";
 import getNews from "@/actions/get-news";
 import getThemes from "@/actions/get-themes";
 import ImportantArticles from "@/components/important-articles/important-articles";
-import ThematicSetOfArticles from "@/components/thematic-set-of-articles/thematic-set-of-articles";
+import MainNavigationButtons from "@/components/main-navigation-buttons/main-navigation-buttons";
 import ImportantNews from "@/components/important-news/important-news";
 import DictionaryList from "@/components/dictionarys-list/dictionary-list";
 import { Suspense } from "react";
@@ -19,7 +19,7 @@ export default async function Home() {
   return (
     <>
       <HiddenSEOTitle />
-      <ThematicSetOfArticles />
+      <MainNavigationButtons />
       <ImportantArticles items={importantArticles} title={"Важные темы"} />
       <ImportantNews latestNews={latest4News} />
       <Suspense fallback={<DictionarySkeleton />}>

@@ -21,6 +21,7 @@ import Link from "next/link";
 import SectionTitle from "../ui/Section-title";
 import { useState } from "react";
 import Fallback from "../../public/fallback.jpg";
+import GradientButton from "../ui/gradient-button";
 
 export default function ImportantNews({ latestNews }: { latestNews: News[] }) {
   const [showedNews, setShowedNews] = useState<number>(3);
@@ -92,15 +93,11 @@ export default function ImportantNews({ latestNews }: { latestNews: News[] }) {
         })}
       </ImageList>
       <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-        <Button
-          sx={{ width: { xs: "100%", md: "30%" }, margin: "0 auto" }}
-          variant="contained"
-          endIcon={<PawPrint />}
-          onClick={handleClickMoreButton}
+        <GradientButton
+          handleClick={handleClickMoreButton}
           disabled={showedNews >= latestNews.length}
-        >
-          Читать ещё
-        </Button>
+          title="Читать ещё"
+        />
       </div>
     </Container>
   );

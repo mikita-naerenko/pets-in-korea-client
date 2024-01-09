@@ -37,7 +37,7 @@ export default function Footer() {
         maxWidth: "100% !important",
         display: "flex",
         alignItems: "center",
-        height: { md: 100 },
+        height: { md: 90 },
         // backgroundColor: `#b78784`,
 
         position: "absolute",
@@ -45,7 +45,7 @@ export default function Footer() {
         left: 0,
       }}
     >
-      <Container disableGutters maxWidth="xl">
+      <Container disableGutters>
         <Box display={"flex"} justifyContent="center">
           <Box
             sx={{
@@ -65,7 +65,7 @@ export default function Footer() {
                 xs: "none",
                 md: "block",
                 justifyContent: "center",
-                maxHeight: "70px",
+                maxHeight: "80px",
                 width: "200px",
               },
             }}
@@ -73,30 +73,33 @@ export default function Footer() {
             <Link href="/">
               {" "}
               <Image
-                width={200}
-                height={60}
+                width={180}
+                height={66}
                 alt="Logo"
                 src={LogoDesktop}
-                style={{ width: "100%", height: "70px", maxHeight: "70px" }}
+                // style={{ width: "100%", height: "70px", maxHeight: "70px" }}
               />
             </Link>
           </Box>
           <Box
+            justifyContent={"space-between"}
             sx={{
               display: { xs: "none", md: "flex" },
+              ml: { md: 10 },
               flexWrap: "wrap",
               mx: "auto",
             }}
           >
-            {NAV_ITEMS.map((item) => {
+            {NAV_ITEMS.map((item, i) => {
               return (
                 <Link
                   key={item.href + item.label}
                   href={item.href}
-                  style={{ width: "30%" }}
+                  style={{ width: "29%", height: "fit-content" }}
                 >
                   <Typography
                     sx={{
+                      // lineHeight: "0.9rem",
                       color: `${
                         pathname === item.href
                           ? theme.palette.secondary.main

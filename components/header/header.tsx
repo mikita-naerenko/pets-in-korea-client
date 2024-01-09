@@ -61,8 +61,11 @@ export default function Header(
             backgroundImage: `linear-gradient(to right, #2b1654 0%, #2575fc 100%)`,
           }}
         >
-          <Container maxWidth="xl">
-            <Toolbar disableGutters>
+          <Container sx={{ px: { sm: "24px", xl: 0 } }}>
+            <Toolbar
+              disableGutters
+              sx={{ display: "flex", justifyContent: "space-between" }}
+            >
               <NavbarXs />
               <Box
                 sx={{
@@ -84,23 +87,24 @@ export default function Header(
                     xs: "none",
                     md: "block",
                     justifyContent: "center",
+
                     width: "200px",
-                    maxHeight: "70px",
+                    maxHeight: "80px",
                   },
                 }}
               >
                 <Link href="/">
                   <Image
-                    width={200}
-                    height={60}
+                    width={180}
+                    height={66}
                     alt="Logo"
                     src={LogoDesktop}
-                    style={{ width: "100%", height: "auto" }}
+                    style={{ marginTop: "10px" }}
                   />
                 </Link>
               </Box>
 
-              <Box
+              {/* <Box
                 sx={{
                   flexGrow: 1,
                   display: { xs: "none", sm: "flex" },
@@ -108,13 +112,13 @@ export default function Header(
                   ml: { md: 10 },
                 }}
               >
-                <Typography sx={{ fontSize: { sm: "0.8rem", md: "1rem" } }}>
-                  Информационный портал для
+                <Typography sx={{ fontSize: { sm: "0.8rem", md: "1.5rem" } }}>
+                  Самое важное
                 </Typography>
-                <Typography sx={{ fontSize: { sm: "0.8rem", md: "1rem" } }}>
-                  владельцев животных в Южной Корее
+                <Typography sx={{ fontSize: { sm: "0.8rem", md: "1.5rem" } }}>
+                  для самых любимых
                 </Typography>
-              </Box>
+              </Box> */}
               <Box sx={{ display: "flex" }}>
                 {showSearchInput && <SearchInputSm />}
                 <IconButton

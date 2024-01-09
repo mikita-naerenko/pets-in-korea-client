@@ -5,6 +5,7 @@ import Link from "@mui/material/Link";
 import { usePathname } from "next/navigation";
 import { NAV_ITEMS } from "@/lib/constants";
 import { useMemo } from "react";
+import Container from "@mui/material/Container";
 
 interface BreadcrumbItem {
   href: string;
@@ -37,23 +38,25 @@ export default function BasicBreadcrumbs({
   }
 
   return (
-    <Breadcrumbs aria-label="breadcrumb">
-      {breadcrumbs.map((item, i) => {
-        return i !== breadcrumbs.length - 1 ? (
-          <Link
-            key={item.label}
-            underline="hover"
-            color="inherit"
-            href={item.href}
-          >
-            {item.label}
-          </Link>
-        ) : (
-          <Typography key={item.label} color="text.primary">
-            {item.label}
-          </Typography>
-        );
-      })}
-    </Breadcrumbs>
+    <Container disableGutters>
+      <Breadcrumbs aria-label="breadcrumb" sx={{ mt: { md: 20 }, mb: 2 }}>
+        {breadcrumbs.map((item, i) => {
+          return i !== breadcrumbs.length - 1 ? (
+            <Link
+              key={item.label}
+              underline="hover"
+              color="inherit"
+              href={item.href}
+            >
+              {item.label}
+            </Link>
+          ) : (
+            <Typography key={item.label} color="text.primary">
+              {item.label}
+            </Typography>
+          );
+        })}
+      </Breadcrumbs>
+    </Container>
   );
 }

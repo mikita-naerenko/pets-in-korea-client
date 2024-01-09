@@ -1,7 +1,6 @@
 "use client";
 import Typography from "@mui/material/Typography";
 import { ReactNode } from "react";
-import { theme } from "../theme";
 
 export default function SectionTitle({
   title,
@@ -13,8 +12,8 @@ export default function SectionTitle({
   return (
     <Typography
       sx={{
-        my: 3,
-        color: `${theme.palette.primary.dark}`,
+        mt: 5,
+        mb: 3,
         fontSize: { md: "1.8rem" },
         fontWeight: "600",
       }}

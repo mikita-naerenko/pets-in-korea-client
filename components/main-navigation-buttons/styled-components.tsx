@@ -6,8 +6,8 @@ export const ImageButton = styled(ButtonBase)(({ theme }) => ({
   height: 300,
   width: "100% !important",
   [theme.breakpoints.up("md")]: {
-    width: "49% !important",
-    marginBottom: "1%",
+    width: "49.8% !important",
+    marginTop: "0.5%",
   },
   "&:hover, &.Mui-focusVisible": {
     zIndex: 1,

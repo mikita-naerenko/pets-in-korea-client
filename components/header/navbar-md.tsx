@@ -37,7 +37,7 @@ export default function NavbarMd() {
   };
 
   return (
-    <Container maxWidth={"xl"}>
+    <Container disableGutters>
       <Box
         sx={{
           flexGrow: 1,

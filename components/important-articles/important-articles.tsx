@@ -13,6 +13,7 @@ import Image from "next/image";
 import SectionTitle from "../ui/Section-title";
 import { useState } from "react";
 import Fallback from "../../public/fallback.jpg";
+import GradientButton from "../ui/gradient-button";
 
 export default function ImportantArticles({
   items,
@@ -22,7 +23,7 @@ export default function ImportantArticles({
   title: string;
 }) {
   const offset = 3;
-  const [showedItems, setShowedItems] = useState<number>(6);
+  const [showedItems, setShowedItems] = useState<number>(3);
 
   const handleClickMoreButton = () => {
     showedItems > items.length
@@ -92,15 +93,11 @@ export default function ImportantArticles({
         </ImageList>
       </Box>
       <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-        <Button
-          sx={{ width: { xs: "100%", md: "30%" }, margin: "0 auto" }}
-          variant="contained"
-          endIcon={<Dog />}
-          onClick={handleClickMoreButton}
+        <GradientButton
+          handleClick={handleClickMoreButton}
           disabled={showedItems >= items.length}
-        >
-          Боольше интересных статей
-        </Button>
+          title="Боольше интересных статей"
+        />
       </div>
     </Container>
   );

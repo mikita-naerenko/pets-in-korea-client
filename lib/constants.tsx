@@ -12,15 +12,15 @@ export const THEMATIC_ARTICLES = [
     title: "Приюты для домашних животных",
     img: Rent.src,
     blur: RentBlur.src,
-    href: "/articles-set",
-    tagId: "real-estate",
+    href: "/shelter",
+    // tagId: "real-estate",
   },
   {
     title: "Как увезти моего питомца на родину?",
     img: Airport.src,
     blur: AirportBlur.src,
-    href: "/articles-set",
-    tagId: "departure",
+    href: "/departure",
+    // tagId: "departure",
   },
   {
     title: "Я хочу завести питомца, с чего начать?",
@@ -50,6 +50,10 @@ export const NAV_ITEMS = [
   {
     href: `/departure`,
     label: "Забираем на Родину",
+  },
+  {
+    href: `/shelter`,
+    label: "Приюты",
   },
   {
     href: `/articles-set`,

@@ -18,7 +18,7 @@ import {
 } from "./styled-components";
 import Container from "@mui/material/Container";
 
-export default function ThematicSetOfArticles() {
+export default function MainNavigationButtons() {
   const router = useRouter();
 
   return (
@@ -37,7 +37,11 @@ export default function ThematicSetOfArticles() {
           <ImageButton
             focusRipple
             key={image.title}
-            onClick={() => router.push(`${image.href}/${image.tagId}`)}
+            onClick={() =>
+              router.push(
+                `${image.href}` + `${image.tagId ? `/${image.tagId}` : ""}`
+              )
+            }
           >
             <ImageContainer>
               <Image

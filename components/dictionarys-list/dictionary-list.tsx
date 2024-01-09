@@ -19,6 +19,7 @@ import SectionTitle from "../ui/Section-title";
 import { useState } from "react";
 import Image from "next/image";
 import Fallback from "../../public/fallback.jpg";
+import GradientButton from "../ui/gradient-button";
 
 export default function DictionaryList({ themes }: { themes: Theme[] }) {
   const theme = useTheme();
@@ -86,7 +87,7 @@ export default function DictionaryList({ themes }: { themes: Theme[] }) {
         })}
       </List>
       <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-        <Button
+        {/* <Button
           sx={{ width: { xs: "100%", md: "30%" }, margin: "0 auto" }}
           variant="contained"
           endIcon={<BookType />}
@@ -94,7 +95,16 @@ export default function DictionaryList({ themes }: { themes: Theme[] }) {
           disabled={showedItems >= themes.length}
         >
           Смотреть ещё
-        </Button>
+        </Button> */}
+        <div
+          style={{ width: "100%", display: "flex", justifyContent: "center" }}
+        >
+          <GradientButton
+            handleClick={handleClickMoreButton}
+            disabled={showedItems >= themes.length}
+            title="Смотреть ещё"
+          />
+        </div>
       </div>
     </Container>
   );
