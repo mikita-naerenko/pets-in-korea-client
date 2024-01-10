@@ -10,6 +10,7 @@ import Box from "@mui/material/Box";
 import TableBodyComp from "./table-body";
 import TableHeadComp from "./table-head";
 import SelectComp from "./select";
+import Container from "@mui/material/Container";
 
 export default function ShelterTable() {
   const [page, setPage] = React.useState(0);
@@ -46,13 +47,36 @@ export default function ShelterTable() {
     setPage(0);
   };
   return (
-    <Paper sx={{ width: "100%", overflow: "hidden" }}>
-      <Box display={"flex"} justifyContent={"end"} flexWrap={"wrap"} py={2}>
-        <SelectComp city={city} setCity={setCity} />
+    <Container disableGutters>
+      <Paper sx={{ width: "100%", overflow: "hidden" }}>
+        <Box display={"flex"} justifyContent={"end"} flexWrap={"wrap"} py={2}>
+          <SelectComp city={city} setCity={setCity} />
+          <TablePagination
+            rowsPerPageOptions={[10, 25, 100]}
+            component="div"
+            count={SHELTERS.length}
+            rowsPerPage={rowsPerPage}
+            page={page}
+            labelRowsPerPage="Показанно строк:"
+            labelDisplayedRows={({ from, to, count }) =>
+              `${from}-${to} всего ${count}`
+            }
+            onPageChange={handleChangePage}
+            onRowsPerPageChange={handleChangeRowsPerPage}
+          />
+        </Box>
+
+        <TableContainer sx={{ maxHeight: 650 }}>
+          <Table stickyHeader aria-label="sticky table">
+            <caption>Приюты для животных в Южной Корее</caption>
+            <TableHeadComp />
+            <TableBodyComp filteredShelters={filteredShelters} />
+          </Table>
+        </TableContainer>
         <TablePagination
           rowsPerPageOptions={[10, 25, 100]}
           component="div"
-          count={SHELTERS.length}
+          count={filteredShelters.length}
           rowsPerPage={rowsPerPage}
           page={page}
           labelRowsPerPage="Показанно строк:"
@@ -62,28 +86,7 @@ export default function ShelterTable() {
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
-      </Box>
-
-      <TableContainer sx={{ maxHeight: 650 }}>
-        <Table stickyHeader aria-label="sticky table">
-          <caption>Приюты для животных в Южной Корее</caption>
-          <TableHeadComp />
-          <TableBodyComp filteredShelters={filteredShelters} />
-        </Table>
-      </TableContainer>
-      <TablePagination
-        rowsPerPageOptions={[10, 25, 100]}
-        component="div"
-        count={filteredShelters.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        labelRowsPerPage="Показанно строк:"
-        labelDisplayedRows={({ from, to, count }) =>
-          `${from}-${to} всего ${count}`
-        }
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      />
-    </Paper>
+      </Paper>
+    </Container>
   );
 }

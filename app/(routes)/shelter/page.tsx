@@ -6,6 +6,9 @@ import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
 import { Metadata } from "next";
 import ShelterTable from "@/components/shelter-table";
 import SectionTitle from "@/components/ui/Section-title";
+import Shelter from "@/components/shelter";
+import Recommendations from "@/components/recommendations";
+import Container from "@mui/material/Container";
 
 export const metadata: Metadata = {
   title: "Приюты для животных в Южной Корее",
@@ -36,8 +39,12 @@ export default async function Page() {
   return (
     <>
       <BasicBreadcrumbs currentPage={undefined} />
+      <Shelter />
       <SectionTitle title="Список приютов для животных в Южной Корее" />
       <ShelterTable />
+      <Container sx={{ mt: 1, display: { md: "none" } }}>
+        <Recommendations />
+      </Container>
     </>
   );
 }

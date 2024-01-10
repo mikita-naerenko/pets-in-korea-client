@@ -11,6 +11,7 @@ export default function ArticleDescription({
     <Typography
       sx={{
         mb: 2,
+        mr: 0.5,
         fontSize: { md: "1.3rem" },
         fontStyle: "italic",
         color: `${theme.palette.text.secondary}`,

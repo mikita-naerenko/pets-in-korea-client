@@ -12,6 +12,7 @@ export default function ArticleTitle({
       sx={{
         mt: { xs: 3, md: 0 },
         mb: 0.5,
+        mr: 0.5,
         fontSize: { md: "1.8rem" },
         fontWeight: "600",
       }}
