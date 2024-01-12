@@ -11,7 +11,6 @@
 
 // export default withPlaiceholder(nextConfig);
 
-// CONFIG ABOVE DOESN'T WORK, LOGIC WILL BE IMPLEMENTED ON A PUBLICK API
 
 
 /**
