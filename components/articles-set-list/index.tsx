@@ -16,7 +16,7 @@ export default function ArticlesSetList({ tags }: { tags: Tag[] }) {
     router.push(`/articles-set/${tag}`);
   };
   return (
-    <Container maxWidth="md" sx={{ height: "100vh" }}>
+    <Container maxWidth="md" sx={{ height: "100:", minHeight: 1000 }}>
       <Box
         component="ul"
         display={"flex"}
