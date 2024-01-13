@@ -20,115 +20,45 @@ export default function InnerStaticContent() {
           подготовиться заранее.
         </h2>
         <div itemScope itemType="https://schema.org/HowTo">
-          <h3 itemProp="name">Порядок действий для вылета из России:</h3>
-          <ul itemProp="step" itemScope itemType="https://schema.org/HowToStep">
-            <li
-              itemProp="itemListElement"
-              itemScope
-              itemType="https://schema.org/HowToTip"
-            >
-              <span itemProp="name">получить ветеринарный паспорт</span>
+          <h3 itemProp="headline">Порядок действий для вылета из России:</h3>
+          <ul>
+            <li itemProp="step" itemType="https://schema.org/HowToStep">
+              получить ветеринарный паспорт
             </li>
-            <li
-              itemProp="itemListElement"
-              itemScope
-              itemType="https://schema.org/HowToTip"
-            >
-              <span itemProp="name">чипировать вашего питомца</span>
+            <li itemProp="step" itemType="https://schema.org/HowToStep">
+              чипировать вашего питомца
             </li>
-            <li
-              itemProp="itemListElement"
-              itemScope
-              itemType="https://schema.org/HowToTip"
-            >
-              <span itemProp="name">пройти комплексную вакцинацию</span>
+            <li itemProp="step" itemType="https://schema.org/HowToStep">
+              пройти комплексную вакцинацию
             </li>
-            <li
-              itemProp="itemListElement"
-              itemScope
-              itemType="https://schema.org/HowToTip"
-            >
-              <span itemProp="name">привить его от бешенства</span>
+            <li itemProp="step" itemType="https://schema.org/HowToStep">
+              привить его от бешенства
             </li>
-            <li
-              itemProp="itemListElement"
-              itemScope
-              itemType="https://schema.org/HowToTip"
-            >
-              <span itemProp="name">
-                провести серологическое исследование крови животного
-                <em
-                  itemProp="additionalProperty"
-                  itemScope
-                  itemType="https://schema.org/PropertyValue"
-                >
-                  (<span itemProp="name">наличие антител к бешенству</span>)
-                </em>
-                не ранее 30 дней и не позднее 24 месяцев после прививки
-              </span>
+            <li itemProp="step" itemType="https://schema.org/HowToStep">
+              провести серологическое исследование крови животного
+              <em>наличие антител к бешенству</em>
+              не ранее 30 дней и не позднее 24 месяцев после прививки
             </li>
-            <li
-              itemProp="itemListElement"
-              itemScope
-              itemType="https://schema.org/HowToTip"
-            >
-              <span itemProp="name">
-                получить одобрение на перевозку от авиакомпании
-              </span>
+            <li itemProp="step" itemType="https://schema.org/HowToStep">
+              получить одобрение на перевозку от авиакомпании
             </li>
-            <li
-              itemProp="itemListElement"
-              itemScope
-              itemType="https://schema.org/HowToTip"
-            >
-              <span itemProp="name">
-                в аккредитованной ветеринарной клинике получить разрешение
-                <em
-                  itemProp="additionalProperty"
-                  itemScope
-                  itemType="https://schema.org/PropertyValue"
-                >
-                  (
-                  <b itemProp="name">
-                    &quot;ветеринарное свидетельство формы №1&quot;
-                  </b>
-                  )
-                </em>
-                на перелет с животным (нужен номер рейса)
-              </span>
+            <li itemProp="step" itemType="https://schema.org/HowToStep">
+              в аккредитованной ветеринарной клинике получить разрешение
+              <em>
+                (<b>&quot;ветеринарное свидетельство формы №1&quot;</b>)
+              </em>
+              на перелет с животным (нужен номер рейса)
             </li>
-            <li
-              itemProp="itemListElement"
-              itemScope
-              itemType="https://schema.org/HowToTip"
-            >
-              <span itemProp="name">
-                прибыть в аэропорт не менее чем за 3 часа для вылета для
-                прохождения ветеринарного контроля и обменять
-                <em
-                  itemProp="additionalProperty"
-                  itemScope
-                  itemType="https://schema.org/PropertyValue"
-                >
-                  (
-                  <b itemProp="name">
-                    &quot;ветеринарное свидетельство формы №1&quot;
-                  </b>
-                  )
-                </em>
-                на
-                <em
-                  itemProp="additionalProperty"
-                  itemScope
-                  itemType="https://schema.org/PropertyValue"
-                >
-                  (
-                  <b itemProp="name">
-                    сертификат международного образца формы 5a
-                  </b>
-                  )
-                </em>
-              </span>
+            <li itemProp="step" itemType="https://schema.org/HowToStep">
+              прибыть в аэропорт не менее чем за 3 часа для вылета для
+              прохождения ветеринарного контроля и обменять
+              <em>
+                (<b>&quot;ветеринарное свидетельство формы №1&quot;</b>)
+              </em>
+              на
+              <em>
+                (<b>сертификат международного образца формы 5a</b>)
+              </em>
             </li>
           </ul>
         </div>
