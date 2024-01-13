@@ -51,7 +51,7 @@ export default function Arrive({ articles }: { articles: Article[] }) {
         </Box>
       </Box>
       <Box sx={{ display: { md: "flex" }, mt: { md: 3 } }}>
-        <Box sx={{ width: { md: "70%" } }} itemScope itemProp="articleBody">
+        <Box sx={{ width: { md: "70%" } }} itemProp="articleBody">
           <StyledTextContainer>
             <InnerStaticContent />
           </StyledTextContainer>
