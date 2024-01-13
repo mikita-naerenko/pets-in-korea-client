@@ -15,7 +15,7 @@ export default function InnerStaticContent() {
   return (
     <>
       <div itemProp="articleSection">
-        <h2 itemScope itemProp="headline">
+        <h2 itemProp="headline">
           К путешествию в Южную Корею с домашним животным необходимо
           подготовиться заранее.
         </h2>
@@ -250,9 +250,7 @@ export default function InnerStaticContent() {
       </div>
 
       <div itemProp="articleSection">
-        <h2 itemScope itemProp="headline">
-          Перелет и таможенный контроль
-        </h2>
+        <h2 itemProp="headline">Перелет и таможенный контроль</h2>
         <p itemProp="text">
           Прибыть в аэропорт следует минимум за 3 часа до вылета, чтобы обменять
           ветеринарное свидетельство на сертификат международного образца формы
@@ -265,9 +263,7 @@ export default function InnerStaticContent() {
           данных или некорректно заполненных документах вам могут отказать в
           посадке на борт.
         </p>
-        <h2 itemScope itemProp="name">
-          В аэропорту Южной Кореи
-        </h2>
+        <h2 itemProp="headline">В аэропорту Южной Кореи</h2>
         <p itemProp="text">
           Перед прохождением таможенного контроля необходимо предоставить
           ветеринарному инспектору сертификат международного образца формы 5a
@@ -276,9 +272,7 @@ export default function InnerStaticContent() {
           антител) животное будет помещено на дополнительный карантин.
         </p>
 
-        <h2 itemScope itemProp="headline">
-          Когда нужно разрешение Россельхознадзора?
-        </h2>
+        <h2 itemProp="headline">Когда нужно разрешение Россельхознадзора?</h2>
         <p itemProp="text">
           Вывезти постоянно проживающее с вами домашнее животное (собаку, кошку,
           хорька, кролика, попугая, хомячка и других, за некоторыми

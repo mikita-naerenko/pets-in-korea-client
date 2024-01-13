@@ -14,7 +14,7 @@ import InnerStaticContent from "./innerStaticContent";
 
 export default function Departure({ articles }: { articles: Article[] }) {
   return (
-    <Container disableGutters>
+    <Container disableGutters itemScope itemType="https://schema.org/Article">
       <Box sx={{ display: { md: "flex" } }}>
         <Box
           sx={{
@@ -23,7 +23,7 @@ export default function Departure({ articles }: { articles: Article[] }) {
             flexDirection: "column",
           }}
         >
-          <ArticleTitle>
+          <ArticleTitle itemProp="headline">
             {"Как увезти домашнее животное из Южной Кореи"}
           </ArticleTitle>
           <ArticleDescription>
@@ -40,11 +40,12 @@ export default function Departure({ articles }: { articles: Article[] }) {
             width={250}
             height={300}
             alt={`Как увезти домашнее животное из Южной Кореи`}
+            itemProp="image"
           />
         </Box>
       </Box>
       <Box sx={{ display: { md: "flex" }, mt: { md: 3 } }}>
-        <Box sx={{ width: { md: "70%" } }}>
+        <Box sx={{ width: { md: "70%" } }} itemProp="articleBody">
           <StyledTextContainer>
             <InnerStaticContent />
           </StyledTextContainer>
