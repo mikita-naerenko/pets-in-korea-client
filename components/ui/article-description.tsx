@@ -20,6 +20,7 @@ export default function ArticleDescription({
       //   gutterBottom
       variant="body2"
       component="p"
+      itemProp="description"
     >
       {children}
     </Typography>

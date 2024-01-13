@@ -4,7 +4,9 @@ import { theme } from "../theme";
 
 export default function ArticleTitle({
   children,
+  itemProp,
 }: {
+  itemProp?: string;
   children: React.ReactNode;
 }) {
   return (
@@ -20,6 +22,7 @@ export default function ArticleTitle({
       //   gutterBottom
       variant="h5"
       component="h2"
+      itemProp={itemProp}
     >
       {children}
     </Typography>

@@ -24,11 +24,14 @@ export default function OtherArticles({ articles }: { articles: Article[] }) {
   };
   return (
     <List
+      itemScope
+      itemType="http://schema.org/ItemList"
       subheader={
         <ListSubheader
           component="h2"
           id="nested-list-subheader"
           sx={{ fontSize: "1.5rem" }}
+          itemProp="name"
         >
           Ещё статьи по теме:
         </ListSubheader>
@@ -47,6 +50,7 @@ export default function OtherArticles({ articles }: { articles: Article[] }) {
             alignItems="flex-start"
             key={article.id}
             divider={i !== articles.length - 1}
+            itemProp="itemListElement"
           >
             <ListItemAvatar>
               <Image
@@ -55,10 +59,13 @@ export default function OtherArticles({ articles }: { articles: Article[] }) {
                 width={50}
                 height={40}
                 alt={`${article.title} `}
+                // itemType="http://schema.org/ImageObject"
+                itemProp="image"
               />
             </ListItemAvatar>
             <ListItemText
               primary={article.title}
+              itemProp="name"
               secondary={
                 <>
                   <Typography
@@ -66,8 +73,10 @@ export default function OtherArticles({ articles }: { articles: Article[] }) {
                     component="span"
                     variant="body2"
                     color="text.primary"
-                  ></Typography>
-                  {article.description.slice(0, 50)}...
+                    itemProp="description"
+                  >
+                    {article.description.slice(0, 50)}...
+                  </Typography>
                 </>
               }
             />

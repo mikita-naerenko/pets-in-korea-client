@@ -52,9 +52,11 @@ export default function Recommendations() {
             id="nested-list-subheader"
             sx={{ fontSize: "1.5rem" }}
           >
-            Читайте также:
+            <span itemProp="headline">Читайте также:</span>
           </ListSubheader>
         }
+        itemScope
+        itemType="http://schema.org/ItemList"
         sx={{ width: "100%", bgcolor: "background.paper", pt: 0 }}
       >
         {loadingArticles ? (
@@ -77,6 +79,7 @@ export default function Recommendations() {
                 alignItems="flex-start"
                 key={item.id}
                 divider={i !== articles.length - 1}
+                itemProp="itemListElement"
               >
                 <ListItemAvatar>
                   <Image
@@ -85,10 +88,12 @@ export default function Recommendations() {
                     width={50}
                     height={40}
                     alt={`${item.title} `}
+                    itemProp="image"
                   />
                 </ListItemAvatar>
                 <ListItemText
                   primary={item.title}
+                  itemProp="name"
                   secondary={
                     <>
                       <Typography
@@ -96,6 +101,7 @@ export default function Recommendations() {
                         component="span"
                         variant="body2"
                         color="text.primary"
+                        itemProp="description"
                       ></Typography>
                       {item.description.slice(0, 50)}...
                     </>
@@ -107,13 +113,14 @@ export default function Recommendations() {
         )}
       </List>
       <List
+        itemType="http://schema.org/ItemList"
         subheader={
           <ListSubheader
             component="h2"
             id="nested-list-subheader"
             sx={{ fontSize: "1.5rem" }}
           >
-            Что нового:
+            <span itemProp="headline">Что нового:</span>
           </ListSubheader>
         }
         sx={{ width: "100%", bgcolor: "background.paper", pt: 0 }}
@@ -134,6 +141,7 @@ export default function Recommendations() {
                 alignItems="flex-start"
                 key={item.id}
                 divider={i !== articles.length - 1}
+                itemProp="itemListElement"
               >
                 <ListItemAvatar>
                   <Image
@@ -142,10 +150,12 @@ export default function Recommendations() {
                     width={50}
                     height={40}
                     alt={`${item.title} `}
+                    itemProp="image"
                   />
                 </ListItemAvatar>
                 <ListItemText
                   primary={item.title}
+                  itemProp="name"
                   secondary={
                     <>
                       <Typography
@@ -153,6 +163,7 @@ export default function Recommendations() {
                         component="span"
                         variant="body2"
                         color="text.primary"
+                        itemProp="description"
                       ></Typography>
                       {item.description.slice(0, 50)}...
                     </>

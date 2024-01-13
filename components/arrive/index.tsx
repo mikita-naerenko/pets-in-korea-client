@@ -15,7 +15,11 @@ import OtherArticles from "../other-articles";
 export default function Arrive({ articles }: { articles: Article[] }) {
   return (
     <Container disableGutters>
-      <Box sx={{ display: { md: "flex" } }}>
+      <Box
+        sx={{ display: { md: "flex" } }}
+        itemScope
+        itemType="https://schema.org/Article"
+      >
         <Box
           sx={{
             width: { md: "60%" },
@@ -23,7 +27,7 @@ export default function Arrive({ articles }: { articles: Article[] }) {
             flexDirection: "column",
           }}
         >
-          <ArticleTitle>
+          <ArticleTitle itemProp="headline">
             {"Ввоз животных в Южную Корею: документы и требования"}
           </ArticleTitle>
           <ArticleDescription>
@@ -45,11 +49,13 @@ export default function Arrive({ articles }: { articles: Article[] }) {
             width={250}
             height={300}
             alt={`dd `}
+            itemScope
+            itemProp="image"
           />
         </Box>
       </Box>
       <Box sx={{ display: { md: "flex" }, mt: { md: 3 } }}>
-        <Box sx={{ width: { md: "70%" } }}>
+        <Box sx={{ width: { md: "70%" } }} itemScope itemProp="articleBody">
           <StyledTextContainer>
             <InnerStaticContent />
           </StyledTextContainer>
