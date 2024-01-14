@@ -9,7 +9,7 @@ import shelter from "../../public/shelter.jpg";
 import InnerStaticContent from "./innerStaticContent";
 import Recommendations from "../recommendations";
 import { StyledTextContainer } from "../styled-text-container";
-import { JSON_LD_HOWTO, JSON_LD_LIST, JSON_LD_TABLE } from "./constants";
+import { JSON_LD_HOWTO, JSON_LD_LIST } from "./constants";
 
 export default function Shelter() {
   return (
@@ -22,10 +22,7 @@ export default function Shelter() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD_LIST) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD_TABLE) }}
-      />
+
       <Box sx={{ display: { md: "flex" } }} itemProp="mainEntity">
         <Box
           sx={{

@@ -35,7 +35,7 @@ export default function SingleArticle({
     }
   }, [article]);
   return (
-    <Container disableGutters itemType="http://schema.org/Article">
+    <Container disableGutters>
       <Box sx={{ display: { md: "flex" } }}>
         <Box
           sx={{
@@ -67,12 +67,11 @@ export default function SingleArticle({
             width={250}
             height={300}
             alt={`${article.title} `}
-            itemProp="image"
           />
         </Box>
       </Box>
       <Box sx={{ display: { md: "flex" }, mt: { md: 3 } }}>
-        <Box sx={{ width: { md: "70%" } }} itemProp="articleBody">
+        <Box sx={{ width: { md: "70%" } }}>
           <StyledTextContainer
             dangerouslySetInnerHTML={{ __html: decodedHTML }}
           />
