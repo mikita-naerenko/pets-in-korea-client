@@ -11,14 +11,22 @@ import Recommendations from "../recommendations";
 import { StyledTextContainer } from "../styled-text-container";
 import { Article } from "@/lib/type";
 import OtherArticles from "../other-articles";
-import { JSON_LD } from "./consts";
+import { JSON_LD_ARTICLE, JSON_LD_HOW_TO, JSON_LD_FAQ } from "./consts";
 
 export default function Arrive({ articles }: { articles: Article[] }) {
   return (
     <Container disableGutters itemScope itemType="https://schema.org/Article">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD_ARTICLE) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD_HOW_TO) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD_FAQ) }}
       />
       <Box sx={{ display: { md: "flex" } }}>
         <Box

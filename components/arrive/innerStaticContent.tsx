@@ -19,37 +19,27 @@ export default function InnerStaticContent() {
           К путешествию в Южную Корею с домашним животным необходимо
           подготовиться заранее.
         </h2>
-        <div itemScope itemType="https://schema.org/HowTo">
+        <div>
           <h3 itemProp="headline">Порядок действий для вылета из России:</h3>
           <ul>
-            <li itemProp="step" itemType="https://schema.org/HowToStep">
-              получить ветеринарный паспорт
-            </li>
-            <li itemProp="step" itemType="https://schema.org/HowToStep">
-              чипировать вашего питомца
-            </li>
-            <li itemProp="step" itemType="https://schema.org/HowToStep">
-              пройти комплексную вакцинацию
-            </li>
-            <li itemProp="step" itemType="https://schema.org/HowToStep">
-              привить его от бешенства
-            </li>
-            <li itemProp="step" itemType="https://schema.org/HowToStep">
+            <li>получить ветеринарный паспорт</li>
+            <li>чипировать вашего питомца</li>
+            <li>пройти комплексную вакцинацию</li>
+            <li>привить его от бешенства</li>
+            <li>
               провести серологическое исследование крови животного
               <em>наличие антител к бешенству</em>
               не ранее 30 дней и не позднее 24 месяцев после прививки
             </li>
-            <li itemProp="step" itemType="https://schema.org/HowToStep">
-              получить одобрение на перевозку от авиакомпании
-            </li>
-            <li itemProp="step" itemType="https://schema.org/HowToStep">
+            <li>получить одобрение на перевозку от авиакомпании</li>
+            <li>
               в аккредитованной ветеринарной клинике получить разрешение
               <em>
                 (<b>&quot;ветеринарное свидетельство формы №1&quot;</b>)
               </em>
               на перелет с животным (нужен номер рейса)
             </li>
-            <li itemProp="step" itemType="https://schema.org/HowToStep">
+            <li>
               прибыть в аэропорт не менее чем за 3 часа для вылета для
               прохождения ветеринарного контроля и обменять
               <em>
