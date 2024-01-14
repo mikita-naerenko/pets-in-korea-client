@@ -11,10 +11,23 @@ import { StyledTextContainer } from "../styled-text-container";
 import { Article } from "@/lib/type";
 import OtherArticles from "../other-articles";
 import InnerStaticContent from "./innerStaticContent";
+import { JSON_LD_ARTICLE, JSON_LD_HOWTO, JSON_LD_LIST } from "./constants";
 
 export default function Departure({ articles }: { articles: Article[] }) {
   return (
-    <Container disableGutters itemScope itemType="https://schema.org/Article">
+    <Container disableGutters>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD_ARTICLE) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD_HOWTO) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD_LIST) }}
+      />
       <Box sx={{ display: { md: "flex" } }}>
         <Box
           sx={{
@@ -23,7 +36,7 @@ export default function Departure({ articles }: { articles: Article[] }) {
             flexDirection: "column",
           }}
         >
-          <ArticleTitle itemProp="headline">
+          <ArticleTitle>
             {"Как увезти домашнее животное из Южной Кореи"}
           </ArticleTitle>
           <ArticleDescription>
@@ -45,7 +58,7 @@ export default function Departure({ articles }: { articles: Article[] }) {
         </Box>
       </Box>
       <Box sx={{ display: { md: "flex" }, mt: { md: 3 } }}>
-        <Box sx={{ width: { md: "70%" } }} itemProp="articleBody">
+        <Box sx={{ width: { md: "70%" } }}>
           <StyledTextContainer>
             <InnerStaticContent />
           </StyledTextContainer>

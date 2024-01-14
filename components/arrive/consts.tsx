@@ -15,7 +15,7 @@ export const JSON_LD_ARTICLE = {
   },
   publisher: {
     "@type": "Organization",
-    name: "",
+    name: "Pets in Korea",
     logo: {
       "@type": "ImageObject",
       url: "https://pets-in-korea-client.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-desktop.6efbd13e.png&w=384&q=75",

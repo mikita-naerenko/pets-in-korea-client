@@ -10,27 +10,23 @@ import { height } from "@mui/system";
 export default function InnerStaticContent() {
   return (
     <>
-      <div itemScope itemType="https://schema.org/ItemList">
-        <h3 itemProp="name">
+      <div>
+        <h3>
           Список документов, необходимых для вывоза животных в страны, входящие
           в Евразийский экономический союз (ЕАЭС):
         </h3>
         <ul>
-          <li itemProp="itemListElement" itemType="https://schema.org/ListItem">
-            Ветеринарный паспорт с отметками о всех необходимых прививках
-          </li>
-          <li itemProp="itemListElement" itemType="https://schema.org/ListItem">
+          <li>Ветеринарный паспорт с отметками о всех необходимых прививках</li>
+          <li>
             Справка от 농림축산검역본부 사무실 не позднее трех дней до вылета
             (можно получить в аэропорту или в местном филиале)
           </li>
-          <li itemProp="itemListElement" itemType="https://schema.org/ListItem">
-            Справка о клиническом осмотре ветеринаром не позднее 10 дней
-          </li>
-          <li itemProp="itemListElement" itemType="https://schema.org/ListItem">
+          <li>Справка о клиническом осмотре ветеринаром не позднее 10 дней</li>
+          <li>
             Авиабилеты для животного и сопровождающего (если животное летит в
             салоне)
           </li>
-          <li itemProp="itemListElement" itemType="https://schema.org/ListItem">
+          <li>
             Согласие авиакомпании на перевозку (не все авиакомпании дают
             согласие)
           </li>
@@ -55,38 +51,26 @@ export default function InnerStaticContent() {
           необходимых прививках для страны, в которую собираетесь полететь.
         </p>
 
-        <div itemScope itemType="https://schema.org/ItemList">
+        <div>
           <span itemProp="name">Для стран ЕАЭС это:</span>
           <ul>
-            <li
-              itemProp="itemListElement"
-              itemType="https://schema.org/ListItem"
-            >
+            <li>
               Прививка от бешенства/광견병 예방 접종, сделанная в течение года,
               но не позднее, чем за 30 дней до дня вылета(для всех видов
               животных)
             </li>
-            <li
-              itemProp="itemListElement"
-              itemType="https://schema.org/ListItem"
-            >
+            <li>
               Собакам – против чумы плотоядных, гепатита, парвовирусных инфекций
               и аденовирусных инфекций, лептоспироза (если не были обработаны с
               профилактической целью дегидрострептомицином или веществом,
               зарегистрированным в стране-экспортере, дающим эквивалентный
               эффект). Комплексная прививка/종합백신
             </li>
-            <li
-              itemProp="itemListElement"
-              itemType="https://schema.org/ListItem"
-            >
+            <li>
               Кошкам – против панлейкопении, или комплексная прививка/FevRCP-C
               백신
             </li>
-            <li
-              itemProp="itemListElement"
-              itemType="https://schema.org/ListItem"
-            >
+            <li>
               Кроликам – против миксоматоза и вирусной геморрагической болезни,
               а также по требованию уполномоченного органа государства – члена
               ЕАЭС, на территорию которого осуществляется ввоз, на другие
