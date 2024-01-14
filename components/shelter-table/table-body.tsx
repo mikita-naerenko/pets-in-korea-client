@@ -29,15 +29,7 @@ export default function TableBodyComp({
     <TableBody>
       {filteredShelters.map((row, i) => {
         return (
-          <TableRow
-            hover
-            role="checkbox"
-            tabIndex={-1}
-            key={i}
-            itemProp="itemListElement"
-            itemType="https://schema.org/Organization"
-            itemScope
-          >
+          <TableRow hover role="checkbox" tabIndex={-1} key={i}>
             <TableCell>{row.district}</TableCell>
             <TableCell itemProp="name">{row.name}</TableCell>
             <TableCell itemProp="telephone">{row.phone}</TableCell>
