@@ -67,8 +67,13 @@ export default function ShelterTable() {
         </Box>
 
         <TableContainer sx={{ maxHeight: 650 }}>
-          <Table stickyHeader aria-label="sticky table">
-            <caption>Приюты для животных в Южной Корее</caption>
+          <Table
+            stickyHeader
+            aria-label="sticky table"
+            itemScope
+            itemType="https://schema.org/ItemList"
+          >
+            <caption itemProp="name">Приюты для животных в Южной Корее</caption>
             <TableHeadComp />
             <TableBodyComp filteredShelters={filteredShelters} />
           </Table>

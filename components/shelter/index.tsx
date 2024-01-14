@@ -12,8 +12,8 @@ import { StyledTextContainer } from "../styled-text-container";
 
 export default function Shelter() {
   return (
-    <Container disableGutters>
-      <Box sx={{ display: { md: "flex" } }}>
+    <Container disableGutters itemScope itemType="https://schema.org/Article">
+      <Box sx={{ display: { md: "flex" } }} itemProp="mainEntity">
         <Box
           sx={{
             width: { md: "60%" },
@@ -21,14 +21,19 @@ export default function Shelter() {
             flexDirection: "column",
           }}
         >
-          <ArticleTitle>{"Приюты для животных в Южной Корее"}</ArticleTitle>
+          <ArticleTitle itemProp="headline">
+            {"Приюты для животных в Южной Корее"}
+          </ArticleTitle>
           <ArticleDescription>
             {
               "Решили взять животное из приюта? Ниже найдете список приютов и полезную информацию."
             }
           </ArticleDescription>
         </Box>
-        <Box sx={{ width: { md: "40%" } }}>
+        <Box
+          sx={{ width: { md: "40%" } }}
+          itemType="https://schema.org/ImageObject"
+        >
           <Image
             style={{
               display: "block",
@@ -41,11 +46,12 @@ export default function Shelter() {
             width={250}
             height={300}
             alt={`Изображения собак в стиле оригами`}
+            itemProp="image"
           />
         </Box>
       </Box>
       <Box sx={{ display: { md: "flex" }, mt: { md: 3 } }}>
-        <Box sx={{ width: { md: "100%" } }}>
+        <Box sx={{ width: { md: "100%" } }} itemProp="articleBody">
           <StyledTextContainer>
             <InnerStaticContent />
           </StyledTextContainer>
