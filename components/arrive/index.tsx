@@ -11,10 +11,15 @@ import Recommendations from "../recommendations";
 import { StyledTextContainer } from "../styled-text-container";
 import { Article } from "@/lib/type";
 import OtherArticles from "../other-articles";
+import { JSON_LD } from "./consts";
 
 export default function Arrive({ articles }: { articles: Article[] }) {
   return (
     <Container disableGutters itemScope itemType="https://schema.org/Article">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+      />
       <Box sx={{ display: { md: "flex" } }}>
         <Box
           sx={{
@@ -23,7 +28,7 @@ export default function Arrive({ articles }: { articles: Article[] }) {
             flexDirection: "column",
           }}
         >
-          <ArticleTitle itemProp="headline">
+          <ArticleTitle>
             {"Ввоз животных в Южную Корею: документы и требования"}
           </ArticleTitle>
           <ArticleDescription>
@@ -51,7 +56,7 @@ export default function Arrive({ articles }: { articles: Article[] }) {
         </Box>
       </Box>
       <Box sx={{ display: { md: "flex" }, mt: { md: 3 } }}>
-        <Box sx={{ width: { md: "70%" } }} itemProp="articleBody">
+        <Box sx={{ width: { md: "70%" } }}>
           <StyledTextContainer>
             <InnerStaticContent />
           </StyledTextContainer>
