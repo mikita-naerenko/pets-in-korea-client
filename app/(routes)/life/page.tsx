@@ -34,6 +34,7 @@ export default async function Page() {
       <ImportantArticles
         items={lifestyleArticles}
         title={"Правила и лайфхаки для комфортной жизни в Южной Корее"}
+        type="article"
       />
     </>
   );
