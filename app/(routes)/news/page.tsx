@@ -5,6 +5,7 @@ import NewsList from "@/components/news-list";
 import getCountOf from "@/actions/get-count-of";
 import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
 import { Metadata } from "next";
+import ImportantArticles from "@/components/important-articles/important-articles";
 
 export const metadata: Metadata = {
   title: "Новости о животных в Южной Корее",
@@ -41,14 +42,18 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const latest6News = await getNews({ quantity: 6 });
+  const latestNews = await getNews({ quantity: 9 });
   const news = await getNews({ quantity: 1 });
   const countOfNews = await getCountOf({ target: "news" });
 
   return (
     <>
       <BasicBreadcrumbs currentPage={undefined} />
-      <LatestNews latest6News={latest6News} />
+      <ImportantArticles
+        items={latestNews}
+        title={"Последние новости"}
+        type="news"
+      />
 
       <NewsList news={news} countOfNews={+countOfNews} />
     </>

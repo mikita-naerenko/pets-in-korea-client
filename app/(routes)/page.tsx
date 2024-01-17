@@ -13,15 +13,24 @@ export default async function Home() {
   const importantArticles = await getArticles({
     tagLabel: "actual",
   });
-  const latest4News = await getNews({ quantity: 4 });
+  const latest6News = await getNews({ quantity: 6 });
   const themes = await getThemes();
 
   return (
     <>
       <HiddenSEOTitle />
       <MainNavigationButtons />
-      <ImportantArticles items={importantArticles} title={"Важные темы"} />
-      <ImportantNews latestNews={latest4News} />
+      <ImportantArticles
+        items={importantArticles}
+        title={"Актуальное"}
+        type="article"
+      />
+      <ImportantArticles
+        items={latest6News}
+        title={"Новости о животных"}
+        type="news"
+      />
+      {/* <ImportantNews latestNews={latest4News} /> */}
       <Suspense fallback={<DictionarySkeleton />}>
         <DictionaryList themes={themes} />
       </Suspense>

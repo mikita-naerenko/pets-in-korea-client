@@ -29,7 +29,7 @@ export default function NewsList({
   const [showedNews, setShowedNews] = useState<News[] | []>(news);
   const [loading, setLoading] = useState(false);
   const [offset, setOffset] = useState(0);
-  const limit = 2;
+  const limit = 6;
 
   const router = useRouter();
 
