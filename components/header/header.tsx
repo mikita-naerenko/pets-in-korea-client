@@ -119,7 +119,9 @@ export default function Header(
               </Box>
             </Toolbar>
           </Container>
-          {showSearchInput && <SearchInputXs />}
+          {showSearchInput && (
+            <SearchInputXs handleClose={setShowSearchInput} />
+          )}
           <NavbarMd />
         </AppBar>
       </HideOnScroll>

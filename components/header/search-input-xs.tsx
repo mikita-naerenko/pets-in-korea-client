@@ -2,11 +2,15 @@ import searchAll from "@/actions/searchAll";
 import { SearchResponse } from "@/lib/type";
 import InputBase from "@mui/material/InputBase";
 import Paper from "@mui/material/Paper/Paper";
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, Dispatch, SetStateAction } from "react";
 import SearchResults from "./search-results";
 import { SearchInputStylesXs } from "./styles";
 
-export default function SearchInputXs() {
+export default function SearchInputXs({
+  handleClose,
+}: {
+  handleClose: Dispatch<SetStateAction<boolean>>;
+}) {
   const debounceTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [found, setFound] = useState<SearchResponse | "">("");
 
@@ -47,7 +51,7 @@ export default function SearchInputXs() {
         sx={{ flexGrow: 1 }}
         onChange={memoHandleChange}
       />
-      <SearchResults found={found} />
+      <SearchResults handleClose={handleClose} found={found} />
     </Paper>
   );
 }
