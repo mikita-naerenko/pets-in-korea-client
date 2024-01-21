@@ -16,7 +16,6 @@ export default async function getArticle(
     url: URL,
     query: {
       id: query?.id || "",
-      //   random: query?.random || "",
     },
   });
   const res = await fetch(url, { cache: "no-store" });

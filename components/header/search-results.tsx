@@ -6,11 +6,14 @@ import ListItemText from "@mui/material/ListItemText";
 import { ListItemButton, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { ListStyles } from "./styles";
+import CircularProgress from "@mui/material/CircularProgress";
 
 export default function SearchResults({
   found,
+  loading,
   handleClose,
 }: {
+  loading: boolean;
   found: SearchResponse | "";
   handleClose: Dispatch<SetStateAction<boolean>>;
 }) {
@@ -19,6 +22,7 @@ export default function SearchResults({
     const newPath = type !== "article" ? `/${type}/${id}` : `/${id}`;
     router.push(newPath);
   };
+  console.log(loading);
   const router = useRouter();
   if (!found) {
     return null;
@@ -93,12 +97,19 @@ export default function SearchResults({
             })
           : null}
         {found.articles?.length === 0 &&
+          !loading &&
           found.news?.length === 0 &&
           found.themes?.length === 0 && (
             <Typography key={"Ничего"} variant="subtitle2" textAlign={"center"}>
               Ничего не найдено
             </Typography>
           )}
+        {loading ? (
+          <Typography key={"Ничего"} variant="subtitle2" textAlign={"center"}>
+            П<CircularProgress size="0.8rem" />
+            ИСК
+          </Typography>
+        ) : null}
       </List>
     </>
   );
