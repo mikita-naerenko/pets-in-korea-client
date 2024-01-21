@@ -27,12 +27,12 @@ export default function SearchInputSm({
           setLoading(true);
           const result: undefined | SearchResponse = await func(...args);
           setFound(result);
-          // setLoading(false);
+          setLoading(false);
           debounceTimeout.current = null;
         } catch (error) {
           console.error(error);
         } finally {
-          // setLoading(false);
+          setLoading(false);
         }
       }, delay);
     };

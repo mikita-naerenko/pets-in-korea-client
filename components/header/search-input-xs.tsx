@@ -13,6 +13,7 @@ export default function SearchInputXs({
 }) {
   const debounceTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [found, setFound] = useState<SearchResponse | "">("");
+  const [loading, setLoading] = useState(false);
 
   type AnyFunction = () => Promise<SearchResponse>;
 
@@ -22,9 +23,17 @@ export default function SearchInputXs({
         clearTimeout(debounceTimeout.current);
       }
       debounceTimeout.current = setTimeout(async () => {
-        const result: undefined | SearchResponse = await func(...args);
-        setFound(result);
-        debounceTimeout.current = null;
+        try {
+          setLoading(true);
+          const result: undefined | SearchResponse = await func(...args);
+          setFound(result);
+          setLoading(false);
+          debounceTimeout.current = null;
+        } catch (error) {
+          console.error(error);
+        } finally {
+          setLoading(false);
+        }
       }, delay);
     };
   }
@@ -51,7 +60,11 @@ export default function SearchInputXs({
         sx={{ flexGrow: 1 }}
         onChange={memoHandleChange}
       />
-      <SearchResults handleClose={handleClose} found={found} />
+      <SearchResults
+        loading={loading}
+        handleClose={handleClose}
+        found={found}
+      />
     </Paper>
   );
 }
