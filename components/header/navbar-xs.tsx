@@ -33,7 +33,7 @@ export default function NavbarXs() {
     >
       <IconButton
         size="large"
-        aria-label="account of current user"
+        aria-label="menu"
         aria-controls="menu-appbar"
         aria-haspopup="true"
         onClick={handleOpenNavMenu}
@@ -51,7 +51,7 @@ export default function NavbarXs() {
         keepMounted
         PaperProps={{
           style: {
-            width: "80vw", // Adjust the width as per your requirement
+            width: "80vw",
           },
         }}
         transformOrigin={{

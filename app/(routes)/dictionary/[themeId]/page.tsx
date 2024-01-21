@@ -31,7 +31,7 @@ export default async function Page({
 
   return (
     <>
-      <BasicBreadcrumbs currentPage={theme.label} />
+      <BasicBreadcrumbs currentPage={theme.rusLabel} />
       <SingleTheme theme={theme} />
     </>
   );

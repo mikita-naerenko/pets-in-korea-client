@@ -1,31 +1,53 @@
+import searchAll from "@/actions/searchAll";
+import { SearchResponse } from "@/lib/type";
 import InputBase from "@mui/material/InputBase";
 import Paper from "@mui/material/Paper/Paper";
-import IconButton from "@mui/material/IconButton";
-import SearchIcon from "@mui/icons-material/Search";
+import { useRef, useState, useCallback } from "react";
+import SearchResults from "./search-results";
+import { SearchInputStylesXs } from "./styles";
 
 export default function SearchInputXs() {
+  const debounceTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [found, setFound] = useState<SearchResponse | "">("");
+
+  type AnyFunction = () => Promise<SearchResponse>;
+
+  function debounce(func: AnyFunction, delay: number) {
+    return function (...args: []) {
+      if (debounceTimeout.current) {
+        clearTimeout(debounceTimeout.current);
+      }
+      debounceTimeout.current = setTimeout(async () => {
+        const result: undefined | SearchResponse = await func(...args);
+        setFound(result);
+        debounceTimeout.current = null;
+      }, delay);
+    };
+  }
+  const memoHandleChange = useCallback(
+    (event: { target: { value: string } }) => {
+      const debouncedSearch = debounce(async () => {
+        return await searchAll({ query: event.target.value });
+      }, 1000);
+      if (event.target.value) {
+        try {
+          debouncedSearch();
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    },
+    []
+  );
   return (
-    <Paper
-      component="form"
-      sx={{
-        p: "2px 10px",
-        display: { xs: "flex", sm: "none" },
-        alignItems: "center",
-        width: "100%",
-      }}
-    >
+    <Paper component="form" sx={SearchInputStylesXs}>
       <InputBase
         placeholder="Поиск по содержимому сайта"
         inputProps={{ "aria-label": "поиск по сайту" }}
         sx={{ flexGrow: 1 }}
+        onChange={memoHandleChange}
       />
-      <IconButton
-        type="button"
-        sx={{ p: "10px", pr: 2, flexShrink: 1 }}
-        aria-label="search"
-      >
-        <SearchIcon />
-      </IconButton>
+      <SearchResults found={found} />
     </Paper>
   );
 }

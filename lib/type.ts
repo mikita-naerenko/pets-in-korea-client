@@ -61,9 +61,20 @@ export interface NewsImg {
 export interface Theme {
   id: string;
   label: string;
+  rusLabel: string;
+  description: string;
+  images: ThemeImage[];
   createdAt: Date;
   updatedAt: Date;
   phrases: Phrase[] | [];
+}
+
+export interface ThemeImage {
+  themeId: string;
+  createdAt: Date;
+  id: string;
+  updatedAt: Date;
+  url: string;
 }
 
 export interface Phrase {
@@ -87,3 +98,11 @@ export interface Translate {
   theme: string;
   koreanPhraseId: string;
 }
+
+export type SearchResponse =
+  | {
+      themes: Theme[] | [];
+      articles: Article[] | [];
+      news: News[] | [];
+    }
+  | undefined;

@@ -7,6 +7,7 @@ import Header from "@/components/header/header";
 import Container from "@mui/material/Container";
 import Footer from "@/components/footer/footer";
 import UpToTopButton from "@/components/ui/up-to-top-button";
+import { ToastProvider } from "@/providers/toast-provider";
 
 const font = PT_Sans_Caption({
   subsets: ["cyrillic"],
@@ -59,6 +60,7 @@ export default function RootLayout({
       <ThemeProvider theme={theme}>
         <body className={font.className} style={{ position: "relative" }}>
           <Container maxWidth={"xl"}>
+            <ToastProvider />
             <Header>{children}</Header>
             <UpToTopButton />
             <Footer />

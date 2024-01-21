@@ -14,6 +14,7 @@ import SectionTitle from "../ui/Section-title";
 import { useState } from "react";
 import Fallback from "../../public/fallback.jpg";
 import GradientButton from "../ui/gradient-button";
+import { useRouter } from "next/navigation";
 
 const hoverStyle = {
   filter: "brightness(1)",
@@ -28,6 +29,7 @@ export default function ImportantArticles({
   title: string;
   type: string;
 }) {
+  const router = useRouter();
   const offset = 3;
   const [showedItems, setShowedItems] = useState<number>(6);
   const [isHovered, setIsHovered] = useState(false);
@@ -53,6 +55,7 @@ export default function ImportantArticles({
       <Box display={"flex"} flexDirection="column" alignItems="center">
         <ImageList
           sx={{
+            overflow: "hidden",
             width: "100%",
             mb: 3,
             gridTemplateColumns: {
@@ -63,7 +66,7 @@ export default function ImportantArticles({
           }}
           cols={0}
         >
-          {items.slice(0, showedItems).map((item) => {
+          {items.slice(0, showedItems).map((item, i) => {
             const image =
               item.images?.[0] && item.images?.[0].url
                 ? item.images?.[0].url
@@ -72,14 +75,21 @@ export default function ImportantArticles({
               <ImageListItem
                 key={item.id}
                 sx={{
+                  animationDelay: `${i * 0.5}s`,
+                  animation: "fadeIn 0.5s ease-in-out",
+
+                  "@keyframes fadeIn": {
+                    from: {
+                      opacity: 0,
+                    },
+                    to: {
+                      opacity: 1,
+                    },
+                  },
                   cursor: "pointer",
                   transition: "transform 0.5s ease-in-out",
                   "&:hover": {
                     transform: "scale(1.01)",
-                    // "& .MuiImageListItemBar-title": {
-                    //   // transition: "1s easy-in-out",
-                    //   // whiteSpace: "normal",
-                    // },
                     "& .MuiImageListItemBar-root": {
                       height: "8rem",
                       background: "rgba(0, 0, 0, 0.7)",
@@ -121,25 +131,18 @@ export default function ImportantArticles({
                   sx={{
                     height: { xs: "6rem" },
                     transition:
-                      "height 0.5s ease-in-out, background 0.5s ease-in-out",
+                      "height 0.3s ease-in-out, background 0.5s ease-in-out",
                     "& .MuiImageListItemBar-title": {
                       paddingBottom: "0.7rem",
                       display: "flex",
                       alignItems: "center",
                       whiteSpace: "normal",
-                      overflow: "scroll",
+                      // overflow: "scroll",
                     },
                     "& .MuiImageListItemBar-subtitle": {
-                      // overflow: "visible",
-                      // whiteSpace: "normal",
-                      // transition: "1s easy-in-out",
                       paddingBottom: "0.3rem",
                       display: { xs: "none", md: "block" },
                     },
-                    // "& .MuiImageListItemBar-titleWrap": {
-                    //   maxHeight: { xs: "5rem", lg: "5rem" },
-                    //   transition: "max-height 0.5s ease-in-out",
-                    // },
                   }}
                 />
               </ImageListItem>
@@ -151,7 +154,7 @@ export default function ImportantArticles({
         style={{
           width: "100%",
           justifyContent: "center",
-          display: `${showedItems >= items.length ? "none" : "flex"}`,
+          display: "flex",
         }}
       >
         <GradientButton

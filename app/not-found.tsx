@@ -1,5 +1,5 @@
 import React from "react";
-
+import Button from "@mui/material/Button";
 import Link from "next/link";
 
 export default function NotFound() {
@@ -15,10 +15,12 @@ export default function NotFound() {
     >
       <h2>Кажется, что-то пошло не так :{"("}</h2>
       <Link href={"/"}>
-        {/* sx={{ width: { xs: "100%", md: "30%" }, margin: "0 auto" }}
+        <Button>
+          {/* sx={{ width: { xs: "100%", md: "30%" }, margin: "0 auto" }}
         variant="contained"
         onClick={router.back} */}
-        Попробовать снова
+          Вернуться на главную
+        </Button>
       </Link>
     </main>
   );

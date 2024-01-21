@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 
 interface GradientButtonProps {
   handleClick: () => void;
-  disabled: boolean;
+  disabled?: boolean;
   title: string;
 }
 

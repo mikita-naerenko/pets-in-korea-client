@@ -34,7 +34,7 @@ export const THEMATIC_ARTICLES = [
     img: Vet.src,
     blur: VetBlur.src,
     href: "/articles-set",
-    tagId: "vet",
+    tagId: "veterinarian",
   },
 ];
 

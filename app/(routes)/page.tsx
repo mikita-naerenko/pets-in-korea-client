@@ -3,7 +3,6 @@ import getNews from "@/actions/get-news";
 import getThemes from "@/actions/get-themes";
 import ImportantArticles from "@/components/important-articles/important-articles";
 import MainNavigationButtons from "@/components/main-navigation-buttons/main-navigation-buttons";
-import ImportantNews from "@/components/important-news/important-news";
 import DictionaryList from "@/components/dictionarys-list/dictionary-list";
 import { Suspense } from "react";
 import { DictionarySkeleton } from "@/components/ui/skeletons";
@@ -30,7 +29,6 @@ export default async function Home() {
         title={"Новости о животных"}
         type="news"
       />
-      {/* <ImportantNews latestNews={latest4News} /> */}
       <Suspense fallback={<DictionarySkeleton />}>
         <DictionaryList themes={themes} />
       </Suspense>

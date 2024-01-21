@@ -49,6 +49,10 @@ export default function DictionaryList({ themes }: { themes: Theme[] }) {
         }}
       >
         {themes.slice(0, showedItems).map((item, i) => {
+          const image =
+            item.images?.[0] && item.images?.[0].url
+              ? item.images?.[0].url
+              : Fallback.src;
           return (
             <ListItemButton
               component="li"
@@ -60,7 +64,7 @@ export default function DictionaryList({ themes }: { themes: Theme[] }) {
             >
               <ListItemAvatar>
                 <Image
-                  src={Fallback.src}
+                  src={image}
                   quality={70}
                   width={50}
                   height={40}
@@ -68,7 +72,7 @@ export default function DictionaryList({ themes }: { themes: Theme[] }) {
                 />
               </ListItemAvatar>
               <ListItemText
-                primary={item.label}
+                primary={item.rusLabel}
                 secondary={
                   <>
                     <Typography
@@ -77,8 +81,7 @@ export default function DictionaryList({ themes }: { themes: Theme[] }) {
                       variant="body2"
                       color="text.primary"
                     ></Typography>
-                    Описание для темы разговорника
-                    {/* {item.description.slice(0, 50)}... */}
+                    {item.description}...
                   </>
                 }
               />
@@ -87,16 +90,7 @@ export default function DictionaryList({ themes }: { themes: Theme[] }) {
         })}
       </List>
       <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-        {/* <Button
-          sx={{ width: { xs: "100%", md: "30%" }, margin: "0 auto" }}
-          variant="contained"
-          endIcon={<BookType />}
-          onClick={handleClickMoreButton}
-          disabled={showedItems >= themes.length}
-        >
-          Смотреть ещё
-        </Button> */}
-        <div
+        {/* <div
           style={{ width: "100%", display: "flex", justifyContent: "center" }}
         >
           <GradientButton
@@ -104,7 +98,7 @@ export default function DictionaryList({ themes }: { themes: Theme[] }) {
             disabled={showedItems >= themes.length}
             title="Смотреть ещё"
           />
-        </div>
+        </div> */}
       </div>
     </Container>
   );
