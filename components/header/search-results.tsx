@@ -22,7 +22,7 @@ export default function SearchResults({
     const newPath = type !== "article" ? `/${type}/${id}` : `/${id}`;
     router.push(newPath);
   };
-  console.log(loading);
+
   const router = useRouter();
   if (!found) {
     return null;
