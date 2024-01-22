@@ -1,5 +1,6 @@
 "use client";
 import { styled } from "@mui/material/styles";
+import { theme } from "./theme";
 
 export const StyledTextContainer = styled("div")(({ theme }) => ({
   fontSize: "0.9rem",
@@ -40,6 +41,21 @@ export const StyledTextContainer = styled("div")(({ theme }) => ({
   "& dd": {
     marginTop: "1rem",
     marginBottom: "1rem",
+  },
+  "& blockquote": {
+    padding: "15px",
+    background: "#eee",
+    borderRadius: "5px",
+    position: "relative",
+    "& ::before": {
+      position: "absolute",
+      top: 0,
+      left: 0,
+      content: "",
+      width: "3px",
+      height: "100%",
+      backgroundColor: `${theme.palette.primary.main}`,
+    },
   },
   [theme.breakpoints.up("md")]: {
     marginTop: "0",

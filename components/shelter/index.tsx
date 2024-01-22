@@ -61,13 +61,13 @@ export default function Shelter() {
         </Box>
       </Box>
       <Box sx={{ display: { md: "flex" }, mt: { md: 3 } }}>
-        <Box sx={{ width: { md: "100%" } }} itemProp="articleBody">
+        <Box sx={{ width: { md: "60%" } }} itemProp="articleBody">
           <StyledTextContainer>
             <InnerStaticContent />
           </StyledTextContainer>
         </Box>
         <Box
-          sx={{ width: { md: "30%" }, display: { xs: "none", md: "block" } }}
+          sx={{ width: { md: "40%" }, display: { xs: "none", md: "block" } }}
         >
           <Recommendations />
         </Box>

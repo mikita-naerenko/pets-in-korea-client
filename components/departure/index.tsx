@@ -58,13 +58,13 @@ export default function Departure({ articles }: { articles: Article[] }) {
         </Box>
       </Box>
       <Box sx={{ display: { md: "flex" }, mt: { md: 3 } }}>
-        <Box sx={{ width: { md: "70%" } }}>
+        <Box sx={{ width: { md: "60%" } }}>
           <StyledTextContainer>
             <InnerStaticContent />
           </StyledTextContainer>
         </Box>
-        <Box sx={{ width: { md: "30%" } }}>
-          <OtherArticles articles={articles} />
+        <Box sx={{ width: { md: "40%" } }}>
+          {/* <OtherArticles articles={articles} /> */}
           <Recommendations />
         </Box>
       </Box>
