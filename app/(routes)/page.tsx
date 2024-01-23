@@ -3,7 +3,8 @@ import getNews from "@/actions/get-news";
 import getThemes from "@/actions/get-themes";
 import ImportantArticles from "@/components/important-articles/important-articles";
 import MainNavigationButtons from "@/components/main-navigation-buttons/main-navigation-buttons";
-import DictionaryList from "@/components/dictionarys-list/dictionary-list";
+// import DictionaryList from "@/components/dictionarys-list/dictionary-list";
+import DictionaryList from "@/components/dictionarys-list/index";
 import { Suspense } from "react";
 import { DictionarySkeleton } from "@/components/ui/skeletons";
 import HiddenSEOTitle from "@/components/ui/hidden-SEO-title";
@@ -41,7 +42,7 @@ export default async function Home() {
     <>
       <HiddenSEOTitle />
       <MainNavigationButtons />
-      <ImportantArticles
+      {/* <ImportantArticles
         items={importantArticles}
         title={"Актуальное"}
         type="article"
@@ -50,10 +51,12 @@ export default async function Home() {
         items={latest6News}
         title={"Новости о животных"}
         type="news"
-      />
-      <Suspense fallback={<DictionarySkeleton />}>
+      /> */}
+      {/* @ts-expect-error Server Component */}
+      <DictionaryList />
+      {/* <Suspense fallback={<DictionarySkeleton />}>
         <DictionaryList themes={themes} />
-      </Suspense>
+      </Suspense> */}
     </>
   );
 }
