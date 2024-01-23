@@ -23,58 +23,7 @@ export default async function DictionaryList(): Promise<JSX.Element> {
           flexWrap: "wrap",
         }}
       >
-        {themes ? (
-          <ItemsList themes={themes} />
-        ) : (
-          <>
-            <RecommendationsSkeleton />
-            <RecommendationsSkeleton />
-            <RecommendationsSkeleton />
-            <RecommendationsSkeleton />
-            <RecommendationsSkeleton />
-            <RecommendationsSkeleton />
-          </>
-        )}
-        {/* {themes.slice(0, showedItems).map((item, i) => {
-          const image =
-            item.images?.[0] && item.images?.[0].url
-              ? item.images?.[0].url
-              : Fallback.src;
-          return (
-            <ListItemButton
-              component="li"
-              onClick={() => handleClick(item)}
-              alignItems="flex-start"
-              sx={{ width: { md: "50%" } }}
-              key={item.id}
-              divider
-            >
-              <ListItemAvatar>
-                <Image
-                  src={image}
-                  quality={70}
-                  width={50}
-                  height={40}
-                  alt={`${item.label} `}
-                />
-              </ListItemAvatar>
-              <ListItemText
-                primary={item.rusLabel}
-                secondary={
-                  <>
-                    <Typography
-                      sx={{ display: "inline" }}
-                      component="span"
-                      variant="body2"
-                      color="text.primary"
-                    ></Typography>
-                    {item.description}...
-                  </>
-                }
-              />
-            </ListItemButton>
-          );
-        })} */}
+        {themes && <ItemsList themes={themes} />}
       </List>
     </Container>
   );

@@ -10,7 +10,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Typography from "@mui/material/Typography";
 
 export default function ItemsList({ themes }: { themes: Theme[] }) {
-  const [showedItems, setShowedItems] = useState<number>(10);
+  const [showedItems, setShowedItems] = useState<number>(6);
 
   const handleClick = (item: Theme) => {
     window.location.assign(`/dictionary/${item.id}`);

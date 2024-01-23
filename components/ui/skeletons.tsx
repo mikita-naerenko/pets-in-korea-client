@@ -7,6 +7,8 @@ import Container from "@mui/material/Container";
 import { BookType } from "lucide-react";
 import SectionTitle from "./Section-title";
 import List from "@mui/material/List";
+import dynamic from "next/dynamic";
+import Typography from "@mui/material/Typography";
 
 export function RecommendationsSkeleton() {
   return (
@@ -49,6 +51,36 @@ export function AuthorInfoSkeleton() {
   );
 }
 
+export function DictionaryItemList() {
+  return (
+    <ListItemButton
+      alignItems="flex-start"
+      divider
+      component="li"
+      sx={{ width: { md: "50%" } }}
+    >
+      <ListItemAvatar>
+        <Skeleton variant="rectangular" width={50} height={40} />
+      </ListItemAvatar>
+
+      <ListItemText
+        primary={<Skeleton variant="text" width={210} height={20} />}
+        secondary={
+          <>
+            <Typography
+              sx={{ display: "inline" }}
+              component="span"
+              variant="body2"
+              color="text.primary"
+            ></Typography>
+            <Skeleton variant="text" width={210} height={20} />
+          </>
+        }
+      ></ListItemText>
+    </ListItemButton>
+  );
+}
+
 export function DictionarySkeleton() {
   return (
     <Container disableGutters component={"section"}>
@@ -65,12 +97,12 @@ export function DictionarySkeleton() {
           flexWrap: "wrap",
         }}
       >
-        <RecommendationsSkeleton />
-        <RecommendationsSkeleton />
-        <RecommendationsSkeleton />
-        <RecommendationsSkeleton />
-        <RecommendationsSkeleton />
-        <RecommendationsSkeleton />
+        <DictionaryItemList />
+        <DictionaryItemList />
+        <DictionaryItemList />
+        <DictionaryItemList />
+        <DictionaryItemList />
+        <DictionaryItemList />
       </List>
     </Container>
   );
