@@ -26,10 +26,11 @@ export default function NewsList({
   news: News[];
   countOfNews: number;
 }) {
+  console.log(countOfNews);
   const [showedNews, setShowedNews] = useState<News[] | []>(news);
   const [loading, setLoading] = useState(false);
   const [offset, setOffset] = useState(0);
-  const limit = 6;
+  const limit = 5;
 
   const router = useRouter();
 

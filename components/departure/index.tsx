@@ -8,12 +8,10 @@ import Image from "next/image";
 import ArriveMain from "../../public/arrive-main.png";
 import Recommendations from "../recommendations";
 import { StyledTextContainer } from "../styled-text-container";
-import { Article } from "@/lib/type";
-import OtherArticles from "../other-articles";
 import InnerStaticContent from "./innerStaticContent";
 import { JSON_LD_ARTICLE, JSON_LD_HOWTO, JSON_LD_LIST } from "./constants";
 
-export default function Departure({ articles }: { articles: Article[] }) {
+export default function Departure() {
   return (
     <Container disableGutters>
       <script
@@ -64,7 +62,6 @@ export default function Departure({ articles }: { articles: Article[] }) {
           </StyledTextContainer>
         </Box>
         <Box sx={{ width: { md: "40%" } }}>
-          {/* <OtherArticles articles={articles} /> */}
           <Recommendations />
         </Box>
       </Box>

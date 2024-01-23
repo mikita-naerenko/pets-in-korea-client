@@ -9,11 +9,9 @@ import departure from "../../public/departure.jpg";
 import InnerStaticContent from "./innerStaticContent";
 import Recommendations from "../recommendations";
 import { StyledTextContainer } from "../styled-text-container";
-import { Article } from "@/lib/type";
-import OtherArticles from "../other-articles";
 import { JSON_LD_ARTICLE, JSON_LD_HOW_TO, JSON_LD_FAQ } from "./consts";
 
-export default function Arrive({ articles }: { articles: Article[] }) {
+export default function Arrive() {
   return (
     <Container disableGutters itemScope itemType="https://schema.org/Article">
       <script
@@ -70,7 +68,6 @@ export default function Arrive({ articles }: { articles: Article[] }) {
           </StyledTextContainer>
         </Box>
         <Box sx={{ width: { md: "40%" } }}>
-          {/* <OtherArticles articles={articles} /> */}
           <Recommendations />
         </Box>
       </Box>

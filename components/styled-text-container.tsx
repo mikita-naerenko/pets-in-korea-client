@@ -51,7 +51,7 @@ export const StyledTextContainer = styled("div")(({ theme }) => ({
       position: "absolute",
       top: 0,
       left: 0,
-      content: "",
+      content: '""',
       width: "3px",
       height: "100%",
       backgroundColor: `${theme.palette.primary.main}`,

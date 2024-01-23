@@ -17,7 +17,7 @@ export default function MainPagination({
       count={count}
       shape="rounded"
       onChange={handleChange}
-      disabled={count <= limit}
+      disabled={count >= limit}
     />
   );
 }
