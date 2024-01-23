@@ -1,11 +1,12 @@
-import React from "react";
+import React, { Suspense } from "react";
 import getNews from "@/actions/get-news";
 import LatestNews from "@/components/latest-news";
 import NewsList from "@/components/news-list";
 import getCountOf from "@/actions/get-count-of";
 import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
 import { Metadata } from "next";
-import ImportantArticles from "@/components/important-articles/important-articles";
+import ImportantArticles from "@/components/important-articles/index";
+import { ImportantArticlesSkeleton } from "@/components/ui/skeletons";
 
 export const metadata: Metadata = {
   title: "Новости о животных в Южной Корее",
@@ -42,19 +43,18 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const latestNews = await getNews({ quantity: 9 });
-  const news = await getNews({ quantity: 1 });
+  // const latestNews = await getNews({ quantity: 9 });
+  const news = await getNews({ quantity: 5 });
   const countOfNews = await getCountOf({ target: "news" });
 
   return (
     <>
       <BasicBreadcrumbs currentPage={undefined} />
-      <ImportantArticles
-        items={latestNews}
-        title={"Последние новости"}
-        type="news"
-      />
-
+      <Suspense
+        fallback={<ImportantArticlesSkeleton title={"Последние новости"} />}
+      >
+        <ImportantArticles title={"Последние новости"} type="news" />
+      </Suspense>
       <NewsList news={news} countOfNews={+countOfNews} />
     </>
   );
