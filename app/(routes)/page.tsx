@@ -9,11 +9,10 @@ import { DictionarySkeleton } from "@/components/ui/skeletons";
 import HiddenSEOTitle from "@/components/ui/hidden-SEO-title";
 
 export default async function Home() {
-  // const importantArticles = await getArticles({
-  //   tagLabel: "actual",
-  // });
-  // const latest6News = await getNews({ quantity: 6 });
-  // const themes = await getThemes();
+  const importantArticles = await getArticles({
+    tagLabel: "actual",
+  });
+  const latest6News = await getNews({ quantity: 6 });
 
   // const allArticles = await await getArticles({});
   // const allNews = await await getNews({});
@@ -41,7 +40,7 @@ export default async function Home() {
     <>
       <HiddenSEOTitle />
       <MainNavigationButtons />
-      {/* <ImportantArticles
+      <ImportantArticles
         items={importantArticles}
         title={"Актуальное"}
         type="article"
@@ -50,14 +49,11 @@ export default async function Home() {
         items={latest6News}
         title={"Новости о животных"}
         type="news"
-      /> */}
+      />
 
       <Suspense fallback={<DictionarySkeleton />}>
         <DictionaryList />
       </Suspense>
-      {/* <Suspense fallback={<DictionarySkeleton />}>
-        <DictionaryList themes={themes} />
-      </Suspense> */}
     </>
   );
 }

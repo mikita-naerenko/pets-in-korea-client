@@ -1,8 +1,10 @@
 import getThemes from "@/actions/get-themes";
-// import DictionaryList from "@/components/dictionarys-list/dictionary-list";
+import DictionaryList from "@/components/dictionarys-list/index";
 import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
+import { DictionarySkeleton } from "@/components/ui/skeletons";
 
 import { Metadata } from "next/types";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Русско-корейский разговорник",
@@ -30,7 +32,9 @@ export default async function Page() {
   return (
     <>
       <BasicBreadcrumbs currentPage={undefined} />
-      {/* <DictionaryList themes={themes} /> */}
+      <Suspense fallback={<DictionarySkeleton />}>
+        <DictionaryList />
+      </Suspense>
     </>
   );
 }
