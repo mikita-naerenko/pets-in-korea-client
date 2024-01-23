@@ -3,7 +3,6 @@ import getNews from "@/actions/get-news";
 import getThemes from "@/actions/get-themes";
 import ImportantArticles from "@/components/important-articles/important-articles";
 import MainNavigationButtons from "@/components/main-navigation-buttons/main-navigation-buttons";
-// import DictionaryList from "@/components/dictionarys-list/dictionary-list";
 import DictionaryList from "@/components/dictionarys-list/index";
 import { Suspense } from "react";
 import { DictionarySkeleton } from "@/components/ui/skeletons";
