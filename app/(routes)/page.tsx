@@ -51,8 +51,10 @@ export default async function Home() {
         title={"Новости о животных"}
         type="news"
       /> */}
-      {/* @ts-expect-error Server Component */}
-      <DictionaryList />
+
+      <Suspense fallback={<DictionarySkeleton />}>
+        <DictionaryList />
+      </Suspense>
       {/* <Suspense fallback={<DictionarySkeleton />}>
         <DictionaryList themes={themes} />
       </Suspense> */}
