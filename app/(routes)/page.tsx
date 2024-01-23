@@ -53,7 +53,6 @@ export default async function Home() {
       /> */}
 
       <Suspense fallback={<DictionarySkeleton />}>
-        {/* @ts-expect-error Server Component */}
         <DictionaryList />
       </Suspense>
       {/* <Suspense fallback={<DictionarySkeleton />}>
