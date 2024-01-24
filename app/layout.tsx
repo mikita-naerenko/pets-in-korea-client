@@ -57,12 +57,22 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <meta
+        property="og:title"
+        content="Pets in Korea. информация о домашних животных в южной корее"
+      />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://www.pets-in-korea.com" />
+      <meta
+        property="og:image"
+        content="https://www.pets-in-korea.com/snippet-logo.png"
+      />
+      {/* <meta
         property="og:image"
         content="https://www.pets-in-korea.com/snippet-logo.png"
       />
       <meta property="og:image:type" content="image/png" />
       <meta property="og:image:width" content="1024" />
-      <meta property="og:image:height" content="1024" />
+      <meta property="og:image:height" content="1024" /> */}
       <ThemeProvider theme={theme}>
         <body className={font.className} style={{ position: "relative" }}>
           <Container maxWidth={"xl"}>
