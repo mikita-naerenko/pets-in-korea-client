@@ -52,16 +52,6 @@ export default async function Home() {
       >
         <ImportantArticles title={"Новости о животных"} type="main-page-news" />
       </Suspense>
-      {/* <ImportantArticles
-        items={importantArticles}
-        title={"Актуальное"}
-        type="article"
-      /> */}
-      {/* <ImportantArticles
-        items={latest6News}
-        title={"Новости о животных"}
-        type="news"
-      /> */}
 
       <Suspense fallback={<DictionarySkeleton />}>
         <DictionaryList />
