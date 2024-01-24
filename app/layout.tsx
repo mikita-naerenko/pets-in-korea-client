@@ -8,6 +8,7 @@ import Container from "@mui/material/Container";
 import Footer from "@/components/footer/footer";
 import UpToTopButton from "@/components/ui/up-to-top-button";
 import { ToastProvider } from "@/providers/toast-provider";
+import t from "./snippet-logo.png";
 
 const font = PT_Sans_Caption({
   subsets: ["cyrillic"],
@@ -64,7 +65,7 @@ export default function RootLayout({
       <meta property="og:url" content="https://www.pets-in-korea.com" />
       <meta
         property="og:image"
-        content="https://www.pets-in-korea.com/snippet-logo.png"
+        content={`https://www.pets-in-korea.com${t.src}`}
       />
       {/* <meta
         property="og:image"
