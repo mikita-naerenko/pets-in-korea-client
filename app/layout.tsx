@@ -67,6 +67,8 @@ export default function RootLayout({
         property="og:image"
         content={`https://www.pets-in-korea.com${t.src}`}
       />
+      <meta property="og:image:width" content="500" />
+      <meta property="og:image:height" content="450" />
       {/* <meta
         property="og:image"
         content="https://www.pets-in-korea.com/snippet-logo.png"
