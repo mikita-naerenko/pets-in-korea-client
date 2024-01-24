@@ -56,6 +56,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
+      <meta property="og:image" content="/snippet-logo.png" />
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:width" content="1024" />
+      <meta property="og:image:height" content="1024" />
       <ThemeProvider theme={theme}>
         <body className={font.className} style={{ position: "relative" }}>
           <Container maxWidth={"xl"}>
