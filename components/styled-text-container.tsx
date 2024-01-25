@@ -16,8 +16,8 @@ export const StyledTextContainer = styled("div")(({ theme }) => ({
     listStylePosition: "inside",
   },
   "& p": {
-    marginTop: "0.3rem",
-    marginBottom: "0.3rem",
+    marginTop: "1rem",
+    marginBottom: "1rem",
     position: "relative",
     "&::first-letter ": {
       marginLeft: "1rem",
@@ -25,6 +25,9 @@ export const StyledTextContainer = styled("div")(({ theme }) => ({
   },
   "& a": {
     color: `${theme.palette.primary.light}!important`,
+    textDecoration: "underline ",
+    textTransform: "uppercase",
+    fontWeight: "bold",
   },
   "& h3": {
     marginTop: "1rem",

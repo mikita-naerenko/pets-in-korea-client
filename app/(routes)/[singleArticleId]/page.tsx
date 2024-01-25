@@ -47,7 +47,7 @@ export default async function page({
       name: "Pets in Korea",
       logo: {
         "@type": "ImageObject",
-        url: "https://pets-in-korea-client.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-desktop.6efbd13e.png&w=384&q=75",
+        url: "https://www.pets-in-korea.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-desktop.6efbd13e.png&w=384&q=75",
       },
     },
     datePublished: "2024-01-14",

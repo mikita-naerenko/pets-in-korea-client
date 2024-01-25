@@ -89,6 +89,18 @@ export const LINKS: {
     priority: 0.5,
   },
   {
+    url: "https://www.pets-in-korea.com/0e00fed2-6348-4a14-a499-aeb1d647a816",
+    lastModified: "2024-01-24T10:11:39.532Z",
+    changeFrequency: "yearly",
+    priority: 0.5,
+  },
+  {
+    url: "https://www.pets-in-korea.com/1ddd39d9-d479-4fee-9dc4-3dd0c28319fb",
+    lastModified: "2024-01-24T16:51:43.234Z",
+    changeFrequency: "yearly",
+    priority: 0.5,
+  },
+  {
     url: "https://www.pets-in-korea.com/3957ccbf-26a6-480f-8b8b-9828ae7002fc",
     lastModified: "2024-01-15T15:05:56.595Z",
     changeFrequency: "yearly",
@@ -97,6 +109,12 @@ export const LINKS: {
   {
     url: "https://www.pets-in-korea.com/48b89593-d21f-49f1-99fd-8e71d6d2ca1b",
     lastModified: "2024-01-16T04:34:44.112Z",
+    changeFrequency: "yearly",
+    priority: 0.5,
+  },
+  {
+    url: "https://www.pets-in-korea.com/5a0a27c3-5f14-4efd-b8b7-4b1e9a8e053b",
+    lastModified: "2024-01-25T02:48:12.836Z",
     changeFrequency: "yearly",
     priority: 0.5,
   },
@@ -125,6 +143,12 @@ export const LINKS: {
     priority: 0.5,
   },
   {
+    url: "https://www.pets-in-korea.com/979e28ba-af94-4bcb-bc8f-bbb8222138c7",
+    lastModified: "2024-01-25T02:52:15.922Z",
+    changeFrequency: "yearly",
+    priority: 0.5,
+  },
+  {
     url: "https://www.pets-in-korea.com/9f2d5b88-f1a4-46b1-9dc2-11ed43910a3f",
     lastModified: "2024-01-15T07:00:31.098Z",
     changeFrequency: "yearly",
@@ -137,8 +161,32 @@ export const LINKS: {
     priority: 0.5,
   },
   {
+    url: "https://www.pets-in-korea.com/cdad46f9-b415-4901-8d46-d5056f9be5ec",
+    lastModified: "2024-01-24T16:23:18.204Z",
+    changeFrequency: "yearly",
+    priority: 0.5,
+  },
+  {
     url: "https://www.pets-in-korea.com/f4ab72d9-7012-47e4-bd23-6f209b7a793e",
-    lastModified: "2024-01-22T06:46:53.643Z",
+    lastModified: "2024-01-25T03:40:17.135Z",
+    changeFrequency: "yearly",
+    priority: 0.5,
+  },
+  {
+    url: "https://www.pets-in-korea.com/news/b97f6dfe-3e1a-44dc-b70f-178e0e5bafc2",
+    lastModified: "2024-01-24T06:20:59.101Z",
+    changeFrequency: "yearly",
+    priority: 0.5,
+  },
+  {
+    url: "https://www.pets-in-korea.com/news/717b23c9-c7ab-4c70-8912-9a04aac7faf3",
+    lastModified: "2024-01-24T05:53:58.402Z",
+    changeFrequency: "yearly",
+    priority: 0.5,
+  },
+  {
+    url: "https://www.pets-in-korea.com/news/ea796e07-376d-4082-8da7-e839e03b3304",
+    lastModified: "2024-01-23T03:16:40.983Z",
     changeFrequency: "yearly",
     priority: 0.5,
   },
@@ -156,7 +204,7 @@ export const LINKS: {
   },
   {
     url: "https://www.pets-in-korea.com/news/9e4175ee-1072-4a94-bc22-147e1280e7a3",
-    lastModified: "2024-01-16T04:59:04.656Z",
+    lastModified: "2024-01-24T08:22:57.932Z",
     changeFrequency: "yearly",
     priority: 0.5,
   },

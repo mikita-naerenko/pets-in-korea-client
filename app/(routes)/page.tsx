@@ -13,11 +13,6 @@ import {
 import HiddenSEOTitle from "@/components/ui/hidden-SEO-title";
 
 export default async function Home() {
-  // const importantArticles = await getArticles({
-  //   tagLabel: "actual",
-  // });
-  // const latest6News = await getNews({ quantity: 6 });
-
   // const allArticles = await await getArticles({});
   // const allNews = await await getNews({});
   // const a = allArticles.map((item) => {
