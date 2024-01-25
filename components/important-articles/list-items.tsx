@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Article, News } from "@/lib/type";
 import ItemsList from "./items-list";
 import GradientButton from "../ui/gradient-button";
+import { useRouter } from "next/navigation";
 
 export default function ListItems({
   items,
@@ -15,11 +16,16 @@ export default function ListItems({
 }) {
   const offset = 3;
   const [showedItems, setShowedItems] = useState<number>(6);
+  const router = useRouter();
 
   const handleClickMoreButton = () => {
-    showedItems > items.length
-      ? setShowedItems(items.length)
-      : setShowedItems(showedItems + offset);
+    if (type === "main-page-news") {
+      router.push("/news");
+    } else {
+      showedItems > items.length
+        ? setShowedItems(items.length)
+        : setShowedItems(showedItems + offset);
+    }
   };
 
   return (
@@ -51,7 +57,6 @@ export default function ListItems({
         }}
       >
         <GradientButton
-          // sx={{display: `${showedItems >= items.length ? 'none' : null}`}}
           handleClick={handleClickMoreButton}
           disabled={showedItems >= items.length}
           title="Боольше интересных статей"

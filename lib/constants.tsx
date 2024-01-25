@@ -26,8 +26,7 @@ export const THEMATIC_ARTICLES = [
     title: "Я хочу завести питомца, с чего начать?",
     img: Adopt.src,
     blur: AdoptBlur.src,
-    href: "/articles-set",
-    tagId: "adoption",
+    href: "/adoption",
   },
   {
     title: "Поход к ветеринару",
@@ -50,6 +49,10 @@ export const NAV_ITEMS = [
   {
     href: `/departure`,
     label: "Забираем на Родину",
+  },
+  {
+    href: `/adoption`,
+    label: "Усыновление",
   },
   {
     href: `/shelter`,

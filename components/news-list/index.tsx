@@ -26,7 +26,6 @@ export default function NewsList({
   news: News[];
   countOfNews: number;
 }) {
-  console.log(countOfNews);
   const [showedNews, setShowedNews] = useState<News[] | []>(news);
   const [loading, setLoading] = useState(false);
   const [offset, setOffset] = useState(0);
@@ -113,6 +112,7 @@ export default function NewsList({
                       width: { xs: 180, sm: "80%" },
                       flexGrow: 1,
                       flexShrink: 0,
+                      pl: 1,
                     }}
                     primary={item.title}
                     secondary={

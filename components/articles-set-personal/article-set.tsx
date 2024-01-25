@@ -113,13 +113,13 @@ export default function ArticleSet({ tags }: { tags: Tag[] }) {
             </Box>
           </Box>
           <Box sx={{ display: { md: "flex" }, mt: { md: 3 } }}>
-            <Box sx={{ width: { md: "70%" } }}>
+            <Box sx={{ width: { md: "60%" } }}>
               <StyledTextContainer
                 dangerouslySetInnerHTML={{ __html: decodedHTML }}
               />
               <AuthorInfo article={current} />
             </Box>
-            <Box sx={{ width: { md: "30%" } }}>
+            <Box sx={{ width: { md: "40%" } }}>
               <OtherArticles articles={otherArticles} />
             </Box>
           </Box>

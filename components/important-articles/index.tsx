@@ -19,7 +19,7 @@ export default async function ImportantArticles({
       tagLabel: "actual",
     });
   } else if (type === "main-page-news") {
-    items = await getNews({ quantity: 6 });
+    items = await getNews({ quantity: 9 });
   } else {
     items = await getNews({});
   }
