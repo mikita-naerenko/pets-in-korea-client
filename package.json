@@ -14,6 +14,8 @@
     "@mui/icons-material": "^5.14.19",
     "@mui/material": "^5.14.20",
     "@plaiceholder/next": "^2.5.0",
+    "@vercel/analytics": "^1.1.2",
+    "@vercel/speed-insights": "^1.0.7",
     "axios": "^1.6.2",
     "formik": "^2.4.5",
     "he": "^1.2.0",

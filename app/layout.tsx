@@ -9,6 +9,8 @@ import Footer from "@/components/footer/footer";
 import UpToTopButton from "@/components/ui/up-to-top-button";
 import { ToastProvider } from "@/providers/toast-provider";
 import t from "./snippet-logo.png";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const font = PT_Sans_Caption({
   subsets: ["cyrillic"],
@@ -79,6 +81,8 @@ export default function RootLayout({
             <UpToTopButton />
             <Footer />
           </Container>
+          <Analytics />
+          <SpeedInsights />
         </body>
       </ThemeProvider>
     </html>
