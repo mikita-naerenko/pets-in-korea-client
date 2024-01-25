@@ -71,13 +71,13 @@ export default function SingleArticle({
         </Box>
       </Box>
       <Box sx={{ display: { md: "flex" }, mt: { md: 3 } }}>
-        <Box sx={{ width: { md: "70%" } }}>
+        <Box sx={{ width: { md: "60%" } }}>
           <StyledTextContainer
             dangerouslySetInnerHTML={{ __html: decodedHTML }}
           />
           <AuthorInfo article={article} />
         </Box>
-        <Box sx={{ width: { md: "30%" } }}>
+        <Box sx={{ width: { md: "40%" } }}>
           <Recommendations />
         </Box>
       </Box>
