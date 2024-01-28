@@ -11,6 +11,8 @@ import { ToastProvider } from "@/providers/toast-provider";
 import t from "./snippet-logo.png";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Suspense } from "react";
+import { Metrika } from "@/components/metrika";
 
 const font = PT_Sans_Caption({
   subsets: ["cyrillic"],
@@ -76,6 +78,9 @@ export default function RootLayout({
       <ThemeProvider theme={theme}>
         <body className={font.className} style={{ position: "relative" }}>
           <Container maxWidth={"xl"}>
+            <Suspense>
+              <Metrika />
+            </Suspense>
             <ToastProvider />
             <Header>{children}</Header>
             <UpToTopButton />
