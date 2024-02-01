@@ -17,7 +17,7 @@ export default async function Home() {
   // const allNews = await await getNews({});
   // const a = allArticles.map((item) => {
   //   return {
-  //     url: `https://www.pets-in-korea.com/${item.id}`,
+  //     url: `https://pets-in-korea.com/${item.id}`,
   //     lastModified: item.updatedAt,
   //     changeFrequency: "yearly",
   //     priority: 0.5,
@@ -25,7 +25,7 @@ export default async function Home() {
   // });
   // const n = allNews.map((item) => {
   //   return {
-  //     url: `https://www.pets-in-korea.com/news/${item.id}`,
+  //     url: `https://pets-in-korea.com/news/${item.id}`,
   //     lastModified: item.updatedAt,
   //     changeFrequency: "yearly",
   //     priority: 0.5,

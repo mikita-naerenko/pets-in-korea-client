@@ -31,7 +31,7 @@ export const JSON_LD_HOW_TO = {
   description:
     "Возможно, прочитав эти статьи, вы примете верное для вас решение и сделаете вашу жизнь счастливее и комфортнее.",
   image:
-    "https://pets-in-korea-client.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdeparture.25f97c05.jpg&w=640&q=90",
+    "https://pets-in-korea.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fadopt-main.535bc193.jpg&w=256&q=90",
   step: [
     {
       "@type": "HowToStep",

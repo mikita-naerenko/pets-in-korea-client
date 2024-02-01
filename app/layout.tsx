@@ -66,17 +66,14 @@ export default function RootLayout({
         content="Pets in Korea. информация о домашних животных в южной корее"
       />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://www.pets-in-korea.com" />
-      <meta
-        property="og:image"
-        content={`https://www.pets-in-korea.com${t.src}`}
-      />
+      <meta property="og:url" content="https://pets-in-korea.com" />
+      <meta property="og:image" content={`https://pets-in-korea.com${t.src}`} />
       <meta property="og:image:type" content="image/png" />
       <meta property="og:image:width" content="500" />
       <meta property="og:image:height" content="450" />
       <link
         rel="icon"
-        href="https://www.pets-in-korea.com/favicon.ico"
+        href="https://pets-in-korea.com/favicon.ico"
         type="image/x-icon"
       ></link>
 

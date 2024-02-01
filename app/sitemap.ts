@@ -4,49 +4,49 @@ import { LINKS } from "@/lib/constants";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://www.pets-in-korea.com",
+      url: "https://pets-in-korea.com/",
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 1,
     },
     {
-      url: "https://www.pets-in-korea.com/arrive",
+      url: "https://pets-in-korea.com/arrive",
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.8,
     },
     {
-      url: "https://www.pets-in-korea.com/departure",
+      url: "https://pets-in-korea.com/departure",
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.8,
     },
     {
-      url: "https://www.pets-in-korea.com/shelter",
+      url: "https://pets-in-korea.com/shelter",
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.8,
     },
     {
-      url: "https://www.pets-in-korea.com/articles-set",
+      url: "https://pets-in-korea.com/articles-set",
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.8,
     },
     {
-      url: "https://www.pets-in-korea.com/life",
+      url: "https://pets-in-korea.com/life",
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.8,
     },
     {
-      url: "https://www.pets-in-korea.com/news",
+      url: "https://pets-in-korea.com/news",
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.8,
     },
     {
-      url: "https://www.pets-in-korea.com/dictionary",
+      url: "https://pets-in-korea.com/dictionary",
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.8,
