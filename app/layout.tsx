@@ -74,6 +74,11 @@ export default function RootLayout({
       <meta property="og:image:type" content="image/png" />
       <meta property="og:image:width" content="500" />
       <meta property="og:image:height" content="450" />
+      <link
+        rel="icon"
+        href="https://www.pets-in-korea.com/favicon.ico"
+        type="image/x-icon"
+      ></link>
 
       <ThemeProvider theme={theme}>
         <body className={font.className} style={{ position: "relative" }}>
