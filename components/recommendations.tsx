@@ -46,7 +46,7 @@ export default function Recommendations() {
     <>
       <List
         subheader={
-          <ListSubheader component="h2" sx={{ fontSize: "1.5rem" }}>
+          <ListSubheader sx={{ fontSize: "1.5rem" }}>
             Читайте также:
           </ListSubheader>
         }
@@ -103,9 +103,7 @@ export default function Recommendations() {
       </List>
       <List
         subheader={
-          <ListSubheader component="h2" sx={{ fontSize: "1.5rem" }}>
-            Что нового:
-          </ListSubheader>
+          <ListSubheader sx={{ fontSize: "1.5rem" }}>Что нового:</ListSubheader>
         }
         sx={{ width: "100%", bgcolor: "background.paper", pt: 0 }}
       >

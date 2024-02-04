@@ -3,17 +3,13 @@ import Container from "@mui/material/Container";
 import List from "@mui/material/List";
 import { BookType } from "lucide-react";
 import SectionTitle from "../ui/Section-title";
-import { RecommendationsSkeleton } from "../ui/skeletons";
 import ItemsList from "./items-list";
 
 export default async function DictionaryList(): Promise<JSX.Element> {
   const themes = await getThemes();
   return (
     <Container disableGutters component={"section"}>
-      <SectionTitle
-        title="Русско-корейский разговорник по темам:"
-        svg={<BookType />}
-      />
+      <SectionTitle title="Русско-корейский разговорник:" svg={<BookType />} />
       <List
         sx={{
           width: "100%",
