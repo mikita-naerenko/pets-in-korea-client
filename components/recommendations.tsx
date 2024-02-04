@@ -46,12 +46,8 @@ export default function Recommendations() {
     <>
       <List
         subheader={
-          <ListSubheader
-            component="h2"
-            id="nested-list-subheader"
-            sx={{ fontSize: "1.5rem" }}
-          >
-            <span>Читайте также:</span>
+          <ListSubheader component="h2" sx={{ fontSize: "1.5rem" }}>
+            Читайте также:
           </ListSubheader>
         }
         sx={{ width: "100%", bgcolor: "background.paper", pt: 0 }}
@@ -107,12 +103,8 @@ export default function Recommendations() {
       </List>
       <List
         subheader={
-          <ListSubheader
-            component="h2"
-            id="nested-list-subheader"
-            sx={{ fontSize: "1.5rem" }}
-          >
-            <span>Что нового:</span>
+          <ListSubheader component="h2" sx={{ fontSize: "1.5rem" }}>
+            Что нового:
           </ListSubheader>
         }
         sx={{ width: "100%", bgcolor: "background.paper", pt: 0 }}
