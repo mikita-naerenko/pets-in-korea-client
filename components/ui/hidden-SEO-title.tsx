@@ -1,4 +1,4 @@
-export default function HiddenSEOTitle() {
+export default function HiddenSEOTitle({ title }: { title: string }) {
   return (
     <h1
       aria-hidden="true"
@@ -12,8 +12,7 @@ export default function HiddenSEOTitle() {
         whiteSpace: "nowrap",
       }}
     >
-      Информационный портал для русскоязычных владельцев домашних животных в
-      Южной Корее. Советы по перевозке, правила и документы.
+      {title}
     </h1>
   );
 }

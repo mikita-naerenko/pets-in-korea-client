@@ -3,11 +3,10 @@ import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Ввоз животных в Южную Корею: документы и требования",
-  description:
-    "Ввоз животных в Южную Корею: документы и требования, подробная инструкция",
-  keywords: [],
-  creator: "Mikita Naerenko",
+  title: "Ввоз животных в Корею: документы, требования, инструкция",
+  description: "Как привезти кошку или собаку в Корею",
+  keywords: ["Корея", "Южная Корея", "кошка", "собака", "кролик", "инструкция"],
+  creator: "",
   robots: {
     index: true,
     follow: true,

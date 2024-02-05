@@ -1,6 +1,7 @@
 import getTags from "@/actions/get-tags";
 import ArticlesSetList from "@/components/articles-set-list";
 import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
+import HiddenSEOTitle from "@/components/ui/hidden-SEO-title";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ export default async function Page() {
   return (
     <>
       <BasicBreadcrumbs currentPage={undefined} />
+      <HiddenSEOTitle title="Подборки статей для хозяев домашних животных в Корее" />
       <ArticlesSetList tags={tags} />
     </>
   );

@@ -2,7 +2,7 @@ import getThemes from "@/actions/get-themes";
 import DictionaryList from "@/components/dictionarys-list/index";
 import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
 import { DictionarySkeleton } from "@/components/ui/skeletons";
-
+import HiddenSEOTitle from "@/components/ui/hidden-SEO-title";
 import { Metadata } from "next/types";
 import { Suspense } from "react";
 
@@ -32,6 +32,7 @@ export default async function Page() {
   return (
     <>
       <BasicBreadcrumbs currentPage={undefined} />
+      <HiddenSEOTitle title="Корейский разговорник для жизни в Корее" />
       <Suspense fallback={<DictionarySkeleton />}>
         <DictionaryList />
       </Suspense>

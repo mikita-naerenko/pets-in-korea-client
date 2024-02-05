@@ -16,6 +16,7 @@ export async function generateMetadata(
 
   return {
     title: theme.label,
+    description: `Русско-корейский разговорник на тему ${theme.label}`,
     openGraph: {
       title: theme.label,
     },

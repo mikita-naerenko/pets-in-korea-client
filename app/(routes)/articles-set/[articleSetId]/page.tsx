@@ -16,6 +16,7 @@ export async function generateMetadata(
 
   return {
     title: tag.label,
+    description: `Подборки статей о животных в Корее`,
     openGraph: {
       title: tag.label,
     },

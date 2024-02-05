@@ -11,9 +11,11 @@ export async function generateMetadata(
   const singleNews = await getNewsById({ id: params.newsId });
 
   return {
-    title: singleNews.title,
+    title: `${singleNews.title} в Корее`,
+    description: `${singleNews.description} в Южной Корее`,
     openGraph: {
-      title: singleNews.title,
+      title: `${singleNews.title} в Корее`,
+      description: `${singleNews.description} в Южной Корее`,
     },
   };
 }

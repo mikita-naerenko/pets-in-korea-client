@@ -1,6 +1,5 @@
 "use client";
 import Typography from "@mui/material/Typography";
-import { theme } from "../theme";
 
 export default function ArticleTitle({
   children,
@@ -21,7 +20,7 @@ export default function ArticleTitle({
       textAlign={"start"}
       //   gutterBottom
       variant="h5"
-      component="h2"
+      component="h1"
       itemProp={itemProp}
     >
       {children}

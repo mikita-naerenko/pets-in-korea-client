@@ -16,9 +16,11 @@ export async function generateMetadata(
   const article = await getArticle({ id: articleId });
 
   return {
-    title: article.title,
+    title: `${article.title} в Корее`,
+    description: `${article.description} в Южной Корее`,
     openGraph: {
-      title: article.title,
+      title: `${article.title} в Корее`,
+      description: `${article.description} в Южной Корее`,
     },
   };
 }
@@ -30,12 +32,12 @@ export default async function page({
 }) {
   const articleId = params.singleArticleId;
   const article = await getArticle({ id: articleId });
-  const imageURL = article?.images?.[0].url;
+  // const imageURL = article?.images?.[0].url;
   const JSON_LD = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: `${article.title}`,
-    description: `${article.description}`,
+    headline: `${article.title}!!!`,
+    description: `${article.description} в Южной Корее`,
     image: `${article.images?.[0].url}`,
     author: {
       "@type": "Person",

@@ -1,7 +1,3 @@
-import getArticles from "@/actions/get-articles";
-import getNews from "@/actions/get-news";
-import getThemes from "@/actions/get-themes";
-// import ImportantArticles from "@/components/important-articles/important-articles";
 import ImportantArticles from "@/components/important-articles/index";
 import MainNavigationButtons from "@/components/main-navigation-buttons/main-navigation-buttons";
 import DictionaryList from "@/components/dictionarys-list/index";
@@ -11,6 +7,29 @@ import {
   ImportantArticlesSkeleton,
 } from "@/components/ui/skeletons";
 import HiddenSEOTitle from "@/components/ui/hidden-SEO-title";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Pets in Korea. Информация о домашних животных в Южной Корее",
+  description:
+    "Информационный портал для русскоязычных владельцев домашних животных в Южной Корее. Как увезти, как привезти, приюты, инструкции",
+  keywords: [
+    "Привезти кошку в Корею",
+    "Привезти собаку в Южную Корею",
+    "Ветклиники в Южной Корее",
+    "Ввоз и вывоз домашних животных Южная Корея",
+    "Законы о животных в Южной Корее",
+    "Как взять из приюта кошку",
+    "Корм и лекарства для домашних животных",
+    "Уход за домашними животными в Южной Корее",
+    "Аренда квартиры в Корее",
+    "Кастрировать кота в Корее цена",
+    "Подготовка к переезду с животными в Южной Корее",
+    "Стерелизация собаки в Корее",
+    "Приюты в Корее",
+  ],
+  creator: "Mikita Naerenko",
+};
 
 export default async function Home() {
   // const allArticles = await await getArticles({});
@@ -37,7 +56,9 @@ export default async function Home() {
 
   return (
     <>
-      <HiddenSEOTitle />
+      <HiddenSEOTitle
+        title={"Свежая информация для владельцев животных в Корее"}
+      />
       <MainNavigationButtons />
       <Suspense fallback={<ImportantArticlesSkeleton title={"Актуальное"} />}>
         <ImportantArticles title={"Актуальное"} type="article" />

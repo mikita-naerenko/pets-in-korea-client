@@ -6,6 +6,7 @@ import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
 import { Metadata } from "next";
 import ImportantArticles from "@/components/important-articles/index";
 import { ImportantArticlesSkeleton } from "@/components/ui/skeletons";
+import HiddenSEOTitle from "@/components/ui/hidden-SEO-title";
 
 export const metadata: Metadata = {
   title: "Новости о животных в Южной Корее",
@@ -48,6 +49,7 @@ export default async function Page() {
   return (
     <>
       <BasicBreadcrumbs currentPage={undefined} />
+      <HiddenSEOTitle title="Новости о животных и их защите в Корее" />
       <Suspense
         fallback={<ImportantArticlesSkeleton title={"Последние новости"} />}
       >

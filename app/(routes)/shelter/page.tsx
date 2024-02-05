@@ -30,6 +30,7 @@ export default async function Page() {
   return (
     <>
       <BasicBreadcrumbs currentPage={undefined} />
+
       <Shelter />
       <SectionTitle title="Список приютов для животных в Южной Корее" />
       <ShelterTable />

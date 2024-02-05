@@ -3,10 +3,10 @@ import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Усыновление животных",
+  title: "Как завести кошку или собаку в Корее",
   description:
-    "Набор статей на тему усыновления домашних животных в Южной Корее",
-  keywords: ["приют купить собаку купить кошку взять из приюта"],
+    "Разбираемся как завести кошку или собаку в Корее, взять животное из приюта или купить",
+  keywords: ["приют", "купить собаку", "купить кошку", "взять из приюта"],
   creator: "Mikita Naerenko",
   robots: {
     index: true,
