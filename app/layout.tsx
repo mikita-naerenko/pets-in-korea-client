@@ -8,7 +8,7 @@ import Container from "@mui/material/Container";
 import Footer from "@/components/footer/footer";
 import UpToTopButton from "@/components/ui/up-to-top-button";
 import { ToastProvider } from "@/providers/toast-provider";
-import t from "./snippet-logo.png";
+import SnippetLogo from "./snippet-logo.png";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Suspense } from "react";
@@ -48,7 +48,10 @@ export default function RootLayout({
       />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://pets-in-korea.com" />
-      <meta property="og:image" content={`https://pets-in-korea.com${t.src}`} />
+      <meta
+        property="og:image"
+        content={`https://pets-in-korea.com${SnippetLogo.src}`}
+      />
       <meta property="og:image:type" content="image/png" />
       <meta property="og:image:width" content="500" />
       <meta property="og:image:height" content="450" />

@@ -17,7 +17,6 @@ export default function ArticleDescription({
         color: `${theme.palette.text.secondary}`,
       }}
       textAlign={"start"}
-      //   gutterBottom
       variant="body2"
       component="p"
       itemProp="description"

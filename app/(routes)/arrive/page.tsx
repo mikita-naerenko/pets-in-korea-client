@@ -1,4 +1,4 @@
-import Arrive from "@/components/arrive";
+import Arrive from "./components";
 import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
 import { Metadata } from "next";
 

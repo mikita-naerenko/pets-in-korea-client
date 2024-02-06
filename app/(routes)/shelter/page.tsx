@@ -2,7 +2,7 @@ import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
 import { Metadata } from "next";
 import ShelterTable from "@/components/shelter-table";
 import SectionTitle from "@/components/ui/Section-title";
-import Shelter from "@/components/shelter";
+import Shelter from "./components";
 import Recommendations from "@/components/recommendations";
 import Container from "@mui/material/Container";
 

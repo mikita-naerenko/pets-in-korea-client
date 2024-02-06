@@ -1,11 +1,9 @@
 import Box from "@mui/material/Box";
 import Image from "next/image";
-import Document10days from "../../public/10-days.jpeg";
-import Document3days from "../../public/Document3days.jpeg";
-import Relax from "../../public/relax.png";
-import relax from "../../public/relax.jpg";
-import antibodyTest from "../../public/antibody-test.png";
-import { height } from "@mui/system";
+import Document10days from "@/public/10-days.jpeg";
+import Document3days from "@/public/Document3days.jpeg";
+import relax from "@/public/relax.jpg";
+import antibodyTest from "@/public/antibody-test.png";
 
 export default function InnerStaticContent() {
   return (

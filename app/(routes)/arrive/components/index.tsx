@@ -2,13 +2,13 @@
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import React from "react";
-import ArticleDescription from "../ui/article-description";
-import ArticleTitle from "../ui/article-title";
+import ArticleDescription from "@/components/ui/article-description";
+import ArticleTitle from "@/components/ui/article-title";
 import Image from "next/image";
-import departure from "../../public/departure.jpg";
+import departure from "@/public/departure.jpg";
 import InnerStaticContent from "./innerStaticContent";
-import Recommendations from "../recommendations";
-import { StyledTextContainer } from "../styled-text-container";
+import Recommendations from "@/components/recommendations";
+import { StyledTextContainer } from "@/components/styled-text-container";
 import { JSON_LD_ARTICLE, JSON_LD_HOW_TO, JSON_LD_FAQ } from "./consts";
 
 export default function Arrive() {

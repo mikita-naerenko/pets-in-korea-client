@@ -1,15 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import Box from "@mui/material/Box";
-import departure from "../../public/departure.jpg";
-import passport from "../../public/passport.jpg";
-import chip from "../../public/chip.jpg";
-import passportMobile from "../../public/passport-mobile.jpg";
-import chipMobile from "../../public/chip-mobile.jpg";
-import rusAntibody from "../../public/rusAntibody.jpg";
-import rusAntibodyMobile from "../../public/rusAntibody-mobile.jpg";
-import vaccine from "../../public/vaccine.jpg";
-import vaccineMobile from "../../public/vaccine-mobile.jpg";
+import passport from "@/public/passport.jpg";
+import chip from "@/public/chip.jpg";
+import passportMobile from "@/public/passport-mobile.jpg";
+import chipMobile from "@/public/chip-mobile.jpg";
+import rusAntibody from "@/public/rusAntibody.jpg";
+import rusAntibodyMobile from "@/public/rusAntibody-mobile.jpg";
+import vaccine from "@/public/vaccine.jpg";
+import vaccineMobile from "@/public/vaccine-mobile.jpg";
 
 export default function InnerStaticContent() {
   return (

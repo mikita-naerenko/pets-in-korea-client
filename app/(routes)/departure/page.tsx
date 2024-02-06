@@ -1,4 +1,4 @@
-import Departure from "@/components/departure";
+import Departure from "./components";
 import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
 import { Metadata } from "next";
 

@@ -19,7 +19,7 @@ export default function OtherArticles({ articles }: { articles: Article[] }) {
     currentProps.setCurrentArticle(article);
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // You can use "auto" for an instant scroll
+      behavior: "smooth",
     });
   };
   return (
