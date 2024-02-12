@@ -110,7 +110,8 @@ export default function Header(
                 <IconButton
                   type="button"
                   sx={{ p: "10px" }}
-                  aria-label="search"
+                  data-testid="search-button"
+                  role="test"
                   onClick={handleShowSearchInput}
                 >
                   {showSearchInput ? <CloseIcon /> : <SearchIcon />}

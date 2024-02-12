@@ -54,12 +54,17 @@ export default function SearchInputSm({
   );
 
   return (
-    <Paper component="form" sx={SearchInputStylesSm}>
+    <Paper
+      component="form"
+      sx={SearchInputStylesSm}
+      data-testid="search-input-sm"
+    >
       <InputBase
         placeholder="Поиск"
         inputProps={{ "aria-label": "поиск по сайту" }}
         sx={{ flexGrow: 1 }}
         onChange={memoHandleChange}
+        role="search-input-sm"
       />
       <SearchResults
         loading={loading}

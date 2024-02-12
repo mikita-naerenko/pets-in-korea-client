@@ -4,9 +4,7 @@ import { Article } from "@/lib/type";
 const URL = `${process.env.NEXT_PUBLIC_API_URL}articles`;
 
 interface Query {
-  //   tagId?: string;
   id?: string;
-  //   random?: number;
 }
 
 export default async function getArticle(
