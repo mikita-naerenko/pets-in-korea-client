@@ -111,10 +111,13 @@ export default function Header(
                   type="button"
                   sx={{ p: "10px" }}
                   data-testid="search-button"
-                  role="test"
                   onClick={handleShowSearchInput}
                 >
-                  {showSearchInput ? <CloseIcon /> : <SearchIcon />}
+                  {showSearchInput ? (
+                    <CloseIcon data-testid="close-search-button-icon" />
+                  ) : (
+                    <SearchIcon data-testid="search-button-icon" />
+                  )}
                 </IconButton>
                 <CTAButton />
               </Box>

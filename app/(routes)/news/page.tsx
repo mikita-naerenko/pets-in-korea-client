@@ -40,6 +40,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  alternates: {
+    canonical: `https://pets-in-korea.com/news`,
+  },
 };
 
 export default async function Page() {

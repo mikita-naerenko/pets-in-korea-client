@@ -22,6 +22,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  alternates: {
+    canonical: `https://pets-in-korea.com/articles-set`,
+  },
 };
 
 export default async function Page() {

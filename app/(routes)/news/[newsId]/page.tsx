@@ -17,6 +17,9 @@ export async function generateMetadata(
       title: `${singleNews.title} в Корее`,
       description: `${singleNews.description} в Южной Корее`,
     },
+    alternates: {
+      canonical: `https://pets-in-korea.com/news/${singleNews.id}`,
+    },
   };
 }
 

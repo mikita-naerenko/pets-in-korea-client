@@ -18,6 +18,9 @@ export async function generateMetadata(
   return {
     title: `${article.title} в Корее`,
     description: `${article.description} в Южной Корее`,
+    alternates: {
+      canonical: `https://pets-in-korea.com/${article.id}`,
+    },
     openGraph: {
       title: `${article.title} в Корее`,
       description: `${article.description} в Южной Корее`,
@@ -36,7 +39,7 @@ export default async function page({
   const JSON_LD = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: `${article.title}!!!`,
+    headline: `${article.title}`,
     description: `${article.description} в Южной Корее`,
     image: `${article.images?.[0].url}`,
     author: {

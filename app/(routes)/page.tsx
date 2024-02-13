@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     "Приюты в Корее",
   ],
   creator: "Mikita Naerenko",
+  alternates: {
+    canonical: `https://pets-in-korea.com/`,
+  },
 };
 
 export default async function Home() {
