@@ -20,6 +20,10 @@ export default async function ImportantArticles({
     });
   } else if (type === "main-page-news") {
     items = await getNews({ quantity: 9 });
+  } else if (type === "lifestyle") {
+    items = await getArticles({
+      tagLabel: "lifestyle",
+    });
   } else {
     items = await getNews({});
   }

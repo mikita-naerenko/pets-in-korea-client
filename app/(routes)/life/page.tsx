@@ -1,6 +1,6 @@
 import getArticles from "@/actions/get-articles";
 import React from "react";
-import ImportantArticles from "@/components/important-articles/important-articles";
+import ImportantArticles from "@/components/important-articles";
 import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
 import { Metadata } from "next/types";
 import HiddenSEOTitle from "@/components/ui/hidden-SEO-title";
@@ -37,9 +37,8 @@ export default async function Page() {
       <BasicBreadcrumbs currentPage={undefined} />
       <HiddenSEOTitle title="Как пользоваться транспортом, выгуливать собаку и мноое другое в Южной Корее." />
       <ImportantArticles
-        items={lifestyleArticles}
         title={"Правила и лайфхаки для комфортной жизни в Южной Корее"}
-        type="article"
+        type="lifestyle"
       />
     </>
   );
