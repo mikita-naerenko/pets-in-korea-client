@@ -1,18 +1,23 @@
 import type { Metadata } from "next";
 import { PT_Sans_Caption } from "next/font/google";
-import { ThemeProvider } from "@mui/material/styles";
-import "./globals.css";
-import { theme } from "@/components/theme";
-import Header from "@/components/header/header";
+import { Suspense } from "react";
+
 import Container from "@mui/material/Container";
-import Footer from "@/components/footer/footer";
+import { ThemeProvider } from "@mui/material/styles";
+
+import { theme } from "@/components/theme";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 import UpToTopButton from "@/components/ui/up-to-top-button";
+import { Metrika } from "@/components/metrika";
+
 import { ToastProvider } from "@/providers/toast-provider";
-import SnippetLogo from "./snippet-logo.png";
+
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Suspense } from "react";
-import { Metrika } from "@/components/metrika";
+
+import SnippetLogo from "./snippet-logo.png";
+import "./globals.css";
 
 const font = PT_Sans_Caption({
   subsets: ["cyrillic"],

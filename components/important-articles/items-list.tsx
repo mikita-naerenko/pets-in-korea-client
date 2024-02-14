@@ -1,14 +1,20 @@
 "use client";
-import { Article, News } from "@/lib/type";
-import ImageListItem from "@mui/material/ImageListItem";
-import { useState } from "react";
-import Fallback from "../../public/fallback.jpg";
 import Image from "next/image";
+import { useState } from "react";
+
+import ImageListItem from "@mui/material/ImageListItem";
+
+import { Article, News } from "@/lib/type";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 
-const hoverStyle = {
-  filter: "brightness(1)",
-};
+import Fallback from "../../public/fallback.jpg";
+
+import {
+  styeImage,
+  styleImageListItem,
+  styleItemBar,
+  hoverStyle,
+} from "./style";
 
 export default function ItemsList({
   items,
@@ -40,31 +46,7 @@ export default function ItemsList({
         return (
           <ImageListItem
             key={item.id}
-            sx={{
-              animationDelay: `${i * 0.5}s`,
-              animation: "fadeIn 0.5s ease-in-out",
-
-              "@keyframes fadeIn": {
-                from: {
-                  opacity: 0,
-                },
-                to: {
-                  opacity: 1,
-                },
-              },
-              cursor: "pointer",
-              transition: "transform 0.5s ease-in-out",
-              "&:hover": {
-                transform: "scale(1.01)",
-                "& .MuiImageListItemBar-root": {
-                  height: "8rem",
-                  background: "rgba(0, 0, 0, 0.7)",
-                },
-                "& .MuiImageListItemBar-subtitle": {
-                  whiteSpace: "normal",
-                },
-              },
-            }}
+            sx={styleImageListItem}
             onClick={() => handleClickSingleItem(item)}
           >
             <Image
@@ -74,13 +56,7 @@ export default function ItemsList({
               quality={80}
               alt={item.title}
               style={{
-                filter: "brightness(0.8)",
-                objectFit: "cover",
-                width: "100%",
-                height: "auto",
-                display: "block",
-                flexGrow: 1,
-                transition: "filter 0.2s ease-in-out",
+                ...styeImage,
                 ...(isHovered && hoveredItem === item.id && hoverStyle),
               }}
               onMouseEnter={() => {
@@ -94,22 +70,7 @@ export default function ItemsList({
             <ImageListItemBar
               title={item.title}
               subtitle={item.description}
-              sx={{
-                height: { xs: "6rem" },
-                transition:
-                  "height 0.3s ease-in-out, background 0.5s ease-in-out",
-                "& .MuiImageListItemBar-title": {
-                  paddingBottom: "0.7rem",
-                  display: "flex",
-                  alignItems: "center",
-                  whiteSpace: "normal",
-                  // overflow: "scroll",
-                },
-                "& .MuiImageListItemBar-subtitle": {
-                  paddingBottom: "0.3rem",
-                  display: { xs: "none", md: "block" },
-                },
-              }}
+              sx={styleItemBar}
             />
           </ImageListItem>
         );

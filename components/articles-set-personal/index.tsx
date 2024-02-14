@@ -1,23 +1,28 @@
 "use client";
-import * as React from "react";
-import Typography from "@mui/material/Typography";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import he from "he";
+
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import Image from "next/image";
-import he from "he";
-import OtherArticles from "../other-articles";
+
+import OtherArticles from "./other-articles";
 import { useCurrentProps } from "@/hooks/use-current-props";
 
-import { usePathname } from "next/navigation";
 import { Article, Tag } from "@/lib/type";
-import { useEffect, useState } from "react";
 import getArticles from "@/actions/get-articles";
-import ArticleTitle from "../ui/article-title";
-import ArticleDescription from "../ui/article-description";
-import { StyledTextContainer } from "../styled-text-container";
-import AuthorInfo from "../ui/author-info";
-import Fallback from "../../public/fallback.jpg";
-import { ArticlePageSkeleton } from "../ui/skeletons";
+
+import { StyledTextContainer } from "@/components/styled-text-container";
+import AuthorInfo from "@/components/ui/author-info";
+import { ArticlePageSkeleton } from "@/components/ui/skeletons";
+import ArticlePreview from "@/components/article-preview";
+
+import Fallback from "@/public/fallback.jpg";
+import {
+  styleBoxContentWrapper,
+  styleBoxTextWrapper,
+  styleOtherArticlesWrapper,
+} from "./style";
 
 export default function ArticleSet({ tags }: { tags: Tag[] }) {
   const currentProps = useCurrentProps();
@@ -79,47 +84,16 @@ export default function ArticleSet({ tags }: { tags: Tag[] }) {
         <ArticlePageSkeleton />
       ) : (
         <Container disableGutters>
-          <Box sx={{ display: { md: "flex" } }}>
-            <Box
-              sx={{
-                width: { md: "60%" },
-                display: { md: "flex" },
-                flexDirection: "column",
-              }}
-            >
-              <ArticleTitle>{current.title}</ArticleTitle>
-              <ArticleDescription>{current.description}</ArticleDescription>
-              <Box
-                sx={{
-                  display: { xs: "none", md: "block" },
-                  mr: 2,
-                  alignSelf: "end",
-                  marginTop: "auto",
-                }}
-              >
-                <AuthorInfo article={current} />
-              </Box>
-            </Box>
-            <Box sx={{ width: { md: "40%" } }}>
-              <Image
-                style={{ display: "block" }}
-                src={imageURL}
-                layout="responsive"
-                quality={90}
-                width={250}
-                height={300}
-                alt={`${current.title} `}
-              />
-            </Box>
-          </Box>
-          <Box sx={{ display: { md: "flex" }, mt: { md: 3 } }}>
-            <Box sx={{ width: { md: "60%" } }}>
+          <ArticlePreview currentArticle={current} img={imageURL} />
+
+          <Box sx={styleBoxContentWrapper}>
+            <Box sx={styleBoxTextWrapper}>
               <StyledTextContainer
                 dangerouslySetInnerHTML={{ __html: decodedHTML }}
               />
               <AuthorInfo article={current} />
             </Box>
-            <Box sx={{ width: { md: "40%" } }}>
+            <Box sx={styleOtherArticlesWrapper}>
               <OtherArticles articles={otherArticles} />
             </Box>
           </Box>

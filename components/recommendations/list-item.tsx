@@ -1,37 +1,42 @@
-"use client";
-import { useState } from "react";
+import React from "react";
 import Image from "next/image";
 
-import ListItemAvatar from "@mui/material/ListItemAvatar";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
+import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Typography from "@mui/material/Typography";
+import ListItemText from "@mui/material/ListItemText";
 
-import { Theme } from "@/lib/type";
-
+import { Article, News } from "@/lib/type";
 import Fallback from "@/public/fallback.jpg";
+import { styleListItemButton, styleListItemTextTypography } from "./style";
 
-export default function ItemsList({ themes }: { themes: Theme[] }) {
-  const [showedItems, setShowedItems] = useState<number>(6);
-
-  const handleClick = (item: Theme) => {
-    window.location.assign(`/dictionary/${item.id}`);
+export default function ListItem({
+  items,
+  type,
+}: {
+  items: Article[] | News[];
+  type: "article" | "news";
+}) {
+  const handleClickArticle = (item: Article | News) => {
+    type === "article"
+      ? window.location.assign(`/${item.id}`)
+      : window.location.assign(`/news/${item.id}`);
   };
   return (
     <>
-      {themes.slice(0, showedItems).map((item, i) => {
+      {items.map((item, i) => {
         const image =
           item.images?.[0] && item.images?.[0].url
             ? item.images?.[0].url
             : Fallback.src;
+
         return (
           <ListItemButton
             component="li"
-            onClick={() => handleClick(item)}
-            alignItems="flex-start"
-            sx={{ width: { md: "50%" } }}
+            onClick={() => handleClickArticle(item)}
+            sx={styleListItemButton}
             key={item.id}
-            divider
+            divider={i !== items.length - 1}
           >
             <ListItemAvatar>
               <Image
@@ -39,20 +44,19 @@ export default function ItemsList({ themes }: { themes: Theme[] }) {
                 quality={70}
                 width={50}
                 height={40}
-                alt={`${item.label} `}
+                alt={`${item.title} `}
               />
             </ListItemAvatar>
             <ListItemText
-              primary={item.rusLabel}
+              primary={item.title}
               secondary={
                 <>
                   <Typography
-                    sx={{ display: "inline" }}
+                    sx={styleListItemTextTypography}
                     component="span"
                     variant="body2"
-                    color="text.primary"
                   ></Typography>
-                  {item.description}...
+                  {item.description.slice(0, 50)}...
                 </>
               }
             />

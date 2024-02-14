@@ -106,3 +106,12 @@ export type SearchResponse =
       news: News[] | [];
     }
   | undefined;
+
+export interface titlePreview {
+  title: string;
+  description: string;
+  linkToSource?: string;
+  authorLink?: string;
+  nameOfSource?: string;
+  authorName?: string;
+}

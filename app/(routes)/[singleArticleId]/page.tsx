@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import getArticle from "@/actions/get-article";
-import SingleArticle from "@/components/single-article";
+import SingleArticle from "@/components/single-article/single-article";
 import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
 import { Metadata, ResolvingMetadata } from "next";
 

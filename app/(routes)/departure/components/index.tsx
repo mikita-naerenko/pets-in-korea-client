@@ -1,15 +1,20 @@
 "use client";
+
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import React from "react";
-import ArticleDescription from "@/components/ui/article-description";
-import ArticleTitle from "@/components/ui/article-title";
-import Image from "next/image";
 import ArriveMain from "@/public/arrive-main.png";
 import Recommendations from "@/components/recommendations";
 import { StyledTextContainer } from "@/components/styled-text-container";
 import InnerStaticContent from "./innerStaticContent";
-import { JSON_LD_ARTICLE, JSON_LD_HOWTO, JSON_LD_LIST } from "./constants";
+import {
+  JSON_LD_ARTICLE,
+  JSON_LD_HOWTO,
+  JSON_LD_LIST,
+  TITLE,
+  DESCRIPTION,
+} from "./constants";
+import ArticlePreview from "@/components/article-preview";
 
 export default function Departure() {
   return (
@@ -26,35 +31,13 @@ export default function Departure() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD_LIST) }}
       />
-      <Box sx={{ display: { md: "flex" } }}>
-        <Box
-          sx={{
-            width: { md: "60%" },
-            display: { md: "flex" },
-            flexDirection: "column",
-          }}
-        >
-          <ArticleTitle>
-            {"Как увезти домашнее животное из Южной Кореи"}
-          </ArticleTitle>
-          <ArticleDescription>
-            {
-              "Жизнь бывает непредсказуема, и иногда возникает острая необходимость по тем или иным причинам покинуть Южную Корею. Подготовка всех необходимых документов для путешествия вместе с животным занимает время, и к решению этого вопроса мы рекомендуем приступать заблаговременно."
-            }
-          </ArticleDescription>
-        </Box>
-        <Box sx={{ width: { md: "40%" } }}>
-          <Image
-            style={{ display: "block", width: "100%", height: "100%" }}
-            src={ArriveMain.src}
-            quality={80}
-            width={250}
-            height={300}
-            alt={`Как увезти домашнее животное из Южной Кореи`}
-            itemProp="image"
-          />
-        </Box>
-      </Box>
+      <ArticlePreview
+        img={ArriveMain.src}
+        currentArticle={{
+          title: TITLE,
+          description: DESCRIPTION,
+        }}
+      />
       <Box sx={{ display: { md: "flex" }, mt: { md: 3 } }}>
         <Box sx={{ width: { md: "60%" } }}>
           <StyledTextContainer>

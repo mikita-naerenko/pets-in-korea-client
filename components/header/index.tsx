@@ -1,8 +1,6 @@
 "use client";
 import { useState } from "react";
 
-import Image from "next/image";
-
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -20,11 +18,9 @@ import SearchInputSm from "./search-input-sm";
 import NavbarMd from "./navbar-md";
 import NavbarXs from "./navbar-xs";
 
-import Logo from "../../public/logo.png";
-import LogoDesktop from "../../public//logo-desktop.png";
-
-import Link from "next/link";
 import CTAButton from "../cta-button/index";
+import { LogoMD, LogoSX } from "./logo-set";
+import { styleAppBar } from "./styles";
 
 interface Props {
   children: React.ReactElement;
@@ -56,53 +52,16 @@ export default function Header(
     <>
       <CssBaseline />
       <HideOnScroll {...props}>
-        <AppBar
-          sx={{
-            backgroundImage: `linear-gradient(to right, #2b1654 0%, #2575fc 100%)`,
-          }}
-        >
+        <AppBar sx={styleAppBar}>
           <Container sx={{ px: { sm: "24px", xl: 0 } }}>
             <Toolbar
               disableGutters
               sx={{ display: "flex", justifyContent: "space-between" }}
             >
               <NavbarXs />
-              <Box
-                sx={{
-                  flexGrow: { xs: 1, md: 0 },
-                  display: {
-                    xs: "flex",
-                    md: "none",
-                    justifyContent: "center",
-                  },
-                }}
-              >
-                <Link href="/">
-                  <Image width={180} height={40} alt="Logo" src={Logo} />
-                </Link>
-              </Box>
-              <Box
-                sx={{
-                  display: {
-                    xs: "none",
-                    md: "block",
-                    justifyContent: "center",
+              <LogoSX />
+              <LogoMD />
 
-                    width: "200px",
-                    maxHeight: "80px",
-                  },
-                }}
-              >
-                <Link href="/">
-                  <Image
-                    width={180}
-                    height={66}
-                    alt="Logo"
-                    src={LogoDesktop}
-                    style={{ marginTop: "10px" }}
-                  />
-                </Link>
-              </Box>
               <Box sx={{ display: "flex" }}>
                 {showSearchInput && (
                   <SearchInputSm handleClose={setShowSearchInput} />

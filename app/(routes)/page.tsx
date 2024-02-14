@@ -1,5 +1,5 @@
 import ImportantArticles from "@/components/important-articles/index";
-import MainNavigationButtons from "@/components/main-navigation-buttons/main-navigation-buttons";
+import MainNavigationButtons from "@/components/main-navigation-buttons";
 import DictionaryList from "@/components/dictionarys-list/index";
 import { Suspense } from "react";
 import {

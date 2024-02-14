@@ -159,8 +159,10 @@ export function ImageListItemSkeleton({ delay }: { delay: number }) {
   return (
     <ImageListItem
       sx={{
-        animationDelay: `${delay * 0.5}s`,
-        animation: "fadeIn 0.5s ease-in-out",
+        boxShadow:
+          "rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em",
+        borderRadius: "10px",
+        animation: "fadeIn 0.2s ease-in-out",
 
         "@keyframes fadeIn": {
           from: {
@@ -171,7 +173,7 @@ export function ImageListItemSkeleton({ delay }: { delay: number }) {
           },
         },
         cursor: "pointer",
-        transition: "transform 0.5s ease-in-out",
+        transition: "transform 0.2s ease-in-out",
         "&:hover": {
           transform: "scale(1.01)",
           "& .MuiImageListItemBar-root": {
@@ -190,8 +192,10 @@ export function ImageListItemSkeleton({ delay }: { delay: number }) {
         title={<Skeleton width={"100%"} height={40} />}
         subtitle={<Skeleton width={"100%"} height={40} />}
         sx={{
+          borderBottomLeftRadius: "10px",
+          borderBottomRightRadius: "10px",
           height: { xs: "6rem" },
-          transition: "height 0.3s ease-in-out, background 0.5s ease-in-out",
+          transition: "height 0.2s ease-in-out, background 0.2s ease-in-out",
           "& .MuiImageListItemBar-title": {
             paddingBottom: "0.7rem",
             display: "flex",
@@ -223,8 +227,10 @@ export function ImportantArticlesSkeleton({ title }: { title: string }) {
               sm: "repeat(2, 1fr)",
               md: "repeat(3, 1fr)",
             },
+            p: 1,
           }}
           cols={0}
+          gap={15}
         >
           <ImageListItemSkeleton delay={0} />
           <ImageListItemSkeleton delay={1} />

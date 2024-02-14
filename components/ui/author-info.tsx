@@ -1,11 +1,15 @@
-import { Article, News } from "@/lib/type";
+import { Article, News, titlePreview } from "@/lib/type";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import React from "react";
 import Link from "next/link";
 import { theme } from "../theme";
 
-export default function AuthorInfo({ article }: { article: Article | News }) {
+export default function AuthorInfo({
+  article,
+}: {
+  article: Article | News | titlePreview;
+}) {
   const hrefResource = article.linkToSource ? article.linkToSource : "#";
   const hrefAuthor = article.authorLink ? article.authorLink : "#";
   return (

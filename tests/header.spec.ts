@@ -7,20 +7,4 @@ test("search-component", async ({ page }) => {
   await expect(page.getByTestId("search-button-icon")).not.toBeVisible();
   await expect(page.getByTestId("close-search-button-icon")).toBeVisible();
   await expect(page.getByTestId("search-input-sm")).toBeVisible();
-  //   await page.goto("http://localhost:3001/shelter");
-  //   const test = page.locator("h1");
-  //   await expect(test).toContainText("Приюты для животных в Южной Корее");
-
-  //   expect(await searchButton.isVisible()).toBeTruthy();
-  //   await searchButton.click();
 });
-
-//   await page.goto("http://localhost:3001/");
-//   // Find an element with the text 'About' and click on it
-//   await page.click("text=Приюты");
-//   // The new URL should be "/about" (baseURL is used there)
-//   await expect(page).toHaveURL("http://localhost:3001/shelter");
-//   // The new page should contain an h1 with "About"
-//   await expect(page.locator("h1")).toContainText(
-//     "Приюты для животных в Южной Корее"
-//   );

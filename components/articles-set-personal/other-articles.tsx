@@ -1,17 +1,17 @@
 "use client";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
-
 import ListSubheader from "@mui/material/ListSubheader";
 import List from "@mui/material/List";
-
 import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
-import { Article } from "../lib/type";
-import { useCurrentProps } from "../hooks/use-current-props";
 import ListItemButton from "@mui/material/ListItemButton";
-import React from "react";
-import Fallback from "../public/fallback.jpg";
+
+import { Article } from "@/lib/type";
+import { useCurrentProps } from "@/hooks/use-current-props";
+
+import Fallback from "@/public/fallback.jpg";
+import { styleSubheader, styleList } from "./style";
 
 export default function OtherArticles({ articles }: { articles: Article[] }) {
   const currentProps = useCurrentProps();
@@ -22,18 +22,19 @@ export default function OtherArticles({ articles }: { articles: Article[] }) {
       behavior: "smooth",
     });
   };
+
   return (
     <List
       subheader={
         <ListSubheader
           component="h2"
           id="nested-list-subheader"
-          sx={{ fontSize: "1.5rem" }}
+          sx={styleSubheader}
         >
           Ещё статьи по теме:
         </ListSubheader>
       }
-      sx={{ width: "100%", bgcolor: "background.paper", pt: 0 }}
+      sx={styleList}
     >
       {articles.map((article, i) => {
         const image =

@@ -2,14 +2,12 @@
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import React from "react";
-import ArticleDescription from "@/components/ui/article-description";
-import ArticleTitle from "@/components/ui/article-title";
-import Image from "next/image";
 import shelter from "@/public/shelter.jpg";
 import InnerStaticContent from "./innerStaticContent";
 import Recommendations from "@/components/recommendations";
 import { StyledTextContainer } from "@/components/styled-text-container";
-import { JSON_LD_HOWTO, JSON_LD_LIST } from "./constants";
+import { JSON_LD_HOWTO, JSON_LD_LIST, TITLE, DESCRIPTION } from "./constants";
+import ArticlePreview from "@/components/article-preview";
 
 export default function Shelter() {
   return (
@@ -22,44 +20,13 @@ export default function Shelter() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD_LIST) }}
       />
-
-      <Box sx={{ display: { md: "flex" } }} itemProp="mainEntity">
-        <Box
-          sx={{
-            width: { md: "60%" },
-            display: { md: "flex" },
-            flexDirection: "column",
-          }}
-        >
-          <ArticleTitle itemProp="headline">
-            {"Приюты для животных в Южной Корее"}
-          </ArticleTitle>
-          <ArticleDescription>
-            {
-              "Решили взять животное из приюта? Ниже найдете список приютов и полезную информацию."
-            }
-          </ArticleDescription>
-        </Box>
-        <Box
-          sx={{ width: { md: "40%" } }}
-          itemType="https://schema.org/ImageObject"
-        >
-          <Image
-            style={{
-              display: "block",
-              width: "100%",
-              height: "100%",
-              maxHeight: "450px",
-            }}
-            src={shelter.src}
-            quality={90}
-            width={250}
-            height={300}
-            alt={`Изображения собак в стиле оригами`}
-            itemProp="image"
-          />
-        </Box>
-      </Box>
+      <ArticlePreview
+        img={shelter.src}
+        currentArticle={{
+          title: TITLE,
+          description: DESCRIPTION,
+        }}
+      />
       <Box sx={{ display: { md: "flex" }, mt: { md: 3 } }}>
         <Box sx={{ width: { md: "60%" } }} itemProp="articleBody">
           <StyledTextContainer>

@@ -26,3 +26,7 @@ export const SearchInputStylesSm = {
 
   position: "relative",
 };
+
+export const styleAppBar = {
+  backgroundImage: `linear-gradient(to right, #2b1654 0%, #2575fc 100%)`,
+};

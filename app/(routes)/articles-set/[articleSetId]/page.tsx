@@ -1,6 +1,6 @@
 import getTags from "@/actions/get-tags";
 import getTag from "@/actions/get-tag";
-import ArticleSet from "@/components/articles-set-personal/article-set";
+import ArticleSet from "@/components/articles-set-personal";
 import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
 import { Metadata, ResolvingMetadata } from "next";
 

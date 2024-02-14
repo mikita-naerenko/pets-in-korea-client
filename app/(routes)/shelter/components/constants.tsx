@@ -1,4 +1,6 @@
-import { SHELTERS } from "@/lib/shelters";
+export const TITLE = "Приюты для животных в Южной Корее";
+export const DESCRIPTION =
+  "Решили взять животное из приюта? Ниже найдете список приютов и полезную информацию.";
 
 export const JSON_LD_LIST = {
   "@context": "https://schema.org",
