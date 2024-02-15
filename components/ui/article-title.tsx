@@ -1,6 +1,15 @@
 "use client";
 import Typography from "@mui/material/Typography";
 
+const styleTypography = {
+  mt: { xs: 3, md: 0 },
+  mb: 0.5,
+  mr: 0.5,
+  fontSize: { md: "1.8rem" },
+  fontWeight: "600",
+  textAlign: "start",
+};
+
 export default function ArticleTitle({
   children,
   itemProp,
@@ -10,15 +19,7 @@ export default function ArticleTitle({
 }) {
   return (
     <Typography
-      sx={{
-        mt: { xs: 3, md: 0 },
-        mb: 0.5,
-        mr: 0.5,
-        fontSize: { md: "1.8rem" },
-        fontWeight: "600",
-      }}
-      textAlign={"start"}
-      //   gutterBottom
+      sx={styleTypography}
       variant="h5"
       component="h1"
       itemProp={itemProp}

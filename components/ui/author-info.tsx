@@ -5,6 +5,14 @@ import React from "react";
 import Link from "next/link";
 import { theme } from "../theme";
 
+const styleTypography = {
+  color: theme.palette.text.secondary,
+  fontSize: "0.8rem",
+  textAlign: "end",
+};
+
+const styleLink = { color: theme.palette.primary.main };
+
 export default function AuthorInfo({
   article,
 }: {
@@ -15,33 +23,18 @@ export default function AuthorInfo({
   return (
     <Box>
       {article.nameOfSource && (
-        <Typography
-          sx={{
-            color: theme.palette.text.secondary,
-            fontSize: "0.8rem",
-            textAlign: "end",
-          }}
-        >
+        <Typography sx={styleTypography}>
           Переведенная статья с ресурса:{" "}
-          <Link
-            href={hrefResource}
-            style={{ color: theme.palette.primary.main }}
-          >
+          <Link href={hrefResource} style={styleLink}>
             {article.nameOfSource}
           </Link>
         </Typography>
       )}
 
       {article.authorName && (
-        <Typography
-          sx={{
-            color: theme.palette.text.secondary,
-            fontSize: "0.8rem",
-            textAlign: "end",
-          }}
-        >
+        <Typography sx={styleTypography}>
           Автор статьи:{" "}
-          <Link style={{ color: theme.palette.primary.main }} href={hrefAuthor}>
+          <Link style={styleLink} href={hrefAuthor}>
             {article.authorName}
           </Link>
         </Typography>

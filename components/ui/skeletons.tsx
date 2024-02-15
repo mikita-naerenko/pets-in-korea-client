@@ -4,17 +4,10 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Container from "@mui/material/Container";
-import { BookType, MousePointerSquareDashed } from "lucide-react";
+import { BookType } from "lucide-react";
 import SectionTitle from "./Section-title";
 import List from "@mui/material/List";
-import dynamic from "next/dynamic";
 import Typography from "@mui/material/Typography";
-import ImageList from "@mui/material/ImageList";
-import Button from "@mui/material/Button";
-import ImageListItem from "@mui/material/ImageListItem";
-import ImageListItemBar from "@mui/material/ImageListItemBar";
-import image from "next/image";
-import GradientButton from "./gradient-button";
 
 export function RecommendationsSkeleton() {
   return (
@@ -151,127 +144,6 @@ export function ArticlePageSkeleton() {
           <OtherArticles articles={otherArticles} />
         </Box> */}
       </Box>
-    </Container>
-  );
-}
-
-export function ImageListItemSkeleton({ delay }: { delay: number }) {
-  return (
-    <ImageListItem
-      sx={{
-        boxShadow:
-          "rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em",
-        borderRadius: "10px",
-        animation: "fadeIn 0.2s ease-in-out",
-
-        "@keyframes fadeIn": {
-          from: {
-            opacity: 0,
-          },
-          to: {
-            opacity: 1,
-          },
-        },
-        cursor: "pointer",
-        transition: "transform 0.2s ease-in-out",
-        "&:hover": {
-          transform: "scale(1.01)",
-          "& .MuiImageListItemBar-root": {
-            height: "8rem",
-            background: "rgba(0, 0, 0, 0.7)",
-          },
-          "& .MuiImageListItemBar-subtitle": {
-            whiteSpace: "normal",
-          },
-        },
-      }}
-    >
-      <Skeleton sx={{ transform: "scale(1)" }} width={"100%"} height={250} />
-
-      <ImageListItemBar
-        title={<Skeleton width={"100%"} height={40} />}
-        subtitle={<Skeleton width={"100%"} height={40} />}
-        sx={{
-          borderBottomLeftRadius: "10px",
-          borderBottomRightRadius: "10px",
-          height: { xs: "6rem" },
-          transition: "height 0.2s ease-in-out, background 0.2s ease-in-out",
-          "& .MuiImageListItemBar-title": {
-            paddingBottom: "0.7rem",
-            display: "flex",
-            alignItems: "center",
-            whiteSpace: "normal",
-          },
-          "& .MuiImageListItemBar-subtitle": {
-            paddingBottom: "0.3rem",
-            display: { xs: "none", md: "block" },
-          },
-        }}
-      />
-    </ImageListItem>
-  );
-}
-
-export function ImportantArticlesSkeleton({ title }: { title: string }) {
-  return (
-    <Container disableGutters>
-      <SectionTitle title={title} svg={<MousePointerSquareDashed />} />
-      <Box display={"flex"} flexDirection="column" alignItems="center">
-        <ImageList
-          sx={{
-            overflow: "hidden",
-            width: "100%",
-            mb: 3,
-            gridTemplateColumns: {
-              xs: "repeat(1, 1fr)",
-              sm: "repeat(2, 1fr)",
-              md: "repeat(3, 1fr)",
-            },
-            p: 1,
-          }}
-          cols={0}
-          gap={15}
-        >
-          <ImageListItemSkeleton delay={0} />
-          <ImageListItemSkeleton delay={1} />
-          <ImageListItemSkeleton delay={2} />
-          <ImageListItemSkeleton delay={3} />
-          <ImageListItemSkeleton delay={4} />
-          <ImageListItemSkeleton delay={5} />
-          <ImageListItemSkeleton delay={6} />
-          <ImageListItemSkeleton delay={7} />
-          <ImageListItemSkeleton delay={8} />
-        </ImageList>
-      </Box>
-      <div
-        style={{
-          width: "100%",
-          justifyContent: "center",
-          display: "flex",
-        }}
-      >
-        <Button
-          sx={{
-            width: { xs: "100%", md: "33%" },
-            margin: "0 auto",
-            backgroundImage: `linear-gradient(to right, #2b1654 0%, #2575fc 100%)`,
-            transition: " 0.5s ease",
-            backgroundSize: "300% auto",
-            "&:hover": {
-              backgroundPosition: "right center",
-            },
-            "&:disabled": {
-              backgroundImage: `linear-gradient(to right, #EEEEEE
-                0%, #EEEEEE
-                100%)`,
-            },
-          }}
-          variant="contained"
-          size="large"
-        >
-          Боольше интересных статей
-        </Button>
-      </div>
     </Container>
   );
 }

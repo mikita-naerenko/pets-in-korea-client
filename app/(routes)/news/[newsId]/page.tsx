@@ -1,7 +1,7 @@
 import React from "react";
 import getNewsById from "@/actions/get-news-by-id";
 import SingleArticle from "@/components/single-article/single-article";
-import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
+import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs/basic-breadcrumbs";
 import { Metadata, ResolvingMetadata } from "next";
 
 export async function generateMetadata(

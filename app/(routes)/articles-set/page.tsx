@@ -1,6 +1,6 @@
 import getTags from "@/actions/get-tags";
 import ArticlesSetList from "@/components/articles-set-list";
-import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
+import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs/basic-breadcrumbs";
 import HiddenSEOTitle from "@/components/ui/hidden-SEO-title";
 import { Metadata } from "next";
 

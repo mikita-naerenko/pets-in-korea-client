@@ -1,17 +1,22 @@
 "use client";
-import * as React from "react";
+import { useEffect, useState } from "react";
+import he from "he";
+
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import he from "he";
-import Recommendations from "../recommendations";
 
-import { Article, News, Tag } from "@/lib/type";
-import { useEffect, useState } from "react";
-import { StyledTextContainer } from "../styled-text-container";
+import { StyledTextContainer } from "@/components/styled-text-container";
 import AuthorInfo from "@/components/ui/author-info";
 import ArticlePreview from "@/components/article-preview/index";
+import Recommendations from "@/components/recommendations";
+import { Article, News } from "@/lib/type";
 
 import Fallback from "@/public/fallback.jpg";
+import {
+  styleBodyWrapper,
+  styleRecommendationsWrapper,
+  styleTextAndAuthorInfoWrapper,
+} from "./style";
 
 export default function SingleArticle({
   article,
@@ -36,14 +41,14 @@ export default function SingleArticle({
   return (
     <Container disableGutters>
       <ArticlePreview currentArticle={article} img={imageURL} />
-      <Box sx={{ display: { md: "flex" }, mt: { md: 3 } }}>
-        <Box sx={{ width: { md: "60%" } }}>
+      <Box sx={styleBodyWrapper}>
+        <Box sx={styleTextAndAuthorInfoWrapper}>
           <StyledTextContainer
             dangerouslySetInnerHTML={{ __html: decodedHTML }}
           />
           <AuthorInfo article={article} />
         </Box>
-        <Box sx={{ width: { md: "40%" } }}>
+        <Box sx={styleRecommendationsWrapper}>
           <Recommendations />
         </Box>
       </Box>

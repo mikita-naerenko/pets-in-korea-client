@@ -2,10 +2,11 @@ import React, { Suspense } from "react";
 import getNews from "@/actions/get-news";
 import NewsList from "@/components/news-list";
 import getCountOf from "@/actions/get-count-of";
-import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
+import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs/basic-breadcrumbs";
 import { Metadata } from "next";
 import ImportantArticles from "@/components/important-articles/index";
-import { ImportantArticlesSkeleton } from "@/components/ui/skeletons";
+// import { ImportantArticlesSkeleton } from "@/components/ui/skeletons";
+import { ImportantArticlesSkeleton } from "@/components/important-articles/skeleton";
 import HiddenSEOTitle from "@/components/ui/hidden-SEO-title";
 
 export const metadata: Metadata = {

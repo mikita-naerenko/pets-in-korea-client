@@ -1,4 +1,4 @@
-import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
+import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs/basic-breadcrumbs";
 import { Metadata } from "next";
 import ShelterTable from "@/components/shelter-table";
 import SectionTitle from "@/components/ui/Section-title";

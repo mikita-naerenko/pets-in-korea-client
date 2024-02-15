@@ -1,6 +1,6 @@
 import getTheme from "@/actions/get-theme";
 import SingleTheme from "@/components/single-theme";
-import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
+import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs/basic-breadcrumbs";
 
 import { Metadata, ResolvingMetadata } from "next";
 

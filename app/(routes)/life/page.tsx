@@ -1,9 +1,10 @@
 import getArticles from "@/actions/get-articles";
-import React from "react";
+import React, { Suspense } from "react";
 import ImportantArticles from "@/components/important-articles";
-import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
+import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs/basic-breadcrumbs";
 import { Metadata } from "next/types";
 import HiddenSEOTitle from "@/components/ui/hidden-SEO-title";
+import { ImportantArticlesSkeleton } from "@/components/important-articles/skeleton";
 
 export const metadata: Metadata = {
   title: "Жизнь с домашним животным в Южной Корее",
@@ -29,17 +30,22 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const lifestyleArticles = await getArticles({
-    tagLabel: "lifestyle",
-  });
   return (
     <>
       <BasicBreadcrumbs currentPage={undefined} />
       <HiddenSEOTitle title="Как пользоваться транспортом, выгуливать собаку и мноое другое в Южной Корее." />
-      <ImportantArticles
-        title={"Правила и лайфхаки для комфортной жизни в Южной Корее"}
-        type="lifestyle"
-      />
+      <Suspense
+        fallback={
+          <ImportantArticlesSkeleton
+            title={"Правила и лайфхаки для комфортной жизни в Южной Корее"}
+          />
+        }
+      >
+        <ImportantArticles
+          title={"Правила и лайфхаки для комфортной жизни в Южной Корее"}
+          type="lifestyle"
+        />
+      </Suspense>
     </>
   );
 }

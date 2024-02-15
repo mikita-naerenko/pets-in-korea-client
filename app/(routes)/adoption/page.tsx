@@ -1,5 +1,5 @@
 import Adoption from "./components";
-import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs";
+import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs/basic-breadcrumbs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

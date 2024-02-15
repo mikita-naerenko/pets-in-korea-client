@@ -1,5 +1,4 @@
 import Pagination from "@mui/material/Pagination";
-import { useState } from "react";
 
 export default function MainPagination({
   countOfNews,
