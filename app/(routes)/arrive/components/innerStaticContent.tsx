@@ -9,6 +9,7 @@ import rusAntibody from "@/public/rusAntibody.jpg";
 import rusAntibodyMobile from "@/public/rusAntibody-mobile.jpg";
 import vaccine from "@/public/vaccine.jpg";
 import vaccineMobile from "@/public/vaccine-mobile.jpg";
+import { IMAGE_QUALITY } from "@/lib/image-quality";
 
 export default function InnerStaticContent() {
   return (
@@ -84,7 +85,7 @@ export default function InnerStaticContent() {
                     marginBottom: "10px",
                   }}
                   src={passportMobile.src}
-                  quality={80}
+                  quality={IMAGE_QUALITY.innerStaticContent}
                   width={250}
                   height={300}
                   alt={`Обложка ветеринарного паспорта`}
@@ -100,7 +101,7 @@ export default function InnerStaticContent() {
                     height: "100%",
                   }}
                   src={chipMobile.src}
-                  quality={80}
+                  quality={IMAGE_QUALITY.innerStaticContent}
                   width={250}
                   height={300}
                   itemProp="image"
@@ -157,7 +158,7 @@ export default function InnerStaticContent() {
                     marginBottom: "10px",
                   }}
                   src={rusAntibodyMobile.src}
-                  quality={80}
+                  quality={IMAGE_QUALITY.innerStaticContent}
                   width={250}
                   height={300}
                   alt={`Тест на антитела к бешенству для кошек`}
@@ -173,7 +174,7 @@ export default function InnerStaticContent() {
                     height: "100%",
                   }}
                   src={vaccineMobile.src}
-                  quality={80}
+                  quality={IMAGE_QUALITY.innerStaticContent}
                   width={250}
                   height={300}
                   alt={`Ветеринарный паспорт с отметкой о вакцинации`}

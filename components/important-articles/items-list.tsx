@@ -15,6 +15,7 @@ import {
   styleItemBar,
   hoverStyle,
 } from "./style";
+import { IMAGE_QUALITY } from "@/lib/image-quality";
 
 export default function ItemsList({
   items,
@@ -53,7 +54,7 @@ export default function ItemsList({
               src={image}
               width={400}
               height={300}
-              quality={30}
+              quality={IMAGE_QUALITY.importantArticles}
               alt={item.title}
               style={{
                 ...styeImage,

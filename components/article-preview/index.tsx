@@ -16,6 +16,7 @@ import {
   image,
   wrapper,
 } from "./styles";
+import { IMAGE_QUALITY } from "@/lib/image-quality";
 
 export default function ArticlePreview({
   currentArticle,
@@ -38,7 +39,7 @@ export default function ArticlePreview({
           style={image}
           src={img}
           layout="responsive"
-          quality={90}
+          quality={IMAGE_QUALITY.articlePreview}
           width={250}
           height={300}
           alt={`${currentArticle.title} `}

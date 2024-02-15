@@ -14,6 +14,7 @@ import {
   ImageMarked,
 } from "./styled-components";
 import { THEMATIC_ARTICLES } from "@/lib/constants";
+import { IMAGE_QUALITY } from "@/lib/image-quality";
 
 import { styleImage, styleTitle, styleWrapper } from "./style";
 
@@ -37,7 +38,7 @@ export default function MainNavigationButtons() {
               <Image
                 alt={image.title}
                 src={image.img}
-                quality={50}
+                quality={IMAGE_QUALITY.mainNavigationButtons}
                 fill
                 style={styleImage}
                 priority

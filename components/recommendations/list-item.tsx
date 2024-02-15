@@ -9,6 +9,7 @@ import ListItemText from "@mui/material/ListItemText";
 import { Article, News } from "@/lib/type";
 import Fallback from "@/public/fallback.jpg";
 import { styleListItemButton, styleListItemTextTypography } from "./style";
+import { IMAGE_QUALITY } from "@/lib/image-quality";
 
 export default function ListItem({
   items,
@@ -41,7 +42,7 @@ export default function ListItem({
             <ListItemAvatar>
               <Image
                 src={image}
-                quality={70}
+                quality={IMAGE_QUALITY.recommendations}
                 width={50}
                 height={40}
                 alt={`${item.title} `}

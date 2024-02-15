@@ -4,6 +4,7 @@ import Document10days from "@/public/10-days.jpeg";
 import Document3days from "@/public/Document3days.jpeg";
 import relax from "@/public/relax.jpg";
 import antibodyTest from "@/public/antibody-test.png";
+import { IMAGE_QUALITY } from "@/lib/image-quality";
 
 export default function InnerStaticContent() {
   return (
@@ -98,7 +99,7 @@ export default function InnerStaticContent() {
             <Image
               style={{ display: "block", width: "100%", height: "100%" }}
               src={Document10days.src}
-              quality={90}
+              quality={IMAGE_QUALITY.innerStaticContent}
               width={250}
               height={300}
               alt={`dd `}
@@ -129,7 +130,7 @@ export default function InnerStaticContent() {
             <Image
               style={{ display: "block", width: "100%", height: "100%" }}
               src={Document3days.src}
-              quality={90}
+              quality={IMAGE_QUALITY.innerStaticContent}
               width={250}
               height={300}
               alt={`dd `}
@@ -183,7 +184,7 @@ export default function InnerStaticContent() {
             <Image
               style={{ display: "block", width: "100%", height: "auto" }}
               src={relax.src}
-              quality={90}
+              quality={IMAGE_QUALITY.innerStaticContent}
               width={250}
               height={300}
               alt={`dd `}
@@ -228,7 +229,7 @@ export default function InnerStaticContent() {
             <Image
               style={{ display: "block", width: "100%", height: "100%" }}
               src={antibodyTest.src}
-              quality={90}
+              quality={IMAGE_QUALITY.innerStaticContent}
               width={250}
               height={300}
               alt={`dd `}
