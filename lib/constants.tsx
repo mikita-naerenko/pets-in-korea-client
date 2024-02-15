@@ -2,36 +2,26 @@ import Vet from "../public/vet.jpg";
 import Airport from "../public/airport.jpg";
 import Rent from "../public/rent.jpg";
 import Adopt from "../public/how-to-adopt.jpg";
-import VetBlur from "../public/vet-blur.jpg";
-import AirportBlur from "../public/airport-blur.jpg";
-import RentBlur from "../public/rent-blur.jpg";
-import AdoptBlur from "../public/how-to-adopt-blur.jpg";
 
 export const THEMATIC_ARTICLES = [
   {
     title: "Приюты для домашних животных",
     img: Rent.src,
-    blur: RentBlur.src,
     href: "/shelter",
-    // tagId: "real-estate",
   },
   {
     title: "Как увезти моего питомца на родину?",
     img: Airport.src,
-    blur: AirportBlur.src,
     href: "/departure",
-    // tagId: "departure",
   },
   {
     title: "Я хочу завести питомца, с чего начать?",
     img: Adopt.src,
-    blur: AdoptBlur.src,
     href: "/adoption",
   },
   {
     title: "Поход к ветеринару",
     img: Vet.src,
-    blur: VetBlur.src,
     href: "/articles-set",
     tagId: "veterinarian",
   },

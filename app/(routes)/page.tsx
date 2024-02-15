@@ -1,6 +1,6 @@
 import ImportantArticles from "@/components/important-articles/index";
 import MainNavigationButtons from "@/components/main-navigation-buttons";
-import DictionaryList from "@/components/dictionarys-list/index";
+import DictionaryList from "@/components/dictionary-list/index";
 import { Suspense } from "react";
 import { DictionarySkeleton } from "@/components/ui/skeletons";
 import { ImportantArticlesSkeleton } from "@/components/important-articles/skeleton";

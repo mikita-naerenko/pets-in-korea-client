@@ -53,7 +53,7 @@ export default function ItemsList({
               src={image}
               width={400}
               height={300}
-              quality={80}
+              quality={30}
               alt={item.title}
               style={{
                 ...styeImage,

@@ -21,6 +21,7 @@ import NavbarXs from "./navbar-xs";
 import CTAButton from "../cta-button/index";
 import { LogoMD, LogoSX } from "./logo-set";
 import { styleAppBar } from "./styles";
+import Tooltip from "@mui/material/Tooltip";
 
 interface Props {
   children: React.ReactElement;
@@ -66,18 +67,20 @@ export default function Header(
                 {showSearchInput && (
                   <SearchInputSm handleClose={setShowSearchInput} />
                 )}
-                <IconButton
-                  type="button"
-                  sx={{ p: "10px" }}
-                  data-testid="search-button"
-                  onClick={handleShowSearchInput}
-                >
-                  {showSearchInput ? (
-                    <CloseIcon data-testid="close-search-button-icon" />
-                  ) : (
-                    <SearchIcon data-testid="search-button-icon" />
-                  )}
-                </IconButton>
+                <Tooltip title="Поиск по сайту">
+                  <IconButton
+                    type="button"
+                    sx={{ p: "10px" }}
+                    data-testid="search-button"
+                    onClick={handleShowSearchInput}
+                  >
+                    {showSearchInput ? (
+                      <CloseIcon data-testid="close-search-button-icon" />
+                    ) : (
+                      <SearchIcon data-testid="search-button-icon" />
+                    )}
+                  </IconButton>
+                </Tooltip>
                 <CTAButton />
               </Box>
             </Toolbar>

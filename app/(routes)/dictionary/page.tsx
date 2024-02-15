@@ -1,5 +1,5 @@
 import getThemes from "@/actions/get-themes";
-import DictionaryList from "@/components/dictionarys-list/index";
+import DictionaryList from "@/components/dictionary-list/index";
 import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs/basic-breadcrumbs";
 import { DictionarySkeleton } from "@/components/ui/skeletons";
 import HiddenSEOTitle from "@/components/ui/hidden-SEO-title";

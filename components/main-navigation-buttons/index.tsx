@@ -37,11 +37,10 @@ export default function MainNavigationButtons() {
               <Image
                 alt={image.title}
                 src={image.img}
-                placeholder="blur"
-                blurDataURL={image.blur}
-                quality={80}
+                quality={50}
                 fill
                 style={styleImage}
+                priority
               />
             </ImageContainer>
             <ImageBackdrop className="MuiImageBackdrop-root" />
