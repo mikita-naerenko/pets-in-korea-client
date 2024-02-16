@@ -53,7 +53,7 @@ export default function CTAButton() {
           <DialogContentText id="alert-dialog-slide-description" mb={2}>
             {MODAL_DIALOG_TEXT}
           </DialogContentText>
-          <FormCTA handleClose={handleClose} />
+          {open ? <FormCTA handleClose={handleClose} /> : null}
         </DialogContent>
       </Dialog>
     </React.Fragment>
