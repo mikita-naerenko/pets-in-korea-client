@@ -19,8 +19,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import SnippetLogo from "./snippet-logo.png";
 import "./globals.css";
 
-export const runtime = "edge";
-
 const font = PT_Sans_Caption({
   subsets: ["cyrillic"],
   weight: ["400", "700"],
@@ -71,9 +69,9 @@ export default function RootLayout({
       <ThemeProvider theme={theme}>
         <body className={font.className} style={{ position: "relative" }}>
           <Container maxWidth={"xl"}>
-            <Suspense>
+            {/* <Suspense>
               <Metrika />
-            </Suspense>
+            </Suspense> */}
             <ToastProvider />
             <Header>{children}</Header>
             <UpToTopButton />
