@@ -34,7 +34,8 @@ export async function generateStaticParams() {
 // }
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  const theme = await getTheme({ id: params.slug });
+  const { slug } = params;
+  const theme = await getTheme({ id: slug });
 
   return (
     <>
