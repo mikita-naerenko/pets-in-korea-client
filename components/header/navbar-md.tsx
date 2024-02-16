@@ -66,6 +66,7 @@ export default function NavbarMd() {
               href={item.href}
               key={item.href}
               label={item.label}
+              // prefetch={false}
             />
           ))}
         </Tabs>
