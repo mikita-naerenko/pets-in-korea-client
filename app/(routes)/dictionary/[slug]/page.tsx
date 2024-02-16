@@ -14,24 +14,24 @@ export async function generateStaticParams() {
   }));
 }
 
-// export async function generateMetadata(
-//   {
-//     params,
-//   }: {
-//     params: { themeId: string };
-//   },
-//   parent: ResolvingMetadata
-// ): Promise<Metadata> {
-//   const theme = await getTheme({ id: params.themeId });
+export async function generateMetadata(
+  {
+    params,
+  }: {
+    params: { themeId: string };
+  },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const theme = await getTheme({ id: params.themeId });
 
-//   return {
-//     title: theme.label,
-//     description: `Русско-корейский разговорник на тему ${theme.label}`,
-//     openGraph: {
-//       title: theme.label,
-//     },
-//   };
-// }
+  return {
+    title: theme.label,
+    description: `Русско-корейский разговорник на тему ${theme.label}`,
+    openGraph: {
+      title: theme.label,
+    },
+  };
+}
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
