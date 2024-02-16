@@ -1,8 +1,17 @@
 import React, { Suspense } from "react";
 import getArticle from "@/actions/get-article";
+import getArticles from "@/actions/get-articles";
 import SingleArticle from "@/components/single-article/single-article";
 import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs/basic-breadcrumbs";
 import { Metadata, ResolvingMetadata } from "next";
+
+// export async function generateStaticParams() {
+//   const article = await getArticles({});
+
+//   return article.map((item) => {
+//     singleArticleId: item.id;
+//   });
+// }
 
 export async function generateMetadata(
   {
@@ -34,8 +43,9 @@ export default async function page({
   params: { singleArticleId: string };
 }) {
   const articleId = params.singleArticleId;
+
   const article = await getArticle({ id: articleId });
-  // const imageURL = article?.images?.[0].url;
+
   const JSON_LD = {
     "@context": "https://schema.org",
     "@type": "Article",

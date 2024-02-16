@@ -38,13 +38,18 @@ export default function Arrive() {
         }}
       />
 
-      <Box sx={{ display: { md: "flex" }, mt: { md: 3 } }}>
-        <Box sx={{ width: { md: "60%" } }}>
+      <Box
+        sx={{
+          display: { md: "flex", justifyContent: "space-between" },
+          mt: { md: 3 },
+        }}
+      >
+        <Box sx={{ width: { md: "69%" } }}>
           <StyledTextContainer>
             <InnerStaticContent />
           </StyledTextContainer>
         </Box>
-        <Box sx={{ width: { md: "40%" } }}>
+        <Box sx={{ width: { md: "30%" } }}>
           <Recommendations />
         </Box>
       </Box>

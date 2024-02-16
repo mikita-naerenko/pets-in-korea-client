@@ -31,7 +31,6 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const themes = await getThemes();
   return (
     <>
       <BasicBreadcrumbs currentPage={undefined} />

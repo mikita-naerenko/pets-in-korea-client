@@ -5,7 +5,7 @@ const styleTypography = {
   mt: { xs: 3, md: 0 },
   mb: 0.5,
   mr: 0.5,
-  fontSize: { md: "1.8rem" },
+  fontSize: { md: "2.3rem" },
   fontWeight: "600",
   textAlign: "start",
 };

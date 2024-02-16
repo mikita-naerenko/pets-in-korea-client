@@ -1,8 +1,17 @@
 import getTheme from "@/actions/get-theme";
+import getThemes from "@/actions/get-themes";
 import SingleTheme from "@/components/single-theme";
 import BasicBreadcrumbs from "@/components/ui/basic-breadcrumbs/basic-breadcrumbs";
 
 import { Metadata, ResolvingMetadata } from "next";
+
+export async function generateStaticParams() {
+  const themes = await getThemes();
+
+  return themes.map((item) => {
+    themeId: item.id;
+  });
+}
 
 export async function generateMetadata(
   {

@@ -10,6 +10,17 @@ import Typography from "@mui/material/Typography";
 import { Theme } from "@/lib/type";
 
 import Fallback from "@/public/fallback.jpg";
+import getThemes from "@/actions/get-themes";
+
+// export async function getStaticProps() {
+//   const themes = await getThemes();
+
+//   return {
+//     props: {
+//       themes,
+//     },
+//   };
+// }
 
 export default function ItemsList({ themes }: { themes: Theme[] }) {
   const [showedItems, setShowedItems] = useState<number>(6);

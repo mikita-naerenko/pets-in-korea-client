@@ -6,7 +6,7 @@ const styleTypography = {
   mb: 2,
   mr: 0.5,
   fontSize: { md: "1.3rem" },
-  fontStyle: "italic",
+  // fontStyle: "italic",
   color: `${theme.palette.text.secondary}`,
   textAlign: "start",
 };
