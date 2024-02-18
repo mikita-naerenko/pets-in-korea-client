@@ -1,7 +1,7 @@
 export const IMAGE_QUALITY = {
-  importantArticles: 20,
-  mainNavigationButtons: 30,
-  innerStaticContent: 40,
-  articlePreview: 10,
+  importantArticles: 50,
+  mainNavigationButtons: 50,
+  innerStaticContent: 50,
+  articlePreview: 70,
   recommendations: 30,
 };

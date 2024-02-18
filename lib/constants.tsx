@@ -2,26 +2,34 @@ import Vet from "../public/vet.jpg";
 import Airport from "../public/airport.jpg";
 import Rent from "../public/rent.jpg";
 import Adopt from "../public/how-to-adopt.jpg";
+import RentMobile from "@/public/rent-mobile.jpg";
+import AirportMobile from "@/public/airport-mobile.jpg";
+import AdoptMobile from "../public/how-to-adopt-mobile.jpg";
+import VetMobile from "../public/vet-mobile.jpg";
 
 export const THEMATIC_ARTICLES = [
   {
     title: "Приюты для домашних животных",
     img: Rent.src,
+    mobileImg: RentMobile.src,
     href: "/shelter",
   },
   {
     title: "Как увезти моего питомца на родину?",
     img: Airport.src,
+    mobileImg: AirportMobile.src,
     href: "/departure",
   },
   {
     title: "Я хочу завести питомца, с чего начать?",
     img: Adopt.src,
+    mobileImg: AdoptMobile.src,
     href: "/adoption",
   },
   {
     title: "Поход к ветеринару",
     img: Vet.src,
+    mobileImg: VetMobile.src,
     href: "/articles-set",
     tagId: "veterinarian",
   },

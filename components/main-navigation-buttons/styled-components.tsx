@@ -3,7 +3,7 @@ import ButtonBase from "@mui/material/ButtonBase";
 
 export const ImageButton = styled(ButtonBase)(({ theme }) => ({
   position: "relative",
-  height: 300,
+  height: 200,
   width: "100% !important",
   borderRadius: "10px",
   transition: "0.5s ease-in-out",

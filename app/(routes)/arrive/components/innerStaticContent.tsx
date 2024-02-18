@@ -160,7 +160,7 @@ export default function InnerStaticContent() {
                   src={rusAntibodyMobile.src}
                   quality={IMAGE_QUALITY.innerStaticContent}
                   width={250}
-                  height={300}
+                  height={200}
                   alt={`Тест на антитела к бешенству для кошек`}
                   itemProp="image"
                 />

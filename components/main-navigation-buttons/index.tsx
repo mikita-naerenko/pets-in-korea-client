@@ -35,14 +35,17 @@ export default function MainNavigationButtons() {
             }
           >
             <ImageContainer>
-              <Image
-                alt={image.title}
-                src={image.img}
-                quality={IMAGE_QUALITY.mainNavigationButtons}
-                fill
-                style={styleImage}
-                priority
-              />
+              <picture>
+                <source media={`(min-width: 900px)`} srcSet={image.img} />
+                <Image
+                  alt={image.title}
+                  src={image.mobileImg}
+                  quality={IMAGE_QUALITY.mainNavigationButtons}
+                  fill
+                  style={styleImage}
+                  priority
+                />
+              </picture>
             </ImageContainer>
             <ImageBackdrop className="MuiImageBackdrop-root" />
             <Content>
