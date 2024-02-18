@@ -14,6 +14,7 @@ import {
   styleImageListItem,
   styleItemBar,
   hoverStyle,
+  styleImageLoaded,
 } from "./style";
 import { IMAGE_QUALITY } from "@/lib/image-quality";
 
@@ -28,6 +29,12 @@ export default function ItemsList({
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<null | string>(null);
+  const [loaded, setLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    console.log("loaded");
+    setLoaded(true);
+  };
 
   const handleClickSingleItem = (item: Article | News) => {
     if (type === "article") {
@@ -59,6 +66,7 @@ export default function ItemsList({
               style={{
                 ...styeImage,
                 ...(isHovered && hoveredItem === item.id && hoverStyle),
+                ...(loaded && styleImageLoaded),
               }}
               onMouseEnter={() => {
                 setIsHovered(true);
@@ -67,6 +75,7 @@ export default function ItemsList({
               onMouseLeave={() => {
                 setIsHovered(false);
               }}
+              onLoad={handleImageLoad}
             />
             <ImageListItemBar
               title={item.title}

@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
 
 export function Metrika() {
@@ -12,7 +10,7 @@ export function Metrika() {
   //   }, [pathName, searchParams]);
   return (
     <>
-      <Script id="yandex-metrika">
+      <Script id="yandex-metrika" strategy="afterInteractive">
         {`
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();

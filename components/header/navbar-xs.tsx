@@ -71,6 +71,7 @@ export default function NavbarXs() {
             href={item.href}
             onClick={() => setAnchorElNav(null)}
             component={Link}
+            prefetch={false}
           >
             <Typography textAlign="center">{item.label}</Typography>
           </MenuItem>

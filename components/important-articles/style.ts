@@ -31,6 +31,12 @@ export const styeImage: CSSProperties = {
   display: "block",
   flexGrow: 1,
   transition: "filter 0.2s ease-in-out",
+  opacity: 0,
+};
+
+export const styleImageLoaded = {
+  opacity: 1,
+  transition: "opacity 1s ease",
 };
 
 export const styleImageListItem = {

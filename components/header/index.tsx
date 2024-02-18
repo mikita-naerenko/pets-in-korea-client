@@ -1,27 +1,35 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import CssBaseline from "@mui/material/CssBaseline";
-import useScrollTrigger from "@mui/material/useScrollTrigger";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import Slide from "@mui/material/Slide";
+import {
+  AppBar,
+  Toolbar,
+  CssBaseline,
+  useScrollTrigger,
+  Box,
+  Container,
+  Slide,
+  Tooltip,
+} from "@mui/material";
 
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
 
-import SearchInputXs from "./search-input-xs";
-import SearchInputSm from "./search-input-sm";
-import NavbarMd from "./navbar-md";
-import NavbarXs from "./navbar-xs";
-
 import CTAButton from "../cta-button/index";
 import { LogoMD, LogoSX } from "./logo-set";
 import { styleAppBar } from "./styles";
-import Tooltip from "@mui/material/Tooltip";
+
+const SearchInputXs = dynamic(() => import("./search-input-xs"), {
+  ssr: false,
+});
+const SearchInputSm = dynamic(() => import("./search-input-sm"), {
+  ssr: false,
+});
+
+const NavbarXs = dynamic(() => import("./navbar-xs"));
+const NavbarMd = dynamic(() => import("./navbar-md"));
 
 interface Props {
   children: React.ReactElement;
@@ -44,6 +52,20 @@ export default function Header(
   props: Props
 ) {
   const [showSearchInput, setShowSearchInput] = useState<boolean>(false);
+  const [screenWidth, setScreenWidth] = useState<number>(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleShowSearchInput = () => {
     setShowSearchInput(!showSearchInput);
@@ -59,7 +81,8 @@ export default function Header(
               disableGutters
               sx={{ display: "flex", justifyContent: "space-between" }}
             >
-              <NavbarXs />
+              {screenWidth < 900 && <NavbarXs />}
+
               <LogoSX />
               <LogoMD />
 
@@ -88,7 +111,7 @@ export default function Header(
           {showSearchInput && (
             <SearchInputXs handleClose={setShowSearchInput} />
           )}
-          <NavbarMd />
+          {screenWidth >= 900 && <NavbarMd />}
         </AppBar>
       </HideOnScroll>
       <Box component="main" sx={{ my: { xs: 10, md: 17 } }}>

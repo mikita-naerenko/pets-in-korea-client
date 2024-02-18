@@ -46,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ru">
+    <html lang="ru" className={font.className}>
       <meta
         property="og:title"
         content="Pets in Korea. информация о домашних животных в южной корее"
@@ -67,11 +67,11 @@ export default function RootLayout({
       ></link>
 
       <ThemeProvider theme={theme}>
-        <body className={font.className} style={{ position: "relative" }}>
+        <body style={{ position: "relative" }}>
           <Container maxWidth={"xl"}>
-            {/* <Suspense>
+            <Suspense>
               <Metrika />
-            </Suspense> */}
+            </Suspense>
             <ToastProvider />
             <Header>{children}</Header>
             <UpToTopButton />

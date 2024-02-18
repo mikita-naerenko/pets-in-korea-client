@@ -1,27 +1,30 @@
 import * as React from "react";
 import { useState } from "react";
 
-import Dialog from "@mui/material/Dialog";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
-import Slide from "@mui/material/Slide";
-import { TransitionProps } from "@mui/material/transitions";
+// import Dialog from "@mui/material/Dialog";
+// import DialogContent from "@mui/material/DialogContent";
+// import DialogContentText from "@mui/material/DialogContentText";
+// import DialogTitle from "@mui/material/DialogTitle";
+// import Slide from "@mui/material/Slide";
+// import { TransitionProps } from "@mui/material/transitions";
 import IconButton from "@mui/material/IconButton";
 import MailIcon from "@mui/icons-material/Mail";
 import Tooltip from "@mui/material/Tooltip";
 
-import FormCTA from "./form";
-import { MODAL_DIALOG_TEXT } from "./consts";
+// import FormCTA from "./form";
+// import { MODAL_DIALOG_TEXT } from "./consts";
+import dynamic from "next/dynamic";
 
-const Transition = React.forwardRef(function Transition(
-  props: TransitionProps & {
-    children: React.ReactElement<any, any>;
-  },
-  ref: React.Ref<unknown>
-) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
+const DialogForm = dynamic(() => import("./dialog-form"), { ssr: false });
+
+// const Transition = React.forwardRef(function Transition(
+//   props: TransitionProps & {
+//     children: React.ReactElement<any, any>;
+//   },
+//   ref: React.Ref<unknown>
+// ) {
+//   return <Slide direction="up" ref={ref} {...props} />;
+// });
 
 export default function CTAButton() {
   const [open, setOpen] = useState(false);
@@ -41,21 +44,7 @@ export default function CTAButton() {
           <MailIcon />
         </IconButton>
       </Tooltip>
-      <Dialog
-        open={open}
-        TransitionComponent={Transition}
-        keepMounted
-        onClose={handleClose}
-        aria-describedby="alert-dialog-slide-description"
-      >
-        <DialogTitle>{"Обратная связь"}</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-slide-description" mb={2}>
-            {MODAL_DIALOG_TEXT}
-          </DialogContentText>
-          {open ? <FormCTA handleClose={handleClose} /> : null}
-        </DialogContent>
-      </Dialog>
+      {open && <DialogForm open={open} handleClose={handleClose} />}
     </React.Fragment>
   );
 }

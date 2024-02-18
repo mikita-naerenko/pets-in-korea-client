@@ -45,7 +45,7 @@ export const LogoSX = () => {
       }}
     >
       <Link href="/">
-        <Image width={180} height={40} alt="Logo" src={LogoMobile} />
+        <Image width={180} height={50} alt="Logo" src={LogoMobile} />
       </Link>
     </Box>
   );
