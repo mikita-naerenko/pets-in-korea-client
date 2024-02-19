@@ -41,7 +41,7 @@ export default function MainNavigationButtons() {
                 quality={IMAGE_QUALITY.mainNavigationButtons}
                 fill
                 style={styleImage}
-                priority
+                priority={true}
               />
             </ImageContainer>
             <ImageBackdrop className="MuiImageBackdrop-root" />
