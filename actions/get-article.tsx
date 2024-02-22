@@ -16,6 +16,6 @@ export default async function getArticle(
       id: query?.id || "",
     },
   });
-  const res = await fetch(url, { cache: "no-store" });
+  const res = await fetch(url);
   return res.json();
 }

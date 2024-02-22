@@ -21,7 +21,7 @@ export default async function getArticles(
         random: query.random,
       },
     });
-    const res = await fetch(url, { cache: "no-store" });
+    const res = await fetch(url);
     return res.json();
   }
   if (query?.tagLabel) {

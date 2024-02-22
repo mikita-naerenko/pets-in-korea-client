@@ -14,6 +14,6 @@ export default async function getCountOf(query: Query): Promise<string> {
       target: query.target,
     },
   });
-  const res = await fetch(url, { cache: "no-store" });
+  const res = await fetch(url);
   return res.json();
 }

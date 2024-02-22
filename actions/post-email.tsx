@@ -1,6 +1,3 @@
-import qs from "query-string";
-import axios from "axios";
-
 interface Req {
   text: string;
   email: string;
@@ -16,7 +13,7 @@ export default async function postEmail(body: Req): Promise<Response> {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(body),
-    cache: "no-store",
+    // cache: "no-store",
   });
 
   return res.json();

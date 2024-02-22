@@ -16,7 +16,7 @@ export default async function getTag(query: Query): Promise<Tag> {
         tagLabel: query.tagLabel,
       },
     });
-    const res = await fetch(url, { cache: "no-store" });
+    const res = await fetch(url);
     return res.json();
   }
   if (query?.tagId) {
@@ -26,7 +26,7 @@ export default async function getTag(query: Query): Promise<Tag> {
         tagId: query.tagId,
       },
     });
-    const res = await fetch(url, { cache: "no-store" });
+    const res = await fetch(url);
     return res.json();
   }
   return {} as Tag;

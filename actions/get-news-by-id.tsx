@@ -15,7 +15,7 @@ export default async function getNewsById(query: Query): Promise<News> {
     },
   });
 
-  const res = await fetch(url, { cache: "no-store" });
+  const res = await fetch(url);
 
   return res.json();
 }

@@ -23,7 +23,7 @@ export default async function getNews(query: Query | null): Promise<News[]> {
     },
   });
 
-  const res = await fetch(url, { cache: "no-store" });
+  const res = await fetch(url);
 
   return res.json();
 }
