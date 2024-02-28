@@ -2,8 +2,8 @@ import ImportantArticles from "@/components/important-articles/index";
 import MainNavigationButtons from "@/components/main-navigation-buttons";
 import DictionaryList from "@/components/dictionary-list/index";
 import { Suspense } from "react";
-import { DictionarySkeleton } from "@/components/ui/skeletons";
-import { ImportantArticlesSkeleton } from "@/components/important-articles/skeleton";
+// import { DictionarySkeleton } from "@/components/ui/skeletons";
+// import { ImportantArticlesSkeleton } from "@/components/important-articles/skeleton";
 import HiddenSEOTitle from "@/components/ui/hidden-SEO-title";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
@@ -40,18 +40,18 @@ export default async function Home() {
         title={"Свежая информация для владельцев животных в Корее"}
       />
       <MainNavigationButtons />
-      <Suspense fallback={<ImportantArticlesSkeleton title={"Актуальное"} />}>
-        <ImportantArticles title={"Актуальное"} type="article" />
-      </Suspense>
-      <Suspense
+      {/* <Suspense fallback={<ImportantArticlesSkeleton title={"Актуальное"} />}> */}
+      <ImportantArticles title={"Актуальное"} type="article" />
+      {/* </Suspense> */}
+      {/* <Suspense
         fallback={<ImportantArticlesSkeleton title={"Новости о животных"} />}
-      >
-        <ImportantArticles title={"Новости о животных"} type="main-page-news" />
-      </Suspense>
+      > */}
+      <ImportantArticles title={"Новости о животных"} type="main-page-news" />
+      {/* </Suspense> */}
 
-      <Suspense fallback={<DictionarySkeleton />}>
-        <DictionaryList />
-      </Suspense>
+      {/* <Suspense fallback={<DictionarySkeleton />}> */}
+      <DictionaryList />
+      {/* </Suspense> */}
     </>
   );
 }

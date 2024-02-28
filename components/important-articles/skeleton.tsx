@@ -32,9 +32,9 @@ export function ImportantArticlesSkeleton({ title }: { title: string }) {
           <ImageListItemSkeleton delay={0} />
           <ImageListItemSkeleton delay={1} />
           <ImageListItemSkeleton delay={2} />
-          {/* <ImageListItemSkeleton delay={3} />
+          <ImageListItemSkeleton delay={3} />
           <ImageListItemSkeleton delay={4} />
-          <ImageListItemSkeleton delay={5} /> */}
+          <ImageListItemSkeleton delay={5} />
           {/* <ImageListItemSkeleton delay={6} />
           <ImageListItemSkeleton delay={7} />
           <ImageListItemSkeleton delay={8} /> */}

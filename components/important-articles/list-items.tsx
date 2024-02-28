@@ -20,7 +20,7 @@ export default function ListItems({
   type: string;
 }) {
   const offset = 3;
-  const [showedItems, setShowedItems] = useState<number>(3);
+  const [showedItems, setShowedItems] = useState<number>(6);
   const router = useRouter();
 
   const handleClickMoreButton = () => {
