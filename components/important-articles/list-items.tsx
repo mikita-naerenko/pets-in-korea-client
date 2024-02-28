@@ -7,6 +7,7 @@ import ImageList from "@mui/material/ImageList";
 import GradientButton from "@/components/ui/gradient-button";
 
 import { Article, News } from "@/lib/type";
+
 import ItemsList from "./items-list";
 
 import { styleImageList, styleWrapperButton } from "./style";
@@ -19,7 +20,7 @@ export default function ListItems({
   type: string;
 }) {
   const offset = 3;
-  const [showedItems, setShowedItems] = useState<number>(6);
+  const [showedItems, setShowedItems] = useState<number>(3);
   const router = useRouter();
 
   const handleClickMoreButton = () => {

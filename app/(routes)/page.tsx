@@ -6,6 +6,7 @@ import { DictionarySkeleton } from "@/components/ui/skeletons";
 import { ImportantArticlesSkeleton } from "@/components/important-articles/skeleton";
 import HiddenSEOTitle from "@/components/ui/hidden-SEO-title";
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 
 export const metadata: Metadata = {
   title: "Pets in Korea. Информация о домашних животных в Южной Корее",

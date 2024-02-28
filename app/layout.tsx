@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PT_Sans_Caption } from "next/font/google";
 import { Suspense } from "react";
+import dynamic from "next/dynamic";
 
 import Container from "@mui/material/Container";
 import { ThemeProvider } from "@mui/material/styles";
@@ -8,16 +9,21 @@ import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "@/components/theme";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import UpToTopButton from "@/components/ui/up-to-top-button";
-import { Metrika } from "@/components/metrika";
-
-import { ToastProvider } from "@/providers/toast-provider";
 
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import SnippetLogo from "./snippet-logo.png";
 import "./globals.css";
+
+const ToastProvider = dynamic(() => import("@/providers/toast-provider"), {
+  ssr: false,
+});
+const Metrika = dynamic(() => import("@/components/metrika"), { ssr: false });
+const UpToTopButton = dynamic(
+  () => import("@/components/ui/up-to-top-button"),
+  { ssr: false }
+);
 
 const font = PT_Sans_Caption({
   subsets: ["cyrillic"],
@@ -69,16 +75,19 @@ export default function RootLayout({
       <ThemeProvider theme={theme}>
         <body style={{ position: "relative" }}>
           <Container maxWidth={"xl"}>
-            <Suspense>
-              <Metrika />
-            </Suspense>
             <ToastProvider />
             <Header>{children}</Header>
             <UpToTopButton />
             <Footer />
           </Container>
-          <Analytics />
-          <SpeedInsights />
+
+          <Suspense fallback={null}>
+            <Analytics />
+          </Suspense>
+          <Suspense fallback={null}>
+            <SpeedInsights />
+          </Suspense>
+          <Metrika />
         </body>
       </ThemeProvider>
     </html>

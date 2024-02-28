@@ -2,12 +2,7 @@
 
 import Script from "next/script";
 
-export function Metrika() {
-  //   const pathName = usePathname();
-  //   const searchParams = useSearchParams();
-  //   useEffect(() => {
-  //     ym(96281979, "hit", window.location.href);
-  //   }, [pathName, searchParams]);
+export default function Metrika() {
   return (
     <>
       <Script id="yandex-metrika" strategy="afterInteractive">
