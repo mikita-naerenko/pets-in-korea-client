@@ -27,7 +27,11 @@ export default function MainNavigationButtonV2() {
       <BoxWrapper>
         {THEMATIC_ARTICLES_V2.map((item) => {
           return (
-            <Trapezoid onClick={() => handleClick(item)} tabIndex={0}>
+            <Trapezoid
+              onClick={() => handleClick(item)}
+              tabIndex={0}
+              key={item.title}
+            >
               <StraightContainer>
                 <StyledImage
                   src={item.img}
