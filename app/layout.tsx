@@ -55,7 +55,7 @@ export default function RootLayout({
     <html lang="ru" className={font.className}>
       <meta
         property="og:title"
-        content="Pets in Korea. информация о домашних животных в южной корее"
+        content="Pets in Korea. Информация о домашних животных в Южной Корее"
       />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://pets-in-korea.com" />

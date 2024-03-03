@@ -56,6 +56,7 @@ export default function ItemsList({
             key={item.id}
             sx={styleImageListItem}
             onClick={() => handleClickSingleItem(item)}
+            tabIndex={0}
           >
             <Image
               src={image}

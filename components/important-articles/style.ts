@@ -55,15 +55,20 @@ export const styleImageListItem = {
   },
   cursor: "pointer",
   transition: "transform 0.2s ease-in-out",
-  "&:hover": {
-    transform: "scale(1.01)",
-    "& .MuiImageListItemBar-root": {
-      height: "8rem",
-      background: "rgba(0, 0, 0, 0.7)",
+  "@media (pointer: fine) ": {
+    "&:hover": {
+      transform: "scale(1.01)",
+      "& .MuiImageListItemBar-root": {
+        height: "8rem",
+        background: "rgba(0, 0, 0, 0.7)",
+      },
+      "& .MuiImageListItemBar-subtitle": {
+        whiteSpace: "normal",
+      },
     },
-    "& .MuiImageListItemBar-subtitle": {
-      whiteSpace: "normal",
-    },
+  },
+  "&:focus": {
+    outline: `4px solid #5294ff`,
   },
 };
 

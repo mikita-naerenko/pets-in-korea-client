@@ -1,12 +1,7 @@
 import ImportantArticles from "@/components/important-articles/index";
-import MainNavigationButtons from "@/components/main-navigation-buttons";
 import DictionaryList from "@/components/dictionary-list/index";
-import { Suspense } from "react";
-// import { DictionarySkeleton } from "@/components/ui/skeletons";
-// import { ImportantArticlesSkeleton } from "@/components/important-articles/skeleton";
 import HiddenSEOTitle from "@/components/ui/hidden-SEO-title";
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import MainNavigationButtonV2 from "@/components/main-navigation-button_v2";
 
 export const metadata: Metadata = {
