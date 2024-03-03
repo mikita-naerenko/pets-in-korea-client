@@ -7,6 +7,7 @@ import { Suspense } from "react";
 import HiddenSEOTitle from "@/components/ui/hidden-SEO-title";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
+import MainNavigationButtonV2 from "@/components/main-navigation-button_v2";
 
 export const metadata: Metadata = {
   title: "Pets in Korea. Информация о домашних животных в Южной Корее",
@@ -39,19 +40,10 @@ export default async function Home() {
       <HiddenSEOTitle
         title={"Свежая информация для владельцев животных в Корее"}
       />
-      <MainNavigationButtons />
-      {/* <Suspense fallback={<ImportantArticlesSkeleton title={"Актуальное"} />}> */}
+      <MainNavigationButtonV2 />
       <ImportantArticles title={"Актуальное"} type="article" />
-      {/* </Suspense> */}
-      {/* <Suspense
-        fallback={<ImportantArticlesSkeleton title={"Новости о животных"} />}
-      > */}
       <ImportantArticles title={"Новости о животных"} type="main-page-news" />
-      {/* </Suspense> */}
-
-      {/* <Suspense fallback={<DictionarySkeleton />}> */}
       <DictionaryList />
-      {/* </Suspense> */}
     </>
   );
 }

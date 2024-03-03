@@ -115,3 +115,11 @@ export interface titlePreview {
   nameOfSource?: string;
   authorName?: string;
 }
+
+export interface ImageButton {
+  title: string;
+  img: string;
+  mobileImg: string;
+  href: string;
+  tagId?: string;
+}

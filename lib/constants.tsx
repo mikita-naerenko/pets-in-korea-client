@@ -4,8 +4,13 @@ import Rent from "../public/rent.jpg";
 import Adopt from "../public/how-to-adopt.jpg";
 import RentMobile from "@/public/rent-mobile.jpg";
 import AirportMobile from "@/public/airport-mobile.jpg";
-import AdoptMobile from "../public/how-to-adopt-mobile.jpg";
-import VetMobile from "../public/vet-mobile.jpg";
+import AdoptMobile from "@/public/how-to-adopt-mobile.jpg";
+import VetMobile from "@/public/vet-mobile.jpg";
+import DepartureV2 from "@/public/departure_v2x1.png";
+import ShelterV2 from "@/public/shelter_v2x1.png";
+import VetV2 from "@/public/vet_v2x1.png";
+import AdoptV2 from "@/public/adopt_v2x1.png";
+import { ImageButton } from "./type";
 
 export const THEMATIC_ARTICLES = [
   {
@@ -30,6 +35,34 @@ export const THEMATIC_ARTICLES = [
     title: "Поход к ветеринару",
     img: Vet.src,
     mobileImg: VetMobile.src,
+    href: "/articles-set",
+    tagId: "veterinarian",
+  },
+];
+
+export const THEMATIC_ARTICLES_V2: ImageButton[] = [
+  {
+    title: "Приюты для домашних животных",
+    img: ShelterV2.src,
+    mobileImg: ShelterV2.src,
+    href: "/shelter",
+  },
+  {
+    title: "Как увезти моего питомца на родину?",
+    img: DepartureV2.src,
+    mobileImg: DepartureV2.src,
+    href: "/departure",
+  },
+  {
+    title: "Как завести домашнее животное?",
+    img: AdoptV2.src,
+    mobileImg: AdoptV2.src,
+    href: "/adoption",
+  },
+  {
+    title: "Поход в ветеринарную клинику",
+    img: VetV2.src,
+    mobileImg: VetV2.src,
     href: "/articles-set",
     tagId: "veterinarian",
   },
